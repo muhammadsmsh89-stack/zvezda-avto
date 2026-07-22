@@ -1,6 +1,8 @@
 // Реальные данные автотехцентра «Звезда», собранные с tc-zvezda.ru и Яндекс.Карт.
 // Цены и факты не изменялись. Источник прайса — официальный прайс-лист tc-zvezda.ru/price/.
 
+import { withBase } from "@/lib/basePath";
+
 export const company = {
   name: "ЗВЕЗДА",
   fullName: "Автотехцентр «Звезда»",
@@ -76,7 +78,7 @@ export const serviceCategories = [
     description:
       "Комплексный слесарный ремонт легковых автомобилей более 20 марок: от планового ТО до капитального ремонта узлов.",
     heroNote: "Основные узлы — в течение дня",
-    image: "/images/gallery/photo-6.jpg",
+    image: withBase("/images/gallery/photo-6.jpg"),
     items: [
       { name: "Техническое обслуживание", price: "от 500 ₽" },
       { name: "Ремонт рулевого управления", price: "от 500 ₽" },
@@ -101,7 +103,7 @@ export const serviceCategories = [
     description:
       "Диагностика и ремонт электрооборудования: от поиска обрыва в проводке до программирования блоков управления.",
     heroNote: "Диагностика на дилерском уровне",
-    image: "/images/gallery/photo-9.jpg",
+    image: withBase("/images/gallery/photo-9.jpg"),
     items: [
       { name: "Компьютерная диагностика" },
       { name: "Ремонт систем освещения" },
@@ -117,7 +119,7 @@ export const serviceCategories = [
     description:
       "Восстановление геометрии кузова, покраска и рихтовка любой сложности с бесплатным осмотром и оценкой перед началом работ.",
     heroNote: "Бесплатный осмотр и оценка",
-    image: "/images/gallery/photo-2.jpg",
+    image: withBase("/images/gallery/photo-2.jpg"),
     items: [
       { name: "Осмотр и диагностика кузова", price: "от 1 800 ₽" },
       { name: "Рихтовка без покраски" },
@@ -298,7 +300,7 @@ export const certificates = [
 ] as const;
 
 export const gallery = Array.from({ length: 12 }, (_, i) => ({
-  src: `/images/gallery/photo-${i + 1}.jpg`,
+  src: withBase(`/images/gallery/photo-${i + 1}.jpg`),
   alt: `Автотехцентр «Звезда» — фото ${i + 1}`,
 }));
 

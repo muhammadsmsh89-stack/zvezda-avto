@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { brands, brandModelHighlights } from "@/lib/content";
+import { withBase } from "@/lib/basePath";
 
 export function BrandsSection() {
   return (
@@ -19,7 +20,7 @@ export function BrandsSection() {
               <div className="group flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-surface p-4 transition-all hover:-translate-y-1 hover:border-accent/40">
                 <div className="relative h-12 w-full overflow-hidden rounded-lg bg-white">
                   <Image
-                    src={`/images/brands/${brand.file}`}
+                    src={withBase(`/images/brands/${brand.file}`)}
                     alt={brand.name}
                     fill
                     className="object-contain p-1.5 grayscale transition-all duration-300 group-hover:grayscale-0"

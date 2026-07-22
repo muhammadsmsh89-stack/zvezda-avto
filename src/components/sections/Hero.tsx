@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { company } from "@/lib/content";
+import { withBase } from "@/lib/basePath";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -12,7 +13,7 @@ export function Hero() {
     <section className="relative flex min-h-[92svh] items-end overflow-hidden bg-background">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero/hero-2.jpg"
+          src={withBase("/images/hero/hero-2.jpg")}
           alt="Автотехцентр «Звезда» — ремонтная зона с подъёмниками в Махачкале"
           fill
           priority

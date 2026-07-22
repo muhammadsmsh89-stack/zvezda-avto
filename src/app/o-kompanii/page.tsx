@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
 import { advantages, trustStats, certificates, insurancePartners, company } from "@/lib/content";
+import { withBase } from "@/lib/basePath";
 
 export const metadata: Metadata = {
   title: "О компании",
@@ -28,7 +29,7 @@ export default function OKompanii() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border">
-                <Image src="/images/site/facade.jpg" alt="Фасад автотехцентра «Звезда»" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <Image src={withBase("/images/site/facade.jpg")} alt="Фасад автотехцентра «Звезда»" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
             </Reveal>
             <Reveal delay={0.1}>
@@ -85,7 +86,7 @@ export default function OKompanii() {
                 {certificates.map((cert) => (
                   <StaggerItem key={cert.file}>
                     <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-border bg-white">
-                      <Image src={`/images/certificates/${cert.file}`} alt={cert.title} fill className="object-contain p-2" sizes="200px" />
+                      <Image src={withBase(`/images/certificates/${cert.file}`)} alt={cert.title} fill className="object-contain p-2" sizes="200px" />
                     </div>
                   </StaggerItem>
                 ))}
@@ -98,7 +99,7 @@ export default function OKompanii() {
                   <StaggerItem key={partner.file}>
                     <div className="flex aspect-square items-center justify-center rounded-xl border border-border bg-white p-3">
                       <div className="relative h-full w-full">
-                        <Image src={`/images/insurance/${partner.file}`} alt={partner.name} fill className="object-contain" sizes="120px" />
+                        <Image src={withBase(`/images/insurance/${partner.file}`)} alt={partner.name} fill className="object-contain" sizes="120px" />
                       </div>
                     </div>
                   </StaggerItem>

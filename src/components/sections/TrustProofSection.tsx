@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { certificates, insurancePartners } from "@/lib/content";
+import { withBase } from "@/lib/basePath";
 
 export function TrustProofSection() {
   return (
@@ -19,7 +20,7 @@ export function TrustProofSection() {
                 <StaggerItem key={cert.file}>
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-xl border border-border bg-white">
                     <Image
-                      src={`/images/certificates/${cert.file}`}
+                      src={withBase(`/images/certificates/${cert.file}`)}
                       alt={cert.title}
                       fill
                       className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
@@ -41,7 +42,7 @@ export function TrustProofSection() {
                   <div className="flex aspect-square items-center justify-center rounded-xl border border-border bg-white p-3">
                     <div className="relative h-full w-full">
                       <Image
-                        src={`/images/insurance/${partner.file}`}
+                        src={withBase(`/images/insurance/${partner.file}`)}
                         alt={partner.name}
                         fill
                         className="object-contain"

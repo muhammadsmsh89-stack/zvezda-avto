@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "zvezda-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/patyasaidova/Клауд Сайт/scripts/dev.sh"],
+      "port": 3000
+    }
+  ]
+}

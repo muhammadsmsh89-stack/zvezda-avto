@@ -35,6 +35,21 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Install naturel-studio dependencies
+        run: npm ci
+        working-directory: ./naturel-studio
+
+      - name: Build naturel-studio (static export)
+        run: npm run build
+        working-directory: ./naturel-studio
+        env:
+          NODE_ENV: production
+
+      - name: Merge naturel-studio into Pages output
+        run: |
+          mkdir -p out/naturel-studio
+          cp -r naturel-studio/out/. out/naturel-studio/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

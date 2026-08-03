@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Standalone sibling project with its own lint/type config.
+    "naturel-studio/**",
   ]),
 ]);
 

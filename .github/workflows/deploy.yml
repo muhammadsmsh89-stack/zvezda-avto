@@ -65,6 +65,21 @@ jobs:
           mkdir -p out/altair-furniture
           cp -r altair-furniture/out/. out/altair-furniture/
 
+      - name: Install liberty-technology dependencies
+        run: npm ci
+        working-directory: ./liberty-technology
+
+      - name: Build liberty-technology (static export)
+        run: npm run build
+        working-directory: ./liberty-technology
+        env:
+          NODE_ENV: production
+
+      - name: Merge liberty-technology into Pages output
+        run: |
+          mkdir -p out/liberty-technology
+          cp -r liberty-technology/out/. out/liberty-technology/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

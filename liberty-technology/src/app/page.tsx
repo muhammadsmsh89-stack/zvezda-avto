@@ -3,7 +3,6 @@ import { ReputationStrip } from "@/components/sections/ReputationStrip";
 import { Capabilities } from "@/components/sections/Capabilities";
 import { ProjectsIntro } from "@/components/sections/ProjectsIntro";
 import { ProjectFeature } from "@/components/sections/ProjectFeature";
-import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { FeatureSpotlight } from "@/components/sections/FeatureSpotlight";
 import { Process } from "@/components/sections/Process";
 import { About } from "@/components/sections/About";
@@ -25,8 +24,6 @@ export default function Home() {
 
       <ProjectsIntro />
       <ProjectFeature project={bmw} />
-
-      <BeforeAfter />
 
       <FeatureSpotlight
         id="protection"

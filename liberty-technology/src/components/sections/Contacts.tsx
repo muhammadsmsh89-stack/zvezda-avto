@@ -71,10 +71,7 @@ export function Contacts() {
 
               <div>
                 <dt className="font-mono-tag text-xs uppercase tracking-[0.12em] text-paper/40">Время работы</dt>
-                <dd className="mt-1 text-[15px] text-paper/85">
-                  {company.hours.display}
-                  <span className="ml-2 text-xs text-paper/35">уточняется</span>
-                </dd>
+                <dd className="mt-1 text-[15px] text-paper/85">{company.hours.display}</dd>
               </div>
             </dl>
 
@@ -92,7 +89,7 @@ export function Contacts() {
                 onClick={() => track("map_open", { source: "contacts" })}
                 className={buttonClass({ variant: "secondary", tone: "dark", size: "md" })}
               >
-                Маршрут
+                Открыть на Яндекс Картах
                 <IconArrowUpRight className="h-4 w-4" />
               </a>
             </div>

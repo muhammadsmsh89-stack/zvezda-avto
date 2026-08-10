@@ -63,7 +63,7 @@ export function Footer() {
 
       <div className="container-wide mt-10 flex flex-col gap-2 border-t border-line-dark pt-6 text-xs text-paper/40 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} Liberty Technology. Детейлинг и восстановление автомобилей в Махачкале.</p>
-        <p>Сайт — независимый концепт, не является официальным ресурсом компании до подтверждения владельцем.</p>
+        <p>Концепт цифрового представительства Liberty Technology.</p>
       </div>
     </footer>
   );

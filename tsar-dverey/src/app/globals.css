@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f1e7;
+  --surface: #fbf8f3;
+  --surface-2: #eae1cd;
+  --border: rgba(28, 24, 18, 0.12);
+  --border-strong: rgba(28, 24, 18, 0.26);
+  --foreground: #201c16;
+  --muted: #6c6152;
+  --deep: #171310;
+  --deep-2: #221c15;
+  --deep-foreground: #f3ede0;
+  --deep-border: rgba(243, 237, 224, 0.14);
+  --wood: #6b4a30;
+  --accent: #a3803f;
+  --accent-dark: #83672f;
+  --accent-foreground: #211a0d;
+  --success: #4b6b4e;
+  --error: #a6392c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-deep: var(--deep);
+  --color-deep-2: var(--deep-2);
+  --color-deep-foreground: var(--deep-foreground);
+  --color-deep-border: var(--deep-border);
+  --color-wood: var(--wood);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --font-display: var(--font-heading);
+  --font-sans: var(--font-body);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.container-wide {
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 96px);
+}
+
+.container-content {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 96px);
+}
+
+.container-text {
+  max-width: 680px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 96px);
+}
+
+/* Тонкая архитектурная линия — переиспользуемый графический акцент вместо иконок/бейджей. */
+.rule-line {
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.rule-line-accent {
+  height: 1px;
+  background: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}

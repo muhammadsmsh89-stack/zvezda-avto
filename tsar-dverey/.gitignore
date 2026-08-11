@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+.DS_Store
+
+# Секреты окружения — реальные значения никогда не коммитятся. Шаблон без секретов: .env.example
+.env
+.env.local
+.env.*.local

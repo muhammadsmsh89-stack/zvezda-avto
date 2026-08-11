@@ -80,6 +80,21 @@ jobs:
           mkdir -p out/liberty-technology
           cp -r liberty-technology/out/. out/liberty-technology/
 
+      - name: Install tsar-dverey dependencies
+        run: npm ci
+        working-directory: ./tsar-dverey
+
+      - name: Build tsar-dverey (static export)
+        run: npm run build
+        working-directory: ./tsar-dverey
+        env:
+          NODE_ENV: production
+
+      - name: Merge tsar-dverey into Pages output
+        run: |
+          mkdir -p out/tsar-dverey
+          cp -r tsar-dverey/out/. out/tsar-dverey/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

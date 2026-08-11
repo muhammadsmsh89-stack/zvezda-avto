@@ -1,9 +1,12 @@
 import type { NextConfig } from "next";
 
-const repoName = "tsar-dverey";
 const isProd = process.env.NODE_ENV === "production";
 
-const basePath = isProd ? `/${repoName}` : "";
+// Как и у остальных подпроектов монорепозитория (naturel-studio, altair-furniture,
+// liberty-technology): при деплое tsar-dverey/out мёржится ВНУТРЬ корневого out/ репозитория
+// zvezda-avto (см. .github/workflows/deploy.yml), поэтому реальный публичный путь —
+// /zvezda-avto/tsar-dverey, а не просто /tsar-dverey.
+const basePath = isProd ? "/zvezda-avto/tsar-dverey" : "";
 
 const nextConfig: NextConfig = {
   output: "export",

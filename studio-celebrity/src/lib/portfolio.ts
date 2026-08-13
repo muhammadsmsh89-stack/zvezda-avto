@@ -9,8 +9,8 @@ export type PortfolioCase = {
   task: string;
   result: string;
   masterSlug?: string;
+  /** Only ever set this from a confirmed studio price — never a guess. */
   priceFrom?: string;
-  priceNote?: string;
 };
 
 export const portfolio: readonly PortfolioCase[] = [
@@ -20,8 +20,6 @@ export const portfolio: readonly PortfolioCase[] = [
     task: "Сложный выход из тёмного",
     result: "Мягкий натуральный блонд без жёлтого подтона",
     masterSlug: "yulia",
-    priceFrom: "от 10 000 ₽",
-    priceNote: "VERIFY_BEFORE_PRODUCTION",
   },
   {
     slug: "makiyazh-na-meropriyatie",

@@ -38,7 +38,7 @@ export function ContactsSection() {
                   <a href={row.href} target={row.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="flex items-start gap-3 group">
                     <row.icon className="mt-0.5 h-4.5 w-4.5 shrink-0 text-muted" />
                     <span>
-                      <span className="block text-[11px] uppercase tracking-[0.12em] text-muted/60">{row.label}</span>
+                      <span className="block text-[11px] uppercase tracking-[0.12em] text-muted">{row.label}</span>
                       <span className="text-sm text-foreground group-hover:underline">{row.value}</span>
                     </span>
                   </a>
@@ -46,7 +46,7 @@ export function ContactsSection() {
                   <div className="flex items-start gap-3">
                     <row.icon className="mt-0.5 h-4.5 w-4.5 shrink-0 text-muted" />
                     <span>
-                      <span className="block text-[11px] uppercase tracking-[0.12em] text-muted/60">{row.label}</span>
+                      <span className="block text-[11px] uppercase tracking-[0.12em] text-muted">{row.label}</span>
                       <span className="text-sm text-foreground">{row.value}</span>
                     </span>
                   </div>

@@ -60,7 +60,7 @@ export function PricesSection() {
                         {d.items.map((item) => (
                           <li key={item.name} className="flex items-baseline justify-between gap-4 text-sm">
                             <span className="text-foreground/85">{item.name}</span>
-                            <span className="shrink-0 text-muted">
+                            <span className="shrink-0 font-medium text-foreground">
                               {item.price ?? "Уточнить стоимость"}
                             </span>
                           </li>
@@ -75,9 +75,8 @@ export function PricesSection() {
         </div>
 
         <Reveal delay={0.2}>
-          <p className="mt-6 text-xs leading-relaxed text-muted/70">
-            Цены — по данным открытых источников на дату публикации и требуют подтверждения студией
-            перед запуском в продакшн.
+          <p className="mt-6 text-sm leading-relaxed text-muted">
+            Точную стоимость процедуры подтвердит мастер на записи.
           </p>
         </Reveal>
       </Container>

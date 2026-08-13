@@ -23,9 +23,7 @@ export function ReviewsSection() {
                 ))}
               </div>
               <span className="text-base font-bold text-foreground">{studio.rating}</span>
-              <span className="text-sm text-muted">
-                · {studio.reviewsCount} отзыва · Яндекс Карты
-              </span>
+              <span className="text-sm text-muted">· {studio.reviewsCount} отзыва</span>
             </Reveal>
           </div>
           <Reveal delay={0.14}>
@@ -33,12 +31,20 @@ export function ReviewsSection() {
           </Reveal>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
+        <Reveal delay={0.18} className="mt-12 border-y border-border py-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">{testimonials[0].tag}</p>
+          <p className="font-serif-accent mt-4 max-w-3xl text-pretty text-2xl italic leading-snug text-foreground sm:text-3xl">
+            «{testimonials[0].text}»
+          </p>
+          <p className="mt-5 text-sm font-semibold text-foreground">{testimonials[0].author}</p>
+        </Reveal>
+
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {testimonials.slice(1).map((t, i) => (
             <Reveal key={t.author} delay={i * 0.06}>
               <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-surface p-6">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-muted/70">{t.tag}</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-muted">{t.tag}</p>
                   <p className="mt-3 text-sm leading-relaxed text-foreground/85">{t.text}</p>
                 </div>
                 <p className="mt-6 text-sm font-semibold text-foreground">{t.author}</p>

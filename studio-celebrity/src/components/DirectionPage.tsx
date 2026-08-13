@@ -65,7 +65,7 @@ export function DirectionPage({ slug }: { slug: string }) {
                   <span className="text-foreground/85">
                     {item.name}
                     {item.note && item.note !== "VERIFY_BEFORE_PRODUCTION" && (
-                      <span className="ml-2 text-xs text-muted/60">{item.note}</span>
+                      <span className="ml-2 text-xs text-muted">{item.note}</span>
                     )}
                   </span>
                   <span className="shrink-0 font-medium text-foreground">

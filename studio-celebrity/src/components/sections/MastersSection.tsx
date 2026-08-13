@@ -12,6 +12,7 @@ import { useBooking } from "@/lib/booking";
 
 export function MastersSection() {
   const { openBooking } = useBooking();
+  const [featured, ...rest] = masters;
 
   return (
     <section id="masters" className="bg-background py-20 lg:py-28">
@@ -28,13 +29,41 @@ export function MastersSection() {
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-5">
-          {masters.map((m, i) => (
-            <Reveal key={m.slug} delay={i * 0.07}>
+          <Reveal className="col-span-2 lg:col-span-2">
+            <Link href={`/masters/${featured.slug}`} className="group block">
+              <div className="overflow-hidden rounded-2xl">
+                <PhotoPlaceholder
+                  shotNumber="01"
+                  label={featured.role}
+                  description={featured.role}
+                  tone="ivory"
+                  subject="portrait"
+                  aspectClassName="aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/5]"
+                  className="transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
+              <h3 className="mt-4 text-xl font-semibold text-foreground">{featured.name}</h3>
+              <p className="text-xs text-muted">{featured.role}</p>
+              <p className="mt-1.5 max-w-xs text-sm leading-relaxed text-foreground/70">{featured.specialty}</p>
+              <span
+                onClick={(e) => {
+                  e.preventDefault();
+                  openBooking(featured.slug);
+                }}
+                className="mt-4 inline-flex rounded-full bg-nude px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-nude-strong"
+              >
+                {ctaLabels.primary}
+              </span>
+            </Link>
+          </Reveal>
+
+          {rest.map((m, i) => (
+            <Reveal key={m.slug} delay={(i + 1) * 0.07}>
               <Link href={`/masters/${m.slug}`} className="group block">
                 <div className="overflow-hidden rounded-2xl">
                   <PhotoPlaceholder
-                    shotNumber={String(i + 1).padStart(2, "0")}
-                    label={`${m.name} — портрет`}
+                    shotNumber={String(i + 2).padStart(2, "0")}
+                    label={m.role}
                     description={m.role}
                     tone="ivory"
                     subject="portrait"
@@ -44,6 +73,7 @@ export function MastersSection() {
                 </div>
                 <h3 className="mt-3.5 text-base font-semibold text-foreground">{m.name}</h3>
                 <p className="text-xs text-muted">{m.role}</p>
+                <p className="mt-1 text-xs leading-relaxed text-foreground/60">{m.specialty}</p>
                 <span
                   onClick={(e) => {
                     e.preventDefault();
@@ -56,24 +86,22 @@ export function MastersSection() {
               </Link>
             </Reveal>
           ))}
-
-          <Reveal delay={masters.length * 0.07} className="col-span-2 lg:col-span-1">
-            <div className="flex h-full flex-col justify-between gap-6 rounded-2xl bg-deep p-6 text-background">
-              <div className="flex items-center justify-between">
-                <p className="text-sm leading-snug">
-                  Не знаете, какую услугу выбрать?
-                </p>
-                <Monogram className="h-8 w-8" dark />
-              </div>
-              <p className="text-xs leading-relaxed text-background/60">
-                Поможем подобрать лучшее решение под ваш образ.
-              </p>
-              <Button onClick={() => openBooking()} variant="nude" size="md" className="justify-center">
-                {ctaLabels.consultation}
-              </Button>
-            </div>
-          </Reveal>
         </div>
+
+        <Reveal delay={0.3} className="mt-5">
+          <div className="flex flex-col items-start justify-between gap-5 rounded-2xl bg-deep px-6 py-7 text-background sm:flex-row sm:items-center sm:px-8">
+            <div className="flex items-center gap-4">
+              <Monogram className="h-9 w-9 shrink-0" dark />
+              <div>
+                <p className="text-base leading-snug">Не знаете, какую услугу выбрать?</p>
+                <p className="mt-0.5 text-sm text-background/60">Поможем подобрать мастера под ваш образ.</p>
+              </div>
+            </div>
+            <Button onClick={() => openBooking()} variant="nude" size="md" className="w-full justify-center sm:w-auto">
+              {ctaLabels.consultation}
+            </Button>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

@@ -43,7 +43,7 @@ export function Hero() {
           <div className="absolute inset-y-0 left-0 w-[30%] bg-gradient-to-r from-background via-background/50 to-transparent" />
 
           <Marker delay={0.9} className="absolute bottom-10 right-8 text-right xl:bottom-14 xl:right-14">
-            <p className="text-xs uppercase tracking-[0.14em] text-foreground/60">Yandex Карты</p>
+            <p className="text-xs uppercase tracking-[0.14em] text-foreground/60">Рейтинг студии</p>
             <p className="mt-1.5 text-2xl font-extrabold tracking-tight text-foreground">
               {studio.rating} · {studio.reviewsCount} отзыва
             </p>
@@ -76,18 +76,28 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: EASE }}
-              className="mt-6 text-pretty text-lg leading-relaxed text-foreground/85"
+              className="mt-6 text-pretty text-2xl font-semibold leading-snug text-foreground"
             >
-              Место, где создают ваш идеальный образ
+              Весь образ. В одном месте.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
+              transition={{ duration: 0.7, delay: 0.38, ease: EASE }}
               className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-muted"
             >
               Hair · Makeup · Brows · Lashes
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.44, ease: EASE }}
+              className="mt-4 max-w-sm text-pretty text-base leading-relaxed text-foreground/70"
+            >
+              Окрашивание, укладка, макияж и beauty-услуги — с выбором мастера и
+              быстрой записью онлайн.
             </motion.p>
 
             <motion.div
@@ -97,16 +107,20 @@ export function Hero() {
               className="mt-8 flex flex-wrap items-center gap-3"
             >
               <Button size="lg" onClick={() => openBooking()}>
-                {ctaLabels.primaryOnline}
+                {ctaLabels.primary}
               </Button>
-              <Button
-                size="lg"
-                variant="secondary"
+              <Button size="lg" variant="secondary" href="/masters">
+                {ctaLabels.chooseMaster}
+              </Button>
+              <a
                 href={studio.whatsappUrl}
-                icon={<WhatsAppIcon className="h-4 w-4" />}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={ctaLabels.whatsapp}
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border-strong text-foreground transition-colors hover:border-foreground"
               >
-                {ctaLabels.whatsapp}
-              </Button>
+                <WhatsAppIcon className="h-5 w-5" />
+              </a>
             </motion.div>
 
             <motion.div

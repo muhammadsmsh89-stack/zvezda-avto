@@ -32,7 +32,7 @@ export function Footer() {
 
         <div className="mt-12 grid gap-10 border-t border-background/10 pt-10 sm:grid-cols-3">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-background/40">Навигация</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-background/60">Навигация</p>
             <ul className="mt-5 space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -45,13 +45,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-background/40">Контакты</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-background/60">Контакты</p>
             <ul className="mt-5 space-y-3">
               {contactRows.map((row) => (
                 <li key={row.label} className="flex items-start gap-2.5 text-sm text-background/70">
                   <row.icon className="mt-0.5 h-4 w-4 shrink-0 text-nude" />
                   <span>
-                    <span className="block text-[11px] uppercase tracking-[0.12em] text-background/35">
+                    <span className="block text-[11px] uppercase tracking-[0.12em] text-background/55">
                       {row.label}
                     </span>
                     {row.value}
@@ -76,7 +76,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-background/40">Документы</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-background/60">Документы</p>
             <ul className="mt-5 space-y-3">
               {footerDocuments.map((doc) => (
                 <li key={doc.label}>
@@ -89,7 +89,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-background/10 pt-7 text-xs text-background/35">
+        <div className="mt-12 flex flex-col gap-2 border-t border-background/10 pt-7 text-xs text-background/55">
           <p>© {new Date().getFullYear()} {studio.name}. {studio.addressFull}.</p>
         </div>
       </Container>

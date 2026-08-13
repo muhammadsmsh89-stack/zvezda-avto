@@ -63,16 +63,6 @@ export const ctaLabels = {
   consultation: "Получить консультацию",
 } as const;
 
-/** Отзывы Яндекс Карт по категориям — доля положительных, число отзывов. Источник: yandex.ru/maps org page, 13.08.2026. */
-export const ratingBreakdown = [
-  { label: "Персонал", percent: 99, count: 132 },
-  { label: "Атмосфера", percent: 100, count: 65 },
-  { label: "Уход за бровями", percent: 98, count: 48 },
-  { label: "Макияж", percent: 100, count: 40 },
-  { label: "Компетентность", percent: 100, count: 39 },
-  { label: "Интерьер", percent: 100, count: 24 },
-] as const;
-
 export const seo = {
   titleDefault: "Studio Celebrity — салон красоты в Ярославле | Hair, Makeup, Brows",
   titleTemplate: "%s — Studio Celebrity",

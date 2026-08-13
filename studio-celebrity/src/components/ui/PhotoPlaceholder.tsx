@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { usePresentation } from "@/lib/presentation";
+import { Monogram } from "@/components/ui/Monogram";
 
 const TONE_GRADIENTS: Record<string, string> = {
   ivory: "linear-gradient(155deg, #efe7da 0%, #ded0c1 50%, #c9b79f 100%)",
@@ -27,11 +28,13 @@ type Subject = "portrait" | "wide" | "detail";
 type Tone = "ivory" | "espresso" | "charcoal";
 
 /**
- * Stands in for photography we don't have yet — marked OWNER_ASSET_REQUIRED
- * per PHOTO_REQUIREMENTS.md. Renders real photography via next/image when
- * `desktopSrc` is supplied; otherwise a toned, vignetted field that reads as
- * an intentional editorial placeholder rather than an empty box. Dev chrome
- * (shot number, caption) hides under ?presentation=1 for client demos.
+ * Stands in for photography we don't have yet (see PHOTO_REQUIREMENTS.md for
+ * the shot list owners need to supply). Renders real photography via
+ * next/image when `desktopSrc` is supplied; otherwise a toned, vignetted
+ * field with a monogram mark that reads as an intentional editorial visual,
+ * not an empty box or a dev placeholder. No internal/process text is ever
+ * shown to visitors — that detail lives only in the `aria-label` for screen
+ * readers and in PHOTO_REQUIREMENTS.md.
  */
 export function PhotoPlaceholder({
   shotNumber,
@@ -97,7 +100,7 @@ export function PhotoPlaceholder({
   return (
     <div
       role={presentation ? undefined : "img"}
-      aria-label={presentation ? undefined : `${label}. OWNER_ASSET_REQUIRED — фотография будет добавлена владельцем.`}
+      aria-label={presentation ? undefined : `${description || label} — фотография появится здесь позже.`}
       aria-hidden={presentation ? true : undefined}
       className={clsx("relative w-full overflow-hidden", aspectClassName, className)}
     >
@@ -150,34 +153,30 @@ export function PhotoPlaceholder({
               "absolute left-4 top-4 text-[10px] font-semibold uppercase tracking-[0.18em] sm:left-5 sm:top-5",
               TONE_TEXT[tone]
             )}
+            aria-hidden
           >
             {shotNumber}
           </span>
+
+          <Monogram
+            dark={!isDark}
+            className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 opacity-[0.16]"
+          />
         </>
       )}
 
       {children}
 
       {!presentation && (
-        <div
+        <p
           className={clsx(
-            "absolute inset-x-0 border-border-strong/60 px-4 py-3 backdrop-blur-[2px] sm:px-5 sm:py-3.5",
-            isDark ? "bg-deep/70" : "bg-surface/75",
-            captionPosition === "bottom" ? "bottom-0 border-t" : "top-0 border-b"
+            "absolute inset-x-4 text-[11px] font-semibold uppercase tracking-[0.12em] sm:inset-x-5",
+            isDark ? "text-background/70" : "text-foreground/65",
+            captionPosition === "bottom" ? "bottom-4 sm:bottom-5" : "top-4 sm:top-5"
           )}
         >
-          <p
-            className={clsx(
-              "text-[10px] font-semibold uppercase tracking-[0.14em]",
-              isDark ? "text-background/60" : "text-foreground/50"
-            )}
-          >
-            OWNER_ASSET_REQUIRED · {label}
-          </p>
-          <p className={clsx("mt-0.5 text-[11px] leading-relaxed", isDark ? "text-background/40" : "text-muted/80")}>
-            {description}
-          </p>
-        </div>
+          {label}
+        </p>
       )}
     </div>
   );

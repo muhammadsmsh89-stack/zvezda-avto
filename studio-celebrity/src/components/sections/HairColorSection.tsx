@@ -35,12 +35,7 @@ export function HairColorSection() {
             </p>
           </Reveal>
           <Reveal delay={0.24}>
-            <p className="mt-6 text-2xl font-bold text-foreground">
-              от 10 000 ₽
-              <span className="ml-2 align-middle text-xs font-medium uppercase tracking-[0.08em] text-muted/60">
-                уточняется
-              </span>
-            </p>
+            <p className="mt-6 text-2xl font-bold text-foreground">Уточнить стоимость</p>
           </Reveal>
           <Reveal delay={0.32} className="mt-7">
             <TextLink href="/works">Посмотреть окрашивания</TextLink>

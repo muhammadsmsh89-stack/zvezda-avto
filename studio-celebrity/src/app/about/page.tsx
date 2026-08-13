@@ -16,7 +16,7 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="О студии"
         title="Место, где создают законченный образ"
-        description="Studio Celebrity — не отдельная процедура, а результат: hair, makeup, brows и lashes собираются в один визит, под руководством мастеров, к которым клиенты возвращаются снова."
+        description="Волосы, макияж, брови и ресницы — можно собрать за один визит, у мастера, к которому захочется вернуться."
       />
 
       <section className="bg-background py-14 lg:py-20">
@@ -38,10 +38,10 @@ export default function AboutPage() {
           <Reveal>
             <h2 className="text-2xl text-foreground sm:text-3xl">Что отмечают клиенты</h2>
             <ul className="mt-6 space-y-4 text-sm leading-relaxed text-muted">
-              <li>— Персональный подход: мастера обсуждают пожелания и референсы перед процедурой.</li>
-              <li>— Несколько услуг за один визит — hair, makeup, brows и lashes.</li>
-              <li>— Уютная атмосфера, кофе и сервис, за которые студию отмечают в отзывах.</li>
-              <li>— Сильные мастера, к которым клиенты возвращаются снова.</li>
+              <li>— Мастер обсуждает пожелания и референсы перед процедурой.</li>
+              <li>— Hair, makeup, brows и lashes — можно собрать за один визит.</li>
+              <li>— Уютный интерьер и кофе с первых минут.</li>
+              <li>— Мастера, к которым возвращаются снова.</li>
             </ul>
           </Reveal>
           <Reveal delay={0.1}>
@@ -57,7 +57,7 @@ export default function AboutPage() {
               </div>
               <div className="flex justify-between gap-4 border-b border-border pb-3">
                 <dt className="text-muted">Рейтинг</dt>
-                <dd className="text-right font-medium text-foreground">{studio.rating} · {studio.reviewsCount} отзыва, Яндекс Карты</dd>
+                <dd className="text-right font-medium text-foreground">{studio.rating} · {studio.reviewsCount} отзыва</dd>
               </div>
               <div className="flex justify-between gap-4 border-b border-border pb-3">
                 <dt className="text-muted">Награда</dt>

@@ -1,12 +1,12 @@
-// Имена и специализации подтверждены отзывами клиентов на Яндекс Картах
-// (yandex.ru/maps/org/studio_celebrity/165256171430/reviews, проверено 13.08.2026)
-// и совпадают с составом, показанным на текущем сайте студии.
-// Портретные фотографии — OWNER_ASSET_REQUIRED, полные биографии и точный
-// список работ каждого мастера — OWNER_CONFIRMATION_REQUIRED.
+// Состав команды и специализации — см. PHOTO_REQUIREMENTS.md для источников
+// и статуса подтверждения владельцем. Портретные фотографии ждём от студии;
+// до тех пор используется editorial-плейсхолдер (PhotoPlaceholder).
 
 export type Master = {
   slug: string;
   name: string;
+  /** Dative form of `name`, for grammatically correct CTAs ("записаться к Юлии"). */
+  nameDative: string;
   role: string;
   specialty: string;
   bio: string;
@@ -18,6 +18,7 @@ export const masters: readonly Master[] = [
   {
     slug: "yulia",
     name: "Юлия",
+    nameDative: "Юлии",
     role: "Стилист-колорист",
     specialty: "Сложное окрашивание и стрижки",
     bio: "Ведёт сложные окрашивания и выходы из тёмного, подбирает уход после процедуры.",
@@ -27,6 +28,7 @@ export const masters: readonly Master[] = [
   {
     slug: "marina",
     name: "Марина",
+    nameDative: "Марине",
     role: "Топ-стилист",
     specialty: "Причёски и образы к мероприятиям",
     bio: "Собирает причёску и макияж к событиям, работает в паре «в 4 руки» с визажистом.",
@@ -36,6 +38,7 @@ export const masters: readonly Master[] = [
   {
     slug: "natalya",
     name: "Наталья",
+    nameDative: "Наталье",
     role: "Визажист",
     specialty: "Макияж и уход за волосами",
     bio: "Проводит макияж и восстанавливающие spa-процедуры для волос, учитывает пожелания и референсы клиента.",
@@ -45,6 +48,7 @@ export const masters: readonly Master[] = [
   {
     slug: "armina",
     name: "Армина",
+    nameDative: "Армине",
     role: "Brow-мастер",
     specialty: "Архитектура бровей и укладки",
     bio: "Оформляет брови и собирает сложные укладки, которые держат форму весь день.",

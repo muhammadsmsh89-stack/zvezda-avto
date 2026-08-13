@@ -21,7 +21,7 @@ export function FullPriceList() {
             >
               <span>
                 <span className="text-lg font-semibold text-foreground">{d.title}</span>
-                <span className="ml-3 text-xs uppercase tracking-[0.1em] text-muted/60">{d.code}</span>
+                <span className="ml-3 text-xs uppercase tracking-[0.1em] text-muted">{d.code}</span>
               </span>
               <span
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border-strong text-foreground transition-transform duration-300 ${
@@ -49,7 +49,7 @@ export function FullPriceList() {
                         <span className="text-foreground/85">
                           {item.name}
                           {item.note && item.note !== "VERIFY_BEFORE_PRODUCTION" && (
-                            <span className="ml-2 text-xs text-muted/60">{item.note}</span>
+                            <span className="ml-2 text-xs text-muted">{item.note}</span>
                           )}
                         </span>
                         <span className="shrink-0 font-medium text-foreground">

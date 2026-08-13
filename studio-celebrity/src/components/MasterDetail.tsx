@@ -49,7 +49,7 @@ export function MasterDetail({ master }: { master: Master }) {
             </div>
             <div className="mt-8">
               <Button size="lg" onClick={() => openBooking(master.slug)}>
-                {ctaLabels.primaryOnline} к {master.name}
+                {ctaLabels.primaryOnline} к {master.nameDative}
               </Button>
             </div>
           </div>
@@ -106,7 +106,7 @@ export function MasterDetail({ master }: { master: Master }) {
         <section className="border-t border-border bg-surface-2/50 py-16 lg:py-20">
           <Container>
             <Reveal>
-              <h2 className="text-2xl text-foreground sm:text-3xl">Отзывы о {master.name}</h2>
+              <h2 className="text-2xl text-foreground sm:text-3xl">Что говорят клиенты</h2>
             </Reveal>
             <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
               {mentions.map((t) => (

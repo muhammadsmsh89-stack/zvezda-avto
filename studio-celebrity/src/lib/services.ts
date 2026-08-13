@@ -29,7 +29,7 @@ export const directions: readonly Direction[] = [
     items: [
       { name: "Стрижка", price: null },
       { name: "Тонирование", price: "от 6 000 ₽", note: "в зависимости от длины и густоты" },
-      { name: "Сложное окрашивание", price: "от 10 000 ₽", note: "VERIFY_BEFORE_PRODUCTION" },
+      { name: "Сложное окрашивание", price: null },
       { name: "Укладка / локоны", price: "от 2 500 ₽", note: "доплата за очень длинные/густые волосы" },
       { name: "Детская укладка", price: "от 2 500 ₽" },
       { name: "Свадебная причёска", price: "от 4 000 ₽" },

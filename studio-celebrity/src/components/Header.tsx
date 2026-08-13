@@ -54,14 +54,14 @@ export function Header() {
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Основная навигация">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="group relative py-1 text-sm text-foreground/75 transition-colors hover:text-foreground"
             >
               {link.label}
               <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-foreground transition-transform duration-300 ease-out group-hover:scale-x-100" />
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -114,17 +114,21 @@ export function Header() {
 
             <nav className="mt-6 flex flex-1 flex-col justify-center gap-1" aria-label="Мобильная навигация">
               {mobileNavLinks.map((link, i) => (
-                <motion.a
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.05 + i * 0.05, ease: EASE }}
-                  className="border-b border-background/10 py-4 text-2xl font-semibold text-background/90 transition-colors hover:text-nude"
+                  className="border-b border-background/10"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-4 text-2xl font-semibold text-background/90 transition-colors hover:text-nude"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
             </nav>
 

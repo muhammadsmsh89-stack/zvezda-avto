@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Link from "next/link";
 import clsx from "clsx";
 
 type Variant = "primary" | "secondary" | "nude";
@@ -55,6 +56,13 @@ export function Button({
   );
 
   if (href) {
+    if (href.startsWith("/")) {
+      return (
+        <Link href={href} className={classes}>
+          {content}
+        </Link>
+      );
+    }
     const isExternal = /^https?:\/\//.test(href);
     return (
       <a
@@ -85,17 +93,34 @@ export function TextLink({
   className?: string;
   tone?: "light" | "dark";
 }) {
+  const classes = clsx(
+    "group inline-flex items-center gap-2 text-sm font-semibold transition-colors",
+    tone === "dark" ? "text-background hover:text-nude" : "text-foreground hover:text-accent-2",
+    className
+  );
+  const content = (
+    <>
+      <span className="border-b border-current pb-0.5">{children}</span>
+      <ArrowIcon className="h-3 w-3 shrink-0 -rotate-45 transition-transform duration-300 ease-out group-hover:rotate-0" />
+    </>
+  );
+
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href} className={classes}>
+        {content}
+      </Link>
+    );
+  }
+
+  const isExternal = /^https?:\/\//.test(href);
   return (
     <a
       href={href}
-      className={clsx(
-        "group inline-flex items-center gap-2 text-sm font-semibold transition-colors",
-        tone === "dark" ? "text-background hover:text-nude" : "text-foreground hover:text-accent-2",
-        className
-      )}
+      className={classes}
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
-      <span className="border-b border-current pb-0.5">{children}</span>
-      <ArrowIcon className="h-3 w-3 shrink-0 -rotate-45 transition-transform duration-300 ease-out group-hover:rotate-0" />
+      {content}
     </a>
   );
 }

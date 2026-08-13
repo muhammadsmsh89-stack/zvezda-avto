@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Monogram } from "@/components/ui/Monogram";
 import { studio, navLinks, footerDocuments } from "@/lib/studio";
@@ -35,9 +36,9 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm text-background/70 transition-colors hover:text-nude">
+                  <Link href={link.href} className="text-sm text-background/70 transition-colors hover:text-nude">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -79,9 +80,9 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {footerDocuments.map((doc) => (
                 <li key={doc.label}>
-                  <a href={doc.href} className="text-sm text-background/70 transition-colors hover:text-nude">
+                  <Link href={doc.href} className="text-sm text-background/70 transition-colors hover:text-nude">
                     {doc.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

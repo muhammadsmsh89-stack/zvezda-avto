@@ -95,6 +95,21 @@ jobs:
           mkdir -p out/tsar-dverey
           cp -r tsar-dverey/out/. out/tsar-dverey/
 
+      - name: Install studio-celebrity dependencies
+        run: npm ci
+        working-directory: ./studio-celebrity
+
+      - name: Build studio-celebrity (static export)
+        run: npm run build
+        working-directory: ./studio-celebrity
+        env:
+          NODE_ENV: production
+
+      - name: Merge studio-celebrity into Pages output
+        run: |
+          mkdir -p out/studio-celebrity
+          cp -r studio-celebrity/out/. out/studio-celebrity/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

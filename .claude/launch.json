@@ -12,6 +12,12 @@
       "runtimeExecutable": "/bin/bash",
       "runtimeArgs": ["/Users/patyasaidova/Клауд Сайт/naturel-studio/scripts/dev.sh"],
       "port": 3300
+    },
+    {
+      "name": "studio-celebrity-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/patyasaidova/Клауд Сайт/studio-celebrity/scripts/dev.sh"],
+      "port": 4000
     }
   ]
 }

@@ -140,6 +140,21 @@ jobs:
           mkdir -p out/lovtseva-beauty
           cp -r lovtseva-beauty/out/. out/lovtseva-beauty/
 
+      - name: Install hpd-studio dependencies
+        run: npm ci
+        working-directory: ./hpd-studio
+
+      - name: Build hpd-studio (static export)
+        run: npm run build
+        working-directory: ./hpd-studio
+        env:
+          NODE_ENV: production
+
+      - name: Merge hpd-studio into Pages output
+        run: |
+          mkdir -p out/hpd-studio
+          cp -r hpd-studio/out/. out/hpd-studio/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

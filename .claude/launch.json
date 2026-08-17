@@ -4,20 +4,98 @@
     {
       "name": "zvezda-dev",
       "runtimeExecutable": "/bin/bash",
-      "runtimeArgs": ["/Users/patyasaidova/Клауд Сайт/scripts/dev.sh"],
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/scripts/dev.sh"
+      ],
       "port": 3000
     },
     {
       "name": "naturel-studio-dev",
       "runtimeExecutable": "/bin/bash",
-      "runtimeArgs": ["/Users/patyasaidova/Клауд Сайт/naturel-studio/scripts/dev.sh"],
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/naturel-studio/scripts/dev.sh"
+      ],
       "port": 3300
+    },
+    {
+      "name": "irbis-mebel-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/irbis-mebel/scripts/dev.sh"
+      ],
+      "port": 3400
+    },
+    {
+      "name": "irbis-studio-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/irbis-studio/scripts/dev.sh"
+      ],
+      "port": 3500
+    },
+    {
+      "name": "lumen-clinic-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/lumen-clinic/scripts/dev.sh"
+      ],
+      "port": 3600
+    },
+    {
+      "name": "altair-furniture-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/altair-furniture/scripts/dev.sh"
+      ],
+      "port": 3700
+    },
+    {
+      "name": "liberty-technology-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/liberty-technology/scripts/dev.sh"
+      ],
+      "port": 3800
+    },
+    {
+      "name": "tsar-dverey-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/tsar-dverey/scripts/dev.sh"
+      ],
+      "port": 3900
     },
     {
       "name": "studio-celebrity-dev",
       "runtimeExecutable": "/bin/bash",
-      "runtimeArgs": ["/Users/patyasaidova/Клауд Сайт/studio-celebrity/scripts/dev.sh"],
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/studio-celebrity/scripts/dev.sh"
+      ],
       "port": 4000
+    },
+    {
+      "name": "seychas-studio-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/seychas-studio/scripts/dev.sh"
+      ],
+      "port": 4100
+    },
+    {
+      "name": "lovtseva-beauty-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/lovtseva-beauty/scripts/dev.sh"
+      ],
+      "port": 4200
+    },
+    {
+      "name": "hpd-studio-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/hpd-studio/scripts/dev.sh"
+      ],
+      "port": 4300
     }
   ]
 }

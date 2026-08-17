@@ -30,25 +30,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": [
-    "node_modules",
-    "naturel-studio",
-    "altair-furniture",
-    "liberty-technology",
-    "ai-telegram-editor",
-    "cardai",
-    "english-app",
-    "irbis-mebel",
-    "irbis-studio",
-    "lucky-box",
-    "lumen-clinic",
-    "mafia-vero-concept",
-    "ne-uveren-proveril",
-    "redbull-concept",
-    "tsar-dverey",
-    "studio-celebrity",
-    "seychas-studio",
-    "lovtseva-beauty",
-    "hpd-studio"
-  ]
+  "exclude": ["node_modules"]
 }

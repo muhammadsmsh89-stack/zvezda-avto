@@ -47,7 +47,7 @@ export function PricePreviewSection() {
 
         <Reveal delay={0.2} className="mt-10 flex flex-wrap items-center gap-4">
           <Button href="/prices">{ctaLabels.prices}</Button>
-          <p className="text-sm text-muted">Публичные ориентиры на дату проверки — точная стоимость у администратора.</p>
+          <p className="text-sm text-muted">Актуальную стоимость уточняйте при записи.</p>
         </Reveal>
       </Container>
     </section>

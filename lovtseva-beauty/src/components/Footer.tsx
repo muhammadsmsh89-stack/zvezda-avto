@@ -92,7 +92,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-background/15 pt-5 text-xs text-background/55">
-          Цифровое представительство {studio.name.toLowerCase()}. Контакты и цены — публичные ориентиры на дату проверки, уточняйте у администратора перед визитом.
+          {studio.name} · {studio.city}. Актуальную стоимость услуг уточняйте при записи.
         </div>
       </Container>
     </footer>

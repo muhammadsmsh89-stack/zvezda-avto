@@ -20,7 +20,7 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="О центре"
         title="Центр носит имя Натальи Ловцевой"
-        description="Развёрнутая история центра — в работе: раздел будет дополнен материалами от владельца. Ниже — то, что уже подтверждено."
+        description="Быстрецкая ул., 20 — центр, где под одной крышей собраны специалисты разных направлений красоты."
       />
 
       <section className="border-b border-border bg-surface py-16 lg:py-20">
@@ -87,14 +87,12 @@ export default function AboutPage() {
       <section className="bg-surface-2/60 py-16 lg:py-20">
         <Container className="max-w-2xl">
           <Reveal>
-            <h2 className="font-serif text-2xl text-foreground sm:text-3xl">Команда</h2>
+            <h2 className="font-serif text-2xl text-foreground sm:text-3xl">Команда центра</h2>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              В центре работают специалисты разных направлений — часть из них клиенты называют по имени
-              в отзывах на Яндекс Картах: парикмахеры-колористы, мастера маникюра и педикюра, косметолог.
-              Полный состав команды и её развитие — тема отдельного раздела, который будет дополнен по
-              мере получения материалов от владельца центра.
+              В отзывах на Яндекс Картах клиенты регулярно называют специалистов по именам — мастеров
+              по волосам, ногтевому сервису и косметологии.
             </p>
           </Reveal>
           <Reveal delay={0.16} className="mt-6">

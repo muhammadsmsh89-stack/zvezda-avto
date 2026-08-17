@@ -32,7 +32,7 @@ export function HairFeatureSection() {
 
           {hairMasters.length > 0 && (
             <p className="mt-6 text-sm text-muted">
-              Направление ведут {hairMasters.map((m) => m.name).join(", ")}.
+              В свежих отзывах клиенты отдельно упоминают {hairMasters.map((m) => m.name).join(", ")}.
             </p>
           )}
 

@@ -110,6 +110,21 @@ jobs:
           mkdir -p out/studio-celebrity
           cp -r studio-celebrity/out/. out/studio-celebrity/
 
+      - name: Install seychas-studio dependencies
+        run: npm ci
+        working-directory: ./seychas-studio
+
+      - name: Build seychas-studio (static export)
+        run: npm run build
+        working-directory: ./seychas-studio
+        env:
+          NODE_ENV: production
+
+      - name: Merge seychas-studio into Pages output
+        run: |
+          mkdir -p out/seychas-studio
+          cp -r seychas-studio/out/. out/seychas-studio/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

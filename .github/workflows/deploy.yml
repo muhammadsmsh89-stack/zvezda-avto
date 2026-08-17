@@ -125,6 +125,21 @@ jobs:
           mkdir -p out/seychas-studio
           cp -r seychas-studio/out/. out/seychas-studio/
 
+      - name: Install lovtseva-beauty dependencies
+        run: npm ci
+        working-directory: ./lovtseva-beauty
+
+      - name: Build lovtseva-beauty (static export)
+        run: npm run build
+        working-directory: ./lovtseva-beauty
+        env:
+          NODE_ENV: production
+
+      - name: Merge lovtseva-beauty into Pages output
+        run: |
+          mkdir -p out/lovtseva-beauty
+          cp -r lovtseva-beauty/out/. out/lovtseva-beauty/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

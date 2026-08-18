@@ -155,6 +155,21 @@ jobs:
           mkdir -p out/hpd-studio
           cp -r hpd-studio/out/. out/hpd-studio/
 
+      - name: Install holy-nails dependencies
+        run: npm ci
+        working-directory: ./holy-nails
+
+      - name: Build holy-nails (static export)
+        run: npm run build
+        working-directory: ./holy-nails
+        env:
+          NODE_ENV: production
+
+      - name: Merge holy-nails into Pages output
+        run: |
+          mkdir -p out/holy-nails
+          cp -r holy-nails/out/. out/holy-nails/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

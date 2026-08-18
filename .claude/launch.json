@@ -96,6 +96,14 @@
         "/Users/patyasaidova/Клауд Сайт/hpd-studio/scripts/dev.sh"
       ],
       "port": 4300
+    },
+    {
+      "name": "holy-nails-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Клауд Сайт/holy-nails/scripts/dev.sh"
+      ],
+      "port": 4400
     }
   ]
 }

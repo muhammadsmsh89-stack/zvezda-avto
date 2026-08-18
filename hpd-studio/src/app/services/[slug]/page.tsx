@@ -48,7 +48,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             ) : (
               <PhotoPanel
                 variant={panelVariants[index % panelVariants.length]}
-                label={`${service.title} в HPD Studio — фото ожидается от студии`}
+                label={`${service.title} — HPD Studio`}
                 className="h-full w-full"
               />
             )}

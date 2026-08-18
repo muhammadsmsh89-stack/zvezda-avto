@@ -10,7 +10,7 @@ export function BigPhoto() {
           <PhotoPanel
             variant="wash"
             sweepFrom="right"
-            label="Работа детейлера HPD над кузовом автомобиля — фото ожидается от студии"
+            label="Работа детейлера HPD над кузовом автомобиля"
             className="h-full w-full rounded-[1.75rem]"
           />
         </FrameReveal>

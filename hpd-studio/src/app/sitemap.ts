@@ -10,7 +10,6 @@ const paths = [
   "/services/",
   ...services.map((s) => `/services/${s.slug}/`),
   "/works/",
-  "/before-after/",
   "/reviews/",
   "/about/",
   "/contacts/",

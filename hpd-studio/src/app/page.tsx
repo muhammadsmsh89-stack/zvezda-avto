@@ -4,7 +4,6 @@ import { BigPhoto } from "@/components/sections/BigPhoto";
 import { NeedsSection } from "@/components/sections/NeedsSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
-import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
@@ -19,7 +18,6 @@ export default function Home() {
       <NeedsSection />
       <ServicesSection />
       <ProjectsSection />
-      <BeforeAfterSection />
       <HowItWorksSection />
       <ReviewsSection />
       <FinalCtaSection />

@@ -103,7 +103,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-foreground/15 pt-5 text-xs text-foreground/60">
-          Концепт цифрового представительства {studio.fullName}. Пушкинская ул., 8, {studio.city}.
+          {studio.fullName} · {studio.city}. Пушкинская ул., 8.
         </div>
       </Container>
     </footer>

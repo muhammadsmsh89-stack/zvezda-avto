@@ -14,12 +14,15 @@ export function ProjectsSection({ full = false }: { full?: boolean }) {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <Reveal>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Работы HPD</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Результаты клиентов</p>
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="mt-4 max-w-lg text-pretty text-3xl leading-[1.1] text-foreground sm:text-4xl lg:text-5xl">
-                Что говорят клиенты о результате
+                Что отмечают владельцы автомобилей
               </h2>
+            </Reveal>
+            <Reveal delay={0.09}>
+              <p className="mt-3 max-w-lg text-sm text-muted">По подтверждённым отзывам клиентов на Яндекс Картах.</p>
             </Reveal>
           </div>
           {!full && (
@@ -36,7 +39,7 @@ export function ProjectsSection({ full = false }: { full?: boolean }) {
                 <div className="relative aspect-[4/3] w-full overflow-hidden">
                   <PhotoPanel
                     variant={panelVariants[i % panelVariants.length]}
-                    label={`${project.vehicle} — ${project.task} — фото ожидается от студии`}
+                    label={`${project.vehicle} — ${project.task}`}
                     sweepFrom={i % 2 === 0 ? "left" : "right"}
                     className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]"
                   />

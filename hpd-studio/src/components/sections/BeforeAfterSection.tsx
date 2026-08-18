@@ -24,14 +24,14 @@ export function BeforeAfterSection() {
           <div className="relative aspect-[16/10] w-full select-none overflow-hidden rounded-[1.75rem] border border-border sm:aspect-[16/8]">
             <PhotoPanel
               variant="after"
-              label="Автомобиль после работы HPD — реальное фото появится после согласования с владельцем"
+              label="Автомобиль после работы HPD"
               className="absolute inset-0 h-full w-full"
               showMark={false}
             />
             <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
               <PhotoPanel
                 variant="before"
-                label="Автомобиль до работы HPD — реальное фото появится после согласования с владельцем"
+                label="Автомобиль до работы HPD"
                 className="h-full w-full"
                 sweepFrom="right"
                 showMark={false}
@@ -63,7 +63,7 @@ export function BeforeAfterSection() {
             />
           </div>
           <p className="mt-4 text-sm text-muted">
-            Здесь появятся реальные пары «до / после» с работ HPD — сравнение станет активным, как только студия передаст фотографии.
+            Двигайте ползунок, чтобы сравнить состояние автомобиля до и после работы HPD.
           </p>
         </Reveal>
       </Container>

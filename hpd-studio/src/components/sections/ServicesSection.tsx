@@ -53,7 +53,7 @@ export function ServicesSection({ full = false }: { full?: boolean }) {
                   ) : (
                     <PhotoPanel
                       variant={panelVariants[i % panelVariants.length]}
-                      label={`${service.title} в HPD Studio — фото ожидается от студии`}
+                      label={`${service.title} — HPD Studio`}
                       sweepFrom={i % 2 === 0 ? "left" : "right"}
                       className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]"
                     />

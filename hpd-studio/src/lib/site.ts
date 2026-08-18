@@ -20,7 +20,6 @@ export const rating = {
 export const navLinks = [
   { href: "/works", label: "Работы" },
   { href: "/services", label: "Услуги" },
-  { href: "/before-after", label: "До / После" },
   { href: "/reviews", label: "Отзывы" },
   { href: "/contacts", label: "Контакты" },
 ] as const;
@@ -28,7 +27,6 @@ export const navLinks = [
 export const mobileNavLinks = [
   { href: "/works", label: "Работы" },
   { href: "/services", label: "Услуги" },
-  { href: "/before-after", label: "До / После" },
   { href: "/reviews", label: "Отзывы" },
   { href: "/about", label: "О студии" },
   { href: "/contacts", label: "Контакты" },

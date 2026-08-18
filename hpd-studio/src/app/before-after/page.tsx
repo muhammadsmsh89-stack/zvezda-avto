@@ -13,7 +13,7 @@ export default function BeforeAfterPage() {
       <PageIntro
         eyebrow="До / После"
         title="Наглядный результат"
-        description="Интерактивное сравнение станет полным, как только HPD передаст парные фотографии одних и тех же зон автомобиля."
+        description="Сравнение состояния автомобиля до и после работы HPD."
       />
       <BeforeAfterSection />
     </>

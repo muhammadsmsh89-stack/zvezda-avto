@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://muhammadsmsh89-stack.github.io/zvezda-avto/dnk-tsveta/sitemap.xml

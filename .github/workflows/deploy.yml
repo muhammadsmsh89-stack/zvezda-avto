@@ -170,6 +170,11 @@ jobs:
           mkdir -p out/holy-nails
           cp -r holy-nails/out/. out/holy-nails/
 
+      - name: Merge dnk-tsveta into Pages output (static, no build step)
+        run: |
+          mkdir -p out/dnk-tsveta
+          rsync -a --exclude='OWNER-CHECKLIST.md' dnk-tsveta/ out/dnk-tsveta/
+
       - name: Add .nojekyll
         run: touch out/.nojekyll
 

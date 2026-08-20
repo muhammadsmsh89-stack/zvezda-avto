@@ -13,7 +13,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='16' fill='%2314100C'/%3E%3Cpath d='M10 8c4 3 4 6 0 9s-4 6 0 9' stroke='%23F5F1EA' stroke-width='1.4' fill='none'/%3E%3Cpath d='M24 8c-4 3-4 6 0 9s4 6 0 9' stroke='%23F5F1EA' stroke-width='1.4' fill='none'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,7 +85,7 @@
   </nav>
   <div class="header-actions">
     <a class="btn btn-primary btn-sm header-cta desktop-only" data-branch-book href="https://n987665.yclients.com/" target="_blank" rel="noopener">Записаться</a>
-    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+    <button type="button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
     </button>
   </div>
@@ -101,11 +101,12 @@
       </svg>
       DNK ЦВЕТА
     </a>
-    <button class="drawer-close" aria-label="Закрыть меню">
+    <button type="button" class="drawer-close" aria-label="Закрыть меню">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
     </button>
   </div>
   <nav class="drawer-nav" aria-label="Мобильное меню">
+    <a href="index.html" aria-current="page">Главная</a>
     <a href="uslugi.html">Услуги</a>
     <a href="raboty.html">Работы</a>
     <a href="mastera.html">Мастера</a>
@@ -235,11 +236,20 @@
   <!-- ================= COLOR SPOTLIGHT ================= -->
   <section class="section on-dark-bg">
     <div class="container">
-      <div class="split">
-        <div class="reveal">
+      <div class="split split-color">
+        <div class="reveal split-head">
           <p class="eyebrow on-dark">Флагманское направление</p>
           <h2 class="on-dark" style="margin-top:16px">Сложное окрашивание — то, ради чего к нам едут через весь город</h2>
-          <p class="lede on-dark" style="margin-top:20px">Тотал блонд без желтизны, Airtouch, балаяж и безопасный выход из тёмного — с сохранением структуры волос. Колористы работают с Goldwell и Alter Ego, подбирают технику под цветотип и историю окрашиваний, а не по шаблону.</p>
+        </div>
+        <div class="reveal split-photo">
+          <div class="field field-tall has-photo">
+            <img src="assets/img/color-result.jpg" alt="Реальная работа DNK Цвета: контрастное окрашивание прядей" loading="lazy" width="512" height="640">
+            <p class="field-label">Реальная работа DNK</p>
+            <p class="field-sub">Азовская</p>
+          </div>
+        </div>
+        <div class="reveal split-body">
+          <p class="lede on-dark">Тотал блонд без желтизны, Airtouch, балаяж и безопасный выход из тёмного — с сохранением структуры волос. Колористы работают с Goldwell и Alter Ego, подбирают технику под цветотип и историю окрашиваний, а не по шаблону.</p>
           <ul style="margin-top:32px;display:flex;flex-direction:column;gap:14px">
             <li class="body on-dark-soft">— Тотал блонд, обесцвечивание и тонирование — от 9 500 ₽</li>
             <li class="body on-dark-soft">— Airtouch, балаяж, шатуш и другие сложные техники — от 9 500 ₽</li>
@@ -249,13 +259,6 @@
           <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap">
             <a class="btn btn-primary" data-wa-context data-wa-message="Здравствуйте! Хочу проконсультироваться по сложному окрашиванию." href="#" target="_blank" rel="noopener">Обсудить окрашивание</a>
             <a class="btn btn-ghost on-dark" href="tseny.html#color">Все цены на окрашивание</a>
-          </div>
-        </div>
-        <div class="reveal">
-          <div class="field field-tall has-photo">
-            <img src="assets/img/color-result.jpg" alt="Реальная работа DNK Цвета: контрастное окрашивание прядей" loading="lazy" width="512" height="640">
-            <p class="field-label">Реальная работа DNK</p>
-            <p class="field-sub">Азовская</p>
           </div>
         </div>
       </div>
@@ -461,13 +464,10 @@
 </footer>
 
 <div class="mobile-book-bar">
-  <a class="btn btn-ghost btn-icon on-dark" data-branch-phone href="tel:+79777291872" aria-label="Позвонить">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0 8 7 15 15 15l3-4-6-3-2 2c-3-1-5-3-6-6l2-2-3-6z"/></svg>
-  </a>
-  <a class="btn btn-primary" data-mobile-book-bar href="https://n987665.yclients.com/" target="_blank" rel="noopener">Записаться</a>
+  <a class="btn btn-primary btn-block" data-mobile-book-bar href="https://n987665.yclients.com/" target="_blank" rel="noopener">Записаться</a>
 </div>
 
-<script src="assets/js/data.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/data.js?v=2"></script>
+<script src="assets/js/main.js?v=2"></script>
 </body>
 </html>

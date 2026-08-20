@@ -187,6 +187,16 @@ p.body{ font-size: 1rem; line-height: 1.65; max-width: 62ch; color: var(--ink-so
 .split.reverse > :first-child{ order: 2; }
 @media (max-width: 900px){ .split.reverse > :first-child{ order: 0; } }
 
+/* split-color: same visual result as .split on desktop, but lets the photo
+   sit between headline and body copy on mobile instead of after everything */
+.split-color{ grid-template-areas: "head photo" "body photo"; column-gap: var(--space-8); row-gap: 0; align-items: start; }
+.split-color .split-head{ grid-area: head; }
+.split-color .split-photo{ grid-area: photo; align-self: center; }
+.split-color .split-body{ grid-area: body; }
+@media (max-width: 900px){
+  .split-color{ grid-template-areas: "head" "photo" "body"; row-gap: var(--space-6); }
+}
+
 .hr{ height: 1px; background: var(--paper-line); border: 0; width: 100%; }
 .on-dark .hr, .on-dark-bg .hr{ background: var(--dark-line); }
 
@@ -266,8 +276,9 @@ p.body{ font-size: 1rem; line-height: 1.65; max-width: 62ch; color: var(--ink-so
   .menu-toggle{
     display: inline-flex; align-items: center; justify-content: center;
     width: 44px; height: 44px; border-radius: var(--radius-m);
+    position: relative; z-index: 5; touch-action: manipulation;
   }
-  .menu-toggle svg{ width: 22px; height: 22px; }
+  .menu-toggle svg{ width: 22px; height: 22px; pointer-events: none; }
   .header-cta.desktop-only{ display: none; }
 }
 
@@ -276,18 +287,21 @@ p.body{ font-size: 1rem; line-height: 1.65; max-width: 62ch; color: var(--ink-so
   position: fixed; inset: 0; z-index: 150;
   background: var(--paper);
   transform: translateY(-100%);
-  transition: transform var(--dur-m) var(--ease-out);
+  visibility: hidden;
+  transition: transform var(--dur-m) var(--ease-out), visibility 0s linear var(--dur-m);
   display: flex; flex-direction: column;
   padding: var(--space-4) var(--gutter) var(--space-6);
+  overflow-y: auto;
 }
-.mobile-drawer.is-open{ transform: translateY(0); }
+.mobile-drawer.is-open{ transform: translateY(0); visibility: visible; transition: transform var(--dur-m) var(--ease-out); }
 .mobile-drawer-top{ display: flex; align-items: center; justify-content: space-between; }
-.drawer-close{ width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.drawer-close{ width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; touch-action: manipulation; }
 .drawer-nav{ display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-7); }
 .drawer-nav a{
   font-family: var(--f-display); font-weight: 700; font-size: clamp(1.6rem,7vw,2.2rem);
   padding: var(--space-3) 0; border-bottom: 1px solid var(--paper-line);
 }
+.drawer-nav a[aria-current="page"]{ color: var(--accent); }
 .drawer-foot{ margin-top: auto; display: flex; flex-direction: column; gap: var(--space-4); padding-top: var(--space-6); }
 .drawer-contacts{ display: flex; gap: var(--space-5); }
 .drawer-contacts a{ font-weight: 600; font-size: .95rem; color: var(--ink-soft); }
@@ -297,7 +311,7 @@ body.no-scroll{ overflow: hidden; }
    Sticky mobile booking bar
    ========================================================================== */
 .mobile-book-bar{
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 110;
   display: none;
   padding: var(--space-3) var(--space-4);
   padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
@@ -308,10 +322,11 @@ body.no-scroll{ overflow: hidden; }
   transition: transform var(--dur-m) var(--ease-out);
 }
 .mobile-book-bar.is-hidden{ transform: translateY(110%); }
-@media (max-width: 720px){ .mobile-book-bar{ display: flex; } }
-.mobile-book-bar .btn{ flex: 1; }
-.mobile-book-bar .btn-icon{ flex: none; width: 48px; padding: 0; }
-.mobile-book-bar .btn-icon svg{ width: 20px; height: 20px; }
+@media (max-width: 720px){
+  .mobile-book-bar{ display: flex; }
+  .site-footer{ padding-bottom: calc(var(--space-6) + 64px + env(safe-area-inset-bottom)); }
+}
+.mobile-book-bar .btn{ flex: 1; touch-action: manipulation; }
 
 /* ==========================================================================
    Hero — signature composition
@@ -394,7 +409,21 @@ body.no-scroll{ overflow: hidden; }
   background: linear-gradient(180deg, rgba(20,16,12,.1) 0%, rgba(20,16,12,.5) 58%, rgba(20,16,12,.94) 100%);
 }
 .hero-visual > *:not(img){ position: relative; z-index: 2; }
-@media (max-width: 980px){ .hero-visual{ min-height: 420px; } }
+
+/* Below the two-column breakpoint, the rail + branch strip no longer fit
+   legibly overlaid on the photo — stack them as plain content underneath it. */
+@media (max-width: 980px){
+  .hero-visual{
+    min-height: 0; padding: 0; display: block;
+  }
+  .hero-visual img{
+    position: static; width: 100%; height: auto; aspect-ratio: 4/5;
+    border-radius: var(--radius-l);
+  }
+  .hero-visual::after{ content: none; }
+  .hero-visual > *:not(img){ position: static; z-index: auto; }
+  .hero-rail{ margin-top: var(--space-6); }
+}
 
 .hero-branch-strip{
   margin-top: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--dark-line);
@@ -406,6 +435,7 @@ body.no-scroll{ overflow: hidden; }
   flex: 1; padding: var(--space-3) var(--space-2); border-radius: var(--radius-m);
   border: 1px solid var(--dark-line); font-size: .82rem; font-weight: 700; text-align: center;
   transition: background var(--dur-s), border-color var(--dur-s), color var(--dur-s);
+  touch-action: manipulation;
 }
 .branch-toggle button.is-active{ background: var(--accent); border-color: var(--accent); color: var(--accent-on); }
 .branch-toggle button:not(.is-active):hover{ border-color: var(--on-dark-soft); }
@@ -680,7 +710,7 @@ a:hover > .field, .field-link:hover .field{ transform: scale(1.015); }
 }
 .price-search svg{ width: 18px; height: 18px; color: var(--ink-faint); flex: none; }
 .price-search input{ border: 0; background: none; width: 100%; font-size: .95rem; outline: none; }
-.price-branch-filter{ display: flex; gap: var(--space-2); }
+.price-branch-filter{ display: flex; gap: var(--space-2); flex-wrap: wrap; }
 .chip{
   padding: 10px 16px; border-radius: var(--radius-pill); border: 1px solid var(--paper-line);
   font-size: .84rem; font-weight: 700; transition: all var(--dur-s) var(--ease-out);
@@ -709,6 +739,10 @@ a:hover > .field, .field-link:hover .field{ transform: scale(1.015); }
 .price-row .amounts .lvl{ font-size: .72rem; color: var(--ink-faint); display: block; text-align: right; }
 .price-row .amounts .val{ font-family: var(--f-display); font-weight: 700; }
 .price-row.is-hidden{ display: none; }
+@media (max-width: 480px){
+  .price-row{ grid-template-columns: 1fr; gap: var(--space-2); }
+  .price-row .amounts{ white-space: normal; flex-wrap: wrap; gap: var(--space-3); }
+}
 .price-empty{ display: none; padding: var(--space-8) 0; text-align: center; color: var(--ink-faint); }
 .price-empty.is-visible{ display: block; }
 

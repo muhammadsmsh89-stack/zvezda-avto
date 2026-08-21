@@ -170,6 +170,21 @@ jobs:
           mkdir -p out/holy-nails
           cp -r holy-nails/out/. out/holy-nails/
 
+      - name: Install beautyway-clinic dependencies
+        run: npm ci
+        working-directory: ./beautyway-clinic
+
+      - name: Build beautyway-clinic (static export)
+        run: npm run build
+        working-directory: ./beautyway-clinic
+        env:
+          NODE_ENV: production
+
+      - name: Merge beautyway-clinic into Pages output
+        run: |
+          mkdir -p out/beautyway-clinic
+          cp -r beautyway-clinic/out/. out/beautyway-clinic/
+
       - name: Merge dnk-tsveta into Pages output (static, no build step)
         run: |
           mkdir -p out/dnk-tsveta

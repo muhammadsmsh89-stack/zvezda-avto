@@ -1,0 +1,395 @@
+[
+{
+"slug": "kontyrnaja-plastika",
+"title": "Контурная пластика",
+"children": [
+{
+"slug": "konturnaya-plastika-gub",
+"title": "Контурная пластика губ"
+},
+{
+"slug": "konturnaya-plastika-lba",
+"title": "Контурная пластика лба"
+},
+{
+"slug": "konturnaya-plastika-pod-glazami",
+"title": "Контурная пластика под глазами"
+},
+{
+"slug": "korrekciya-nososleznoj-borozdy",
+"title": "Коррекция носослезной борозды"
+},
+{
+"slug": "vektornyj-lifting",
+"title": "Векторный лифтинг препаратом Radiesse"
+},
+{
+"slug": "visochnyj-lifting-fillerami",
+"title": "Височный лифтинг филлерами"
+},
+{
+"slug": "konturnaya-plastika-skul",
+"title": "Контурная пластика скул"
+},
+{
+"slug": "konturnaya-plastika-nosa",
+"title": "Контурная пластика носа"
+},
+{
+"slug": "konturnaya-plastika-nosogubnyh-skladok",
+"title": "Контурная пластика носогубных складок"
+},
+{
+"slug": "korrekciya-nizhnej-treti-lica",
+"title": "Контурная пластика нижней трети лица"
+},
+{
+"slug": "korrekciya-podborodka-fillerami",
+"title": "Контурная пластика подбородка"
+},
+{
+"slug": "korrekciya-mochek-ushey",
+"title": "Коррекция мочек ушей"
+},
+{
+"slug": "kollagenoterapiya",
+"title": "Инъекции коллагена для лица"
+},
+{
+"slug": "push-up-gub",
+"title": "Push up губ"
+},
+{
+"slug": "udalenie-fillera-iz-gub",
+"title": "Удаление филлера из губ"
+}
+]
+},
+{
+"slug": "yvelichenie-gyb",
+"title": "Увеличение губ",
+"children": []
+},
+{
+"slug": "inekcionnaya-kosmetologiya",
+"title": "Инъекционная косметология",
+"children": [
+{
+"slug": "botulinoterapiya",
+"title": "Ботулинотерапия"
+},
+{
+"slug": "lipolitiki",
+"title": "Липолитики"
+},
+{
+"slug": "mezoterapiya",
+"title": "Мезотерапия"
+},
+{
+"slug": "biorevitalizaciya",
+"title": "Биоревитализация"
+},
+{
+"slug": "bioreparaciya-kozhi-lica",
+"title": "Биорепарация кожи лица"
+},
+{
+"slug": "lechenie-vypadeniya-volos",
+"title": "Лечение выпадения волос"
+},
+{
+"slug": "lechenie-gipergidroza",
+"title": "Лечение гипергидроза"
+},
+{
+"slug": "plazmolifting",
+"title": "Плазмолифтинг"
+},
+{
+"slug": "full-face",
+"title": "Процедура Full face (фулфейс)"
+},
+{
+"slug": "lifting-nefertiti",
+"title": "Лифтинг Нефертити"
+},
+{
+"slug": "korolevsky-lifting-cocktail-monaco",
+"title": "Королевский лифтинг \"Коктейль Монако\""
+},
+{
+"slug": "blanshirovanie-blanshing-morschin-belotero",
+"title": "Бланширование морщин Belotero"
+},
+{
+"slug": "intralipoterapiya-akvaliks",
+"title": "Интралипотерапия Aqualyx"
+},
+{
+"slug": "aqua-glow",
+"title": "Процедура Aqua Glow"
+},
+{
+"slug": "procedura-collost-micro-mikrokollost",
+"title": "Процедура Collost Micro"
+},
+{
+"slug": "mezodissolyuciya",
+"title": "Мезодиссолюция"
+}
+]
+},
+{
+"slug": "umenshenie-nosa-v-obyome",
+"title": "Работа с носом",
+"children": []
+},
+{
+"slug": "rabota-s-glazami",
+"title": "Работа с глазами",
+"children": []
+},
+{
+"slug": "tredlifting",
+"title": "Нитевой лифтинг",
+"children": [
+{
+"slug": "mezoniti-dlya-podtyazhki-lica",
+"title": "Мезонити для подтяжки лица"
+},
+{
+"slug": "niti-cog-dlya-podtyazhki-lica",
+"title": "Лифтинг нитями COG"
+},
+{
+"slug": "niti-aptos-dlya-podtyazhki-lica",
+"title": "Лифтинг нитями Aptos"
+},
+{
+"slug": "zhidkie-niti-aesthefill",
+"title": "Жидкие нити Aesthefill"
+},
+{
+"slug": "bioarmirovanie",
+"title": "Биоармирование"
+},
+{
+"slug": "lifting-brovey-nityami",
+"title": "Лифтинг бровей нитями"
+},
+{
+"slug": "nitevoy-lifting-podborodka",
+"title": "Нитевой лифтинг подбородка"
+},
+{
+"slug": "nitevoy-lifting-glaz-i-vek",
+"title": "Нитевой лифтинг глаз"
+},
+{
+"slug": "nitevoy-lifting-nosogubnyh-skladok",
+"title": "Нитевой лифтинг носогубных складок"
+},
+{
+"slug": "nitevoy-lifting-shei",
+"title": "Нитевой лифтинг шеи"
+}
+]
+},
+{
+"slug": "kolcza-veneryi",
+"title": "Коррекция шеи",
+"children": []
+},
+{
+"slug": "lechenie-akne",
+"title": "Лечение акне и постакне",
+"children": []
+},
+{
+"slug": "esteticheskaya-kosmetologiya",
+"title": "Эстетическая косметология",
+"children": [
+{
+"slug": "anti-age",
+"title": "Омоложение"
+},
+{
+"slug": "chistka-licza",
+"title": "Чистка лица"
+},
+{
+"slug": "chistka-spiny",
+"title": "Чистка спины"
+},
+{
+"slug": "pilingi",
+"title": "Пилинги"
+}
+]
+},
+{
+"slug": "apparatnaya-kosmetologiya",
+"title": "Аппаратная косметология",
+"children": [
+{
+"slug": "ultrazvukovoy-smas-lifting-ultraformer-mpt",
+"title": "SMAS-лифтинг Ultraformer MPT"
+},
+{
+"slug": "smas-lifting",
+"title": "SMAS-лифтинг Ultraformer 3"
+},
+{
+"slug": "rf-lifting-sylfirm-x",
+"title": "RF-лифтинг"
+},
+{
+"slug": "fotoomolozhenie-lica",
+"title": "Фотоомоложение лица"
+},
+{
+"slug": "svetovoe-omolozhenie-glow-flow",
+"title": "Процедура Glow Flow"
+},
+{
+"slug": "infrakrasnyj-lifting-lica",
+"title": "Инфракрасный лифтинг лица"
+},
+{
+"slug": "bezoperacionnaya-podtyazhka-lica",
+"title": "Безоперационная подтяжка лица"
+},
+{
+"slug": "frakcionnyy-fototermoliz",
+"title": "Фракционный фототермолиз"
+},
+{
+"slug": "termolifting",
+"title": "Термолифтинг"
+},
+{
+"slug": "fotodinamicheskaya-terapiya-lica-heleo4",
+"title": "Фотодинамическая терапия HELEO4"
+},
+{
+"slug": "fototerapiya",
+"title": "Фототерапия Harmony"
+},
+{
+"slug": "ipl-fotoomolozhenie",
+"title": "IPL фотоомоложение"
+},
+{
+"slug": "procedura-ekzosomy-dlya-lica",
+"title": "Экзосомы для лица"
+}
+]
+},
+{
+"slug": "lazernaya-kosmetologiya",
+"title": "Лазерная косметология",
+"children": []
+},
+{
+"slug": "muzhskaya-kosmetologiya",
+"title": "Мужская косметология",
+"children": [
+{
+"slug": "mezoterapia-dlya-muzhchin",
+"title": "Мезотерапия для мужчин"
+},
+{
+"slug": "konturnaya-plastika-dlya-muzhchin",
+"title": "Контурная пластика для мужчин"
+},
+{
+"slug": "chistka-lica-dlya-muzhchin",
+"title": "Чистка лица для мужчин"
+},
+{
+"slug": "peeling-lica-dlya-muzhchin",
+"title": "Пилинг лица для мужчин"
+},
+{
+"slug": "botox-dlya-muzhchin",
+"title": "Ботулинотерапия лица для мужчин"
+},
+{
+"slug": "smas-lifting-dlya-muzhchin",
+"title": "SMAS-лифтинг для мужчин"
+},
+{
+"slug": "lazernaya-epilacia-spiny-dlya-muzhchin",
+"title": "Лазерная эпиляция спины для мужчин"
+}
+]
+},
+{
+"slug": "udalenie-novoobrazovaniy",
+"title": "Удаление новообразований",
+"children": [
+{
+"slug": "lazernoe-udalenie-novoobrazovanij",
+"title": "Лазерное удаление новообразований"
+},
+{
+"slug": "udalenie-novoobrazovaniy/radiovolnovoe-udalenie-novoobrazovaniy",
+"title": "Радиоволновое удаление новообразований"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-novoobrazovaniya-na-kozhe-hirurgicheskim-putem",
+"title": "Удаление новообразования на коже хирургическим путем"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-nevusa",
+"title": "Удаление невуса"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-kozhnogo-roga",
+"title": "Удаление кожного рога"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-sterzhnevoy-mozoli",
+"title": "Удаление стержневой мозоли"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-kontagioznogo-mollyuska",
+"title": "Удаление контагиозного моллюска"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-kondilom",
+"title": "Удаление кондилом"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-ksantomy",
+"title": "Удаление ксантомы"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-ksantelazmy",
+"title": "Удаление ксантелазмы"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-lipomy",
+"title": "Удаление липомы"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-ateromy",
+"title": "Удаление атеромы"
+},
+{
+"slug": "udalenie-novoobrazovaniy/udalenie-fibromy",
+"title": "Удаление фибромы"
+},
+{
+"slug": "udalenie-novoobrazovaniy/vrosshiy-nogot",
+"title": "Вросший ноготь"
+}
+]
+},
+{
+"slug": "konsultaciya-kosmetologa",
+"title": "Консультация косметолога",
+"children": []
+}
+]

@@ -25,7 +25,7 @@ export function TrustStrip() {
       <p className="mt-3 flex items-center gap-1.5 text-[12px] text-fg-faint sm:text-[13px]">
         <IconStar className="size-3.5 text-gold" />
         <span>
-          <span className="font-semibold text-fg-dim">{facts.rating}</span> на {facts.ratingSource}
+          <span className="font-semibold text-fg-dim">{facts.rating}</span> на {facts.ratingSourceIn}
         </span>
       </p>
     </div>

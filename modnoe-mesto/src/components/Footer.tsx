@@ -9,7 +9,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-bg-deep pb-[calc(env(safe-area-inset-bottom)+92px)] pt-12 lg:pb-12">
+    <footer className="border-t border-line bg-bg-deep pb-[max(40px,env(safe-area-inset-bottom))] pt-12 lg:pb-12">
       <Container>
         <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
           <div>

@@ -25,7 +25,7 @@ export function Reviews() {
             <IconStar className="size-4 text-gold" />
             <span>
               <span className="font-semibold text-fg">{facts.rating}</span> — рейтинг на{" "}
-              {facts.ratingSource}
+              {facts.ratingSourceIn}
             </span>
           </p>
         </Reveal>

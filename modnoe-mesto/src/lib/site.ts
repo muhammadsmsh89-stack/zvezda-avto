@@ -11,6 +11,8 @@ export const facts = {
   specialists: "100+",
   rating: "5.0",
   ratingSource: "Яндекс Карты",
+  /** Предложный падеж — «рейтинг на Яндекс Картах». */
+  ratingSourceIn: "Яндекс Картах",
   certificateFrom: "15 000 ₽",
   telegramDiscount: "5%",
 } as const;

@@ -8,7 +8,7 @@ import { withBase } from "@/lib/basePath";
 const numbers = [
   { value: facts.clients, label: "довольных клиентов" },
   { value: facts.specialists, label: "профильных специалистов" },
-  { value: facts.rating, label: `рейтинг на ${facts.ratingSource}` },
+  { value: facts.rating, label: `рейтинг на ${facts.ratingSourceIn}` },
   { value: "Гарантия", label: "на работы и материалы" },
 ];
 

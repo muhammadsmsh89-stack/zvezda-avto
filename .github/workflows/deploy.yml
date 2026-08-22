@@ -185,6 +185,21 @@ jobs:
           mkdir -p out/beautyway-clinic
           cp -r beautyway-clinic/out/. out/beautyway-clinic/
 
+      - name: Install modnoe-mesto dependencies
+        run: npm ci
+        working-directory: ./modnoe-mesto
+
+      - name: Build modnoe-mesto (static export)
+        run: npm run build
+        working-directory: ./modnoe-mesto
+        env:
+          NODE_ENV: production
+
+      - name: Merge modnoe-mesto into Pages output
+        run: |
+          mkdir -p out/modnoe-mesto
+          cp -r modnoe-mesto/out/. out/modnoe-mesto/
+
       - name: Merge dnk-tsveta into Pages output (static, no build step)
         run: |
           mkdir -p out/dnk-tsveta

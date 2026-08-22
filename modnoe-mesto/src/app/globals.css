@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/*
+  MODNOE MESTO — quiet luxury + automotive precision.
+  Палитра построена на фирменных цветах компании: графит #282828 / #1d1c1c
+  и приглушённое золото #C0994E (взяты с modnoe-mesto.com).
+*/
+:root {
+  --bg: #0b0b0c;
+  --bg-deep: #060607;
+  --surface: #131315;
+  --surface-2: #1b1b1e;
+  --line: rgba(240, 238, 233, 0.10);
+  --line-strong: rgba(240, 238, 233, 0.22);
+  --fg: #f0eee9;
+  --fg-dim: #a9a7a1;
+  --fg-faint: #8f8d85;
+
+  --gold: #c0994e;
+  --gold-bright: #d8b26b;
+  --gold-soft: rgba(192, 153, 78, 0.14);
+  --on-gold: #14110a;
+
+  --radius: 4px;
+  --radius-lg: 8px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-deep: var(--bg-deep);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-fg-dim: var(--fg-dim);
+  --color-fg-faint: var(--fg-faint);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-soft: var(--gold-soft);
+  --color-on-gold: var(--on-gold);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* компенсация фиксированного хедера при переходе по якорям */
+  scroll-padding-top: 72px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Свой индикатор в <details> вместо системного треугольника */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--on-gold);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- утилиты --- */
+
+.u-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.u-rule {
+  height: 1px;
+  background: var(--line);
+}
+
+/* Плавное появление секции. Держим смещение маленьким — это читается как fade. */
+.u-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 620ms var(--ease-out),
+    transform 620ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.u-reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Без JS анимация появления не нужна — контент виден сразу. */
+@media (scripting: none) {
+  .u-reveal { opacity: 1; transform: none; }
+}
+
+/* Медленное «оседание» фото героя: 1.04 → 1.00, один раз, без параллакса. */
+@keyframes hero-settle {
+  from { transform: scale(1.045); }
+  to { transform: scale(1); }
+}
+
+.u-hero-img {
+  animation: hero-settle 1600ms var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .u-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .u-hero-img { animation: none; }
+
+  /*
+    Убираем движение, но оставляем переходы прозрачности и цвета —
+    они помогают понять, что состояние изменилось.
+  */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-property: opacity, color, background-color, border-color !important;
+    transition-duration: 150ms !important;
+  }
+}

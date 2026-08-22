@@ -104,6 +104,14 @@
         "/Users/patyasaidova/Клауд Сайт/holy-nails/scripts/dev.sh"
       ],
       "port": 4400
+    },
+    {
+      "name": "modnoe-mesto-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "/Users/patyasaidova/Desktop/10K websites/zvezda-avto/modnoe-mesto/scripts/dev.sh"
+      ],
+      "port": 4600
     }
   ]
 }

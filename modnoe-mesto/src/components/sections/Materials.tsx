@@ -41,10 +41,10 @@ export function Materials() {
             <dl className="border-t border-line">
               {materials.map((m) => (
                 <div key={m.title} className="border-b border-line py-6">
-                  <dt className="text-[16.5px] font-semibold leading-tight sm:text-[18px]">
+                  <dt className="text-[18px] font-semibold leading-tight sm:text-[20px]">
                     {m.title}
                   </dt>
-                  <dd className="mt-2 max-w-[52ch] text-[14.5px] leading-[1.55] text-fg-dim sm:text-[15px]">
+                  <dd className="mt-2 max-w-[52ch] text-body text-fg-dim">
                     {m.text}
                   </dd>
                 </div>
@@ -64,7 +64,7 @@ export function Materials() {
                   height={733}
                   className="aspect-[16/10] w-full rounded-[6px] object-cover"
                 />
-                <figcaption className="mt-2.5 text-[12.5px] leading-snug text-fg-faint">
+                <figcaption className="mt-2.5 text-micro text-fg-faint">
                   {p.caption}
                 </figcaption>
               </figure>

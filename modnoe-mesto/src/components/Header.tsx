@@ -60,7 +60,7 @@ export function Header() {
         <Container className="flex h-14 items-center justify-between gap-4 lg:h-[72px]">
           <a
             href="#top"
-            className="flex min-h-[44px] items-center py-2 text-[13px] lg:text-[15px]"
+            className="flex min-h-[44px] items-center py-2 text-[14px] lg:text-[16px]"
             aria-label="MODNOE MESTO — на главную"
           >
             <Wordmark />
@@ -71,7 +71,7 @@ export function Header() {
               <a
                 key={n.href}
                 href={n.href}
-                className="text-[14px] font-medium text-fg-dim transition-colors duration-200 hover:text-fg"
+                className="text-[15px] font-medium text-fg-dim transition-colors duration-200 hover:text-fg"
               >
                 {n.label}
               </a>
@@ -81,13 +81,13 @@ export function Header() {
           <div className="flex items-center gap-1.5">
             <a
               href={contacts.phoneHref}
-              className="hidden text-[14px] font-semibold tabular-nums text-fg transition-colors hover:text-gold-bright lg:block"
+              className="hidden text-[15px] font-semibold tabular-nums text-fg transition-colors hover:text-gold-bright lg:block"
             >
               {contacts.phoneDisplay}
             </a>
             <a
               href="#calculator"
-              className="hidden min-h-[44px] items-center rounded-[4px] bg-gold px-5 text-[14px] font-semibold text-on-gold transition-[transform,background-color] duration-[160ms] ease-out hover:bg-gold-bright active:scale-[0.975] lg:inline-flex"
+              className="hidden min-h-[44px] items-center rounded-[4px] bg-gold px-5 text-[15px] font-semibold text-on-gold transition-[transform,background-color] duration-[160ms] ease-out hover:bg-gold-bright active:scale-[0.975] lg:inline-flex"
             >
               Рассчитать стоимость
             </a>
@@ -130,7 +130,7 @@ export function Header() {
         inert={!open}
       >
         <div className="flex h-14 items-center justify-between px-5">
-          <Wordmark className="text-[13px]" />
+          <Wordmark className="text-[14px]" />
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -156,7 +156,7 @@ export function Header() {
             ))}
           </ul>
 
-          <p className="mt-8 text-[13.5px] leading-relaxed text-fg-faint">
+          <p className="mt-8 text-small text-fg-faint">
             {contacts.addressFull}
           </p>
 
@@ -165,7 +165,7 @@ export function Header() {
               href={contacts.telegram}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex min-h-[46px] items-center gap-2 rounded-[4px] border border-line px-4 text-[13.5px] font-semibold"
+              className="inline-flex min-h-[46px] items-center gap-2 rounded-[4px] border border-line px-4 text-small font-semibold"
             >
               <IconTelegram className="size-[17px] text-gold" />
               Telegram
@@ -174,7 +174,7 @@ export function Header() {
               href={contacts.vk}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex min-h-[46px] items-center gap-2 rounded-[4px] border border-line px-4 text-[13.5px] font-semibold"
+              className="inline-flex min-h-[46px] items-center gap-2 rounded-[4px] border border-line px-4 text-small font-semibold"
             >
               <IconVk className="size-[17px] text-gold" />
               VK
@@ -186,18 +186,18 @@ export function Header() {
           <a
             href="#calculator"
             onClick={() => setOpen(false)}
-            className="flex min-h-[54px] w-full items-center justify-center rounded-[4px] bg-gold text-[15px] font-semibold text-on-gold active:scale-[0.985]"
+            className="flex min-h-[54px] w-full items-center justify-center rounded-[4px] bg-gold text-body font-semibold text-on-gold active:scale-[0.985]"
           >
             Рассчитать стоимость
           </a>
           <a
             href={contacts.phoneHref}
-            className="mt-3 flex min-h-[48px] items-center justify-center gap-2 text-[15px] font-semibold tabular-nums text-fg"
+            className="mt-3 flex min-h-[48px] items-center justify-center gap-2 text-body font-semibold tabular-nums text-fg"
           >
             <IconPhone className="size-[18px] text-gold" />
             {contacts.phoneDisplay}
           </a>
-          <p className="mt-1 text-center text-[13px] text-fg-faint">{contacts.hours}</p>
+          <p className="mt-1 text-center text-micro text-fg-faint">{contacts.hours}</p>
         </div>
       </div>
     </>

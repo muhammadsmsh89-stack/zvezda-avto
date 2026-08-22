@@ -11,7 +11,7 @@ export function FinalCTA() {
       {/* Действующая акция компании: 5% за подписку на Telegram-канал */}
       <div className="border-t border-line bg-surface">
         <Container className="flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[14px] leading-snug text-fg-dim">
+          <p className="text-small text-fg-dim">
             <span className="font-semibold text-fg">
               Скидка {facts.telegramDiscount}
             </span>{" "}
@@ -21,7 +21,7 @@ export function FinalCTA() {
             href={contacts.telegram}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex min-h-[44px] items-center gap-2 self-start text-[14px] font-semibold text-gold transition-colors hover:text-gold-bright sm:self-auto"
+            className="inline-flex min-h-[44px] items-center gap-2 self-start text-small font-semibold text-gold transition-colors hover:text-gold-bright sm:self-auto"
           >
             <IconTelegram className="size-[18px]" />
             Подписаться
@@ -41,7 +41,7 @@ export function FinalCTA() {
             >
               Расскажите, что хотите сделать с автомобилем
             </h2>
-            <p className="mt-4 max-w-[44ch] text-[15.5px] leading-[1.6] text-fg-dim sm:text-[17px]">
+            <p className="mt-4 max-w-[44ch] text-lead text-fg-dim sm:text-lead-lg">
               Подберём решение и рассчитаем стоимость. Если не знаете, что нужно
               — тоже пишите: подскажем.
             </p>
@@ -56,7 +56,7 @@ export function FinalCTA() {
               </ButtonLink>
             </div>
 
-            <p className="mt-5 text-[13px] text-fg-faint">{contacts.hours}</p>
+            <p className="mt-5 text-micro text-fg-faint">{contacts.hours}</p>
           </Reveal>
         </Container>
       </section>

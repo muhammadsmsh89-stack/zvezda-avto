@@ -37,10 +37,10 @@ export function Contacts() {
                 <div key={label} className="flex gap-4 border-b border-line py-5">
                   <Icon className="mt-0.5 size-5 shrink-0 text-gold" />
                   <div>
-                    <dt className="text-[12px] uppercase tracking-[0.12em] text-fg-faint">
+                    <dt className="text-label uppercase tracking-[0.12em] text-fg-faint">
                       {label}
                     </dt>
-                    <dd className="mt-1 text-[15.5px] font-medium leading-snug">
+                    <dd className="mt-1 text-[17px] font-medium leading-snug">
                       {href ? (
                         <a
                           href={href}
@@ -62,7 +62,7 @@ export function Contacts() {
                 href={contacts.telegram}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex min-h-[48px] items-center gap-2.5 rounded-[4px] border border-line-strong px-5 text-[14px] font-semibold transition-colors hover:border-gold hover:text-gold-bright"
+                className="inline-flex min-h-[48px] items-center gap-2.5 rounded-[4px] border border-line-strong px-5 text-small font-semibold transition-colors hover:border-gold hover:text-gold-bright"
               >
                 <IconTelegram className="size-[18px]" />
                 Telegram
@@ -71,14 +71,14 @@ export function Contacts() {
                 href={contacts.vk}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex min-h-[48px] items-center gap-2.5 rounded-[4px] border border-line-strong px-5 text-[14px] font-semibold transition-colors hover:border-gold hover:text-gold-bright"
+                className="inline-flex min-h-[48px] items-center gap-2.5 rounded-[4px] border border-line-strong px-5 text-small font-semibold transition-colors hover:border-gold hover:text-gold-bright"
               >
                 <IconVk className="size-[18px]" />
                 VK
               </a>
             </div>
 
-            <p className="mt-6 border-t border-line pt-5 text-[14px] leading-relaxed text-fg-dim">
+            <p className="mt-6 border-t border-line pt-5 text-body text-fg-dim">
               Подарочные сертификаты — от{" "}
               <span className="font-semibold text-fg">{facts.certificateFrom}</span>,
               действуют год и распространяются на весь спектр услуг.
@@ -104,8 +104,8 @@ export function Contacts() {
                   className="flex size-full flex-col items-center justify-center gap-3 px-6 text-center transition-colors hover:bg-surface-2"
                 >
                   <IconPin className="size-7 text-gold" />
-                  <span className="text-[15.5px] font-semibold">Показать карту</span>
-                  <span className="max-w-[34ch] text-[13px] leading-snug text-fg-faint">
+                  <span className="text-body font-semibold">Показать карту</span>
+                  <span className="max-w-[34ch] text-small text-fg-faint">
                     {contacts.addressFull}. Карта загрузится по нажатию — чтобы
                     страница открывалась быстрее.
                   </span>

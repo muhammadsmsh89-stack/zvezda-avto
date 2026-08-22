@@ -42,7 +42,7 @@ export function MobileStickyCTA() {
       <div className="flex items-center gap-2.5 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3">
         <a
           href="#calculator"
-          className="flex min-h-[50px] flex-1 items-center justify-center rounded-[4px] bg-gold text-[15px] font-semibold text-on-gold transition-transform duration-[160ms] ease-out active:scale-[0.985]"
+          className="flex min-h-[50px] flex-1 items-center justify-center rounded-[4px] bg-gold text-body font-semibold text-on-gold transition-transform duration-[160ms] ease-out active:scale-[0.985]"
         >
           Рассчитать стоимость
         </a>

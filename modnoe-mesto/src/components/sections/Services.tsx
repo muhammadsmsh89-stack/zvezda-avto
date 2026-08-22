@@ -44,16 +44,16 @@ export function Services() {
                     {g.title}
                   </h3>
                   <span className="mt-0.5 shrink-0 text-right">
-                    <span className="block text-[10.5px] uppercase tracking-[0.14em] text-fg-faint">
+                    <span className="block text-[11.5px] uppercase tracking-[0.14em] text-fg-faint">
                       от
                     </span>
-                    <span className="block text-[15px] font-semibold tabular-nums text-gold sm:text-[16px]">
+                    <span className="block text-[17px] font-semibold tabular-nums text-gold sm:text-[18px]">
                       {g.priceFrom}
                     </span>
                   </span>
                 </div>
 
-                <p className="mt-2.5 max-w-[42ch] text-[14.5px] leading-[1.5] text-fg-dim sm:text-[15px]">
+                <p className="mt-2.5 max-w-[42ch] text-body text-fg-dim">
                   {g.benefit}
                 </p>
 
@@ -61,14 +61,14 @@ export function Services() {
                   {g.items.map((it) => (
                     <li
                       key={it}
-                      className="rounded-full border border-line px-3 py-1.5 text-[12.5px] leading-none text-fg-dim"
+                      className="rounded-full border border-line px-3.5 py-2 text-[14px] leading-none text-fg-dim"
                     >
                       {it}
                     </li>
                   ))}
                 </ul>
 
-                <span className="mt-5 inline-flex min-h-[24px] items-center gap-2 text-[13.5px] font-semibold text-fg transition-colors duration-200 group-hover:text-gold-bright">
+                <span className="mt-5 inline-flex min-h-[24px] items-center gap-2 text-small font-semibold text-fg transition-colors duration-200 group-hover:text-gold-bright">
                   Рассчитать стоимость
                   <IconArrow className="size-4 text-gold" />
                 </span>
@@ -77,20 +77,20 @@ export function Services() {
           ))}
         </ul>
 
-        <p className="mt-6 border-t border-line pt-5 text-[12.5px] leading-relaxed text-fg-faint">
+        <p className="mt-6 border-t border-line pt-5 text-micro text-fg-faint">
           Цены указаны как минимальные и зависят от класса автомобиля, состояния
           кузова и объёма работ. Точная стоимость — после осмотра и сметы.
         </p>
 
         {/* Для тех, кто впервые выбирает между плёнкой, керамикой и винилом */}
         <Reveal className="mt-12 sm:mt-16">
-          <h3 className="text-[19px] font-bold sm:text-[22px]">
+          <h3 className="text-[21px] font-bold sm:text-[24px]">
             Плёнка, керамика или винил — в чём разница
           </h3>
           <div className="mt-5 border-t border-line">
             {explainer.map((e) => (
               <details key={e.term} className="group border-b border-line">
-                <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-4 text-[15.5px] font-semibold marker:hidden sm:text-[16px]">
+                <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-4 text-[17px] font-semibold marker:hidden sm:text-[18px]">
                   {e.term}
                   <span
                     aria-hidden="true"
@@ -100,7 +100,7 @@ export function Services() {
                     <span className="absolute h-3.5 w-px bg-current transition-transform duration-200 ease-out group-open:rotate-90 group-open:opacity-0" />
                   </span>
                 </summary>
-                <p className="max-w-[60ch] pb-5 pr-8 text-[14.5px] leading-[1.6] text-fg-dim">
+                <p className="max-w-[60ch] pb-5 pr-8 text-body text-fg-dim">
                   {e.text}
                 </p>
               </details>

@@ -9,7 +9,7 @@ import { IconCheck, IconPhone, IconTelegram, IconMail } from "../ui/Icons";
 import { carBrands, goals } from "@/lib/calculator";
 import { contacts } from "@/lib/contacts";
 
-const step = "text-[11px] font-semibold uppercase tracking-[0.16em] text-gold";
+const step = "text-label font-semibold uppercase tracking-[0.16em] text-gold";
 const field =
   "min-h-[52px] w-full rounded-[4px] border border-line-strong bg-surface px-4 text-[16px] text-fg " +
   "placeholder:text-fg-faint transition-colors duration-200 focus:border-gold focus:outline-none " +
@@ -86,11 +86,11 @@ export function Calculator() {
             >
               Узнайте стоимость работ для вашего автомобиля
             </h2>
-            <p className="mt-4 max-w-[44ch] text-[15px] leading-[1.6] text-fg-dim sm:text-[16px]">
+            <p className="mt-4 max-w-[44ch] text-lead text-fg-dim sm:text-lead-lg">
               Три коротких шага. Специалист перезвонит, уточнит детали и назовёт
               вилку цен — до визита в студию.
             </p>
-            <ul className="mt-6 space-y-2.5 text-[14px] text-fg-dim">
+            <ul className="mt-6 space-y-3 text-body text-fg-dim">
               {[
                 "Расчёт бесплатный и ни к чему не обязывает",
                 "Точная смета — после осмотра автомобиля",
@@ -116,7 +116,7 @@ export function Calculator() {
                   <legend className={step}>Шаг 1 — Автомобиль</legend>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="calc-brand" className="mb-2 block text-[13.5px] text-fg-dim">
+                      <label htmlFor="calc-brand" className="mb-2 block text-small text-fg-dim">
                         Марка
                       </label>
                       <select
@@ -141,7 +141,7 @@ export function Calculator() {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="calc-model" className="mb-2 block text-[13.5px] text-fg-dim">
+                      <label htmlFor="calc-model" className="mb-2 block text-small text-fg-dim">
                         Модель <span className="text-fg-faint">— необязательно</span>
                       </label>
                       <input
@@ -195,10 +195,10 @@ export function Calculator() {
                           />
                         </span>
                         <span>
-                          <span className="block text-[15px] font-medium leading-tight">
+                          <span className="block text-body font-medium leading-tight">
                             {g.label}
                           </span>
-                          <span className="mt-0.5 block text-[12.5px] leading-tight text-fg-faint">
+                          <span className="mt-1 block text-micro leading-snug text-fg-faint">
                             {g.hint}
                           </span>
                         </span>
@@ -212,7 +212,7 @@ export function Calculator() {
                   <legend className={step}>Шаг 3 — Контакт</legend>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="calc-name" className="mb-2 block text-[13.5px] text-fg-dim">
+                      <label htmlFor="calc-name" className="mb-2 block text-small text-fg-dim">
                         Имя <span className="text-fg-faint">— необязательно</span>
                       </label>
                       <input
@@ -227,7 +227,7 @@ export function Calculator() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="calc-phone" className="mb-2 block text-[13.5px] text-fg-dim">
+                      <label htmlFor="calc-phone" className="mb-2 block text-small text-fg-dim">
                         Телефон <span className="text-gold">*</span>
                       </label>
                       <input
@@ -252,7 +252,7 @@ export function Calculator() {
                   </div>
                 </fieldset>
 
-                <label className="mt-6 flex cursor-pointer items-start gap-3 text-[13px] leading-[1.5] text-fg-dim">
+                <label className="mt-6 flex cursor-pointer items-start gap-3 text-small text-fg-dim">
                   <input
                     type="checkbox"
                     checked={agree}
@@ -280,7 +280,7 @@ export function Calculator() {
                   <p
                     id="calc-error"
                     role="alert"
-                    className="mt-4 rounded-[4px] border border-[#c4634a]/50 bg-[#c4634a]/10 px-4 py-3 text-[13.5px] text-[#e79880]"
+                    className="mt-4 rounded-[4px] border border-[#c4634a]/50 bg-[#c4634a]/10 px-4 py-3 text-small text-[#e79880]"
                   >
                     {error}
                   </p>
@@ -289,7 +289,7 @@ export function Calculator() {
                 <Button type="submit" className="mt-6 w-full">
                   Получить расчёт
                 </Button>
-                <p className="mt-3 text-center text-[12px] text-fg-faint">
+                <p className="mt-3 text-center text-micro text-fg-faint">
                   Перезвоним в рабочее время: {contacts.hours.toLowerCase()}
                 </p>
               </form>
@@ -306,13 +306,13 @@ export function Calculator() {
                 <h3 className="mt-5 text-[22px] font-bold leading-tight sm:text-[26px]">
                   Заявка готова
                 </h3>
-                <p className="mt-3 text-[15px] leading-[1.6] text-fg-dim">
+                <p className="mt-3 text-body text-fg-dim">
                   {copied
                     ? "Текст заявки скопирован в буфер обмена. Отправьте его удобным способом — ответим в рабочее время."
                     : "Отправьте заявку удобным способом — ответим в рабочее время."}
                 </p>
 
-                <pre className="mt-5 overflow-x-auto whitespace-pre-wrap rounded-[4px] border border-line bg-bg-deep p-4 text-[13px] leading-[1.65] text-fg-dim">
+                <pre className="mt-5 overflow-x-auto whitespace-pre-wrap rounded-[4px] border border-line bg-bg-deep p-4 text-small leading-[1.7] text-fg-dim">
                   {summary}
                 </pre>
 
@@ -342,7 +342,7 @@ export function Calculator() {
                     setSent(false);
                     setCopied(false);
                   }}
-                  className="mt-5 min-h-[44px] text-[13.5px] text-fg-faint underline underline-offset-4 transition-colors hover:text-fg-dim"
+                  className="mt-5 min-h-[44px] text-small text-fg-faint underline underline-offset-4 transition-colors hover:text-fg-dim"
                 >
                   Изменить заявку
                 </button>

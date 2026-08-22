@@ -14,7 +14,7 @@ export function Footer() {
         <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
           <div>
             <Wordmark className="text-[14px]" />
-            <p className="mt-3 max-w-[34ch] text-[13.5px] leading-relaxed text-fg-faint">
+            <p className="mt-3 max-w-[34ch] text-small text-fg-faint">
               Детейлинг-центр в Москве: защита, детейлинг и дооснащение
               автомобилей.
             </p>
@@ -28,7 +28,7 @@ export function Footer() {
                     href={l.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex min-h-[44px] items-center text-[13.5px] text-fg-dim transition-colors hover:text-fg"
+                    className="inline-flex min-h-[44px] items-center text-small text-fg-dim transition-colors hover:text-fg"
                   >
                     {l.label}
                   </a>
@@ -38,7 +38,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 border-t border-line pt-6 text-[12px] leading-relaxed text-fg-faint">
+        <div className="mt-10 border-t border-line pt-6 text-micro text-fg-faint">
           <p>
             {contacts.legal.name} · ИНН {contacts.legal.inn} · ОГРН{" "}
             {contacts.legal.ogrn}

@@ -29,7 +29,7 @@ function Frame({
       />
       <figcaption
         className={
-          "absolute left-0 top-0 bg-bg-deep/85 px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.18em] backdrop-blur-[2px] " +
+          "absolute left-0 top-0 bg-bg-deep/85 px-3 py-1.5 text-[11.5px] font-semibold uppercase tracking-[0.18em] backdrop-blur-[2px] " +
           (priority ? "text-gold" : "text-fg-dim")
         }
       >
@@ -57,7 +57,7 @@ export function FeaturedCase() {
           >
             {featuredCase.car}
           </h2>
-          <p className="mt-3 text-[16px] font-medium text-gold sm:text-[18px]">
+          <p className="mt-3 text-lead font-medium text-gold sm:text-[20px]">
             {featuredCase.work}
           </p>
         </Reveal>
@@ -83,13 +83,13 @@ export function FeaturedCase() {
       <Container>
         <Reveal className="mt-8 grid gap-6 sm:mt-12 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
           <div className="max-w-[62ch]">
-            <p className="text-[17px] font-medium leading-[1.45] sm:text-[20px]">
+            <p className="text-[19px] font-medium leading-[1.4] sm:text-[22px]">
               {featuredCase.lead}
             </p>
-            <p className="mt-4 text-[15px] leading-[1.6] text-fg-dim sm:text-[16px]">
+            <p className="mt-4 text-body text-fg-dim">
               {featuredCase.body}
             </p>
-            <p className="mt-5 text-[12.5px] text-fg-faint">{featuredCase.note}</p>
+            <p className="mt-5 text-micro text-fg-faint">{featuredCase.note}</p>
           </div>
 
           <ButtonLink href="#calculator" variant="secondary" className="w-full lg:w-auto">

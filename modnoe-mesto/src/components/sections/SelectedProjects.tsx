@@ -49,14 +49,14 @@ export function SelectedProjects() {
                 </div>
                 <figcaption className="mt-3.5 flex items-baseline justify-between gap-4 border-t border-line pt-3.5">
                   <div>
-                    <p className="text-[16px] font-semibold leading-tight sm:text-[18px]">
+                    <p className="text-[17px] font-semibold leading-tight sm:text-[19px]">
                       {p.car}
                     </p>
-                    <p className="mt-1 text-[13.5px] leading-snug text-fg-dim sm:text-[14px]">
+                    <p className="mt-1 text-small text-fg-dim">
                       {p.work}
                     </p>
                   </div>
-                  <span className="shrink-0 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-gold">
+                  <span className="shrink-0 text-[11.5px] font-semibold uppercase tracking-[0.14em] text-gold">
                     {p.tag}
                   </span>
                 </figcaption>

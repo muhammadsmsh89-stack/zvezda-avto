@@ -31,7 +31,7 @@ export function SectionHeading({
         {title}
       </h2>
       {lead && (
-        <p className="mt-4 text-[15px] leading-[1.6] text-fg-dim sm:text-base">{lead}</p>
+        <p className="mt-4 text-lead text-fg-dim sm:text-lead-lg">{lead}</p>
       )}
     </header>
   );

@@ -9,20 +9,20 @@ const items = [
 
 export function TrustStrip() {
   return (
-    <div className="border-t border-line pt-4">
+    <div className="border-t border-line pt-3.5">
       <ul className="grid grid-cols-3 gap-3">
         {items.map((it) => (
           <li key={it.label}>
-            <p className="text-[15px] font-bold leading-none text-fg sm:text-[17px]">
+            <p className="text-[17px] font-bold leading-none text-fg sm:text-[19px]">
               {it.value}
             </p>
-            <p className="mt-1.5 text-[11.5px] leading-[1.35] text-fg-faint sm:text-[13px]">
+            <p className="mt-1.5 text-micro text-fg-faint">
               {it.label}
             </p>
           </li>
         ))}
       </ul>
-      <p className="mt-3 flex items-center gap-1.5 text-[12px] text-fg-faint sm:text-[13px]">
+      <p className="mt-3 flex items-center gap-1.5 text-micro text-fg-faint">
         <IconStar className="size-3.5 text-gold" />
         <span>
           <span className="font-semibold text-fg-dim">{facts.rating}</span> на {facts.ratingSourceIn}

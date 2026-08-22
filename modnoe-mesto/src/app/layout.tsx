@@ -70,7 +70,7 @@ export default function RootLayout({
       <body>
         <a
           href="#content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[4px] focus:bg-gold focus:px-4 focus:py-3 focus:text-[14px] focus:font-semibold focus:text-on-gold"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[4px] focus:bg-gold focus:px-4 focus:py-3 focus:text-[15px] focus:font-semibold focus:text-on-gold"
         >
           Перейти к содержимому
         </a>

@@ -36,7 +36,7 @@ export function WhyUs() {
                 <p className="text-[28px] font-bold leading-none tracking-[-0.03em] text-gold sm:text-[34px] lg:text-[40px]">
                   {n.value}
                 </p>
-                <p className="mt-2.5 text-[13px] leading-[1.35] text-fg-dim sm:text-[14px]">
+                <p className="mt-2.5 text-small text-fg-dim">
                   {n.label}
                 </p>
               </li>
@@ -58,16 +58,16 @@ export function WhyUs() {
           </Reveal>
 
           <Reveal delay={70}>
-            <h3 className="text-[21px] font-bold leading-tight sm:text-[26px]">
+            <h3 className="text-[23px] font-bold leading-tight sm:text-[28px]">
               Один адрес вместо пяти подрядчиков
             </h3>
-            <p className="mt-4 text-[15px] leading-[1.6] text-fg-dim sm:text-[16px]">
+            <p className="mt-4 text-body text-fg-dim">
               Оклейка, полировка, керамика, химчистка, реставрация салона,
               шумоизоляция, дооснащение, кузовные и малярные работы — всё в
               одном центре, одной командой и с одной ответственностью за
               результат.
             </p>
-            <dl className="mt-6 space-y-4 border-t border-line pt-6 text-[14.5px]">
+            <dl className="mt-6 space-y-4 border-t border-line pt-6 text-body">
               <div className="flex gap-4">
                 <dt className="w-[104px] shrink-0 text-fg-faint">Адрес</dt>
                 <dd className="font-medium">{contacts.addressFull}</dd>

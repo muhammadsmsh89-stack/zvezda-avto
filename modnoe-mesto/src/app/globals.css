@@ -43,6 +43,27 @@
   --color-gold-soft: var(--gold-soft);
   --color-on-gold: var(--on-gold);
   --font-sans: var(--font-sans);
+
+  /*
+    Типографическая шкала: шесть ролей вместо двух десятков произвольных
+    размеров. Основной текст — 16px/1.6, подзаголовки секций — 18→19.5px.
+  */
+  --text-label: 0.75rem;              /* 12px — надзаголовки, теги */
+  --text-label--line-height: 1.25;
+  --text-micro: 0.84375rem;           /* 13.5px — даты, сноски, юр. текст */
+  --text-micro--line-height: 1.55;
+  --text-small: 0.9375rem;            /* 15px — подписи, чипы, метки полей */
+  --text-small--line-height: 1.5;
+  --text-body: 1rem;                  /* 16px — основной текст */
+  --text-body--line-height: 1.6;
+  --text-lead: 1.125rem;              /* 18px — подзаголовок секции */
+  --text-lead--line-height: 1.5;
+  --text-lead-lg: 1.21875rem;         /* 19.5px */
+  --text-lead-lg--line-height: 1.45;
+  --text-hero: 1.1875rem;             /* 19px — подзаголовок первого экрана */
+  --text-hero--line-height: 1.5;
+  --text-hero-lg: 1.3125rem;          /* 21px */
+  --text-hero-lg--line-height: 1.45;
 }
 
 * {
@@ -95,7 +116,7 @@ summary::-webkit-details-marker {
 /* --- утилиты --- */
 
 .u-eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;

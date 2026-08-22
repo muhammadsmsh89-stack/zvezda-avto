@@ -21,7 +21,7 @@ export function Reviews() {
             title="О нас говорят"
             id="reviews-title"
           />
-          <p className="flex shrink-0 items-center gap-2 text-[14px] text-fg-dim">
+          <p className="flex shrink-0 items-center gap-2 text-small text-fg-dim">
             <IconStar className="size-4 text-gold" />
             <span>
               <span className="font-semibold text-fg">{facts.rating}</span> — рейтинг на{" "}
@@ -38,21 +38,21 @@ export function Reviews() {
               delay={(i % 3) * 60}
               className="flex flex-col rounded-[6px] border border-line bg-surface p-5 sm:p-6"
             >
-              <blockquote className="flex-1 text-[14.5px] leading-[1.6] text-fg-dim sm:text-[15px]">
+              <blockquote className="flex-1 text-body text-fg-dim">
                 «{r.quote}»
               </blockquote>
               <footer className="mt-5 border-t border-line pt-4">
-                <p className="text-[15px] font-semibold">{r.name}</p>
+                <p className="text-[17px] font-semibold">{r.name}</p>
                 {r.context && (
-                  <p className="mt-1 text-[12.5px] leading-snug text-gold">{r.context}</p>
+                  <p className="mt-1 text-micro text-gold">{r.context}</p>
                 )}
-                <p className="mt-1.5 text-[12px] tabular-nums text-fg-faint">{r.date}</p>
+                <p className="mt-1.5 text-micro tabular-nums text-fg-faint">{r.date}</p>
               </footer>
             </Reveal>
           ))}
         </ul>
 
-        <p className="mt-6 text-[12.5px] text-fg-faint">
+        <p className="mt-6 text-micro text-fg-faint">
           Отзывы опубликованы на официальном сайте компании{" "}
           <a
             href={contacts.sourceSite}

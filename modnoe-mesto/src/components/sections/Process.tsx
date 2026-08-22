@@ -29,15 +29,15 @@ export function Process() {
             >
               <span
                 aria-hidden="true"
-                className="w-[26px] shrink-0 pt-1 text-[13px] font-semibold tabular-nums text-gold sm:text-[14px]"
+                className="w-[26px] shrink-0 pt-1 text-[14px] font-semibold tabular-nums text-gold sm:text-[15px]"
               >
                 {s.n}
               </span>
               <div>
-                <h3 className="text-[17px] font-semibold leading-tight sm:text-[19px]">
+                <h3 className="text-[18px] font-semibold leading-tight sm:text-[20px]">
                   {s.title}
                 </h3>
-                <p className="mt-2 max-w-[52ch] text-[14.5px] leading-[1.55] text-fg-dim sm:text-[15px]">
+                <p className="mt-2 max-w-[52ch] text-body text-fg-dim">
                   {s.text}
                 </p>
               </div>

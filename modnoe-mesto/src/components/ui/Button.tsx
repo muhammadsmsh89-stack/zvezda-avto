@@ -4,7 +4,7 @@ import clsx from "clsx";
 type Variant = "primary" | "secondary" | "ghost";
 
 const base =
-  "inline-flex min-h-[52px] items-center justify-center gap-2 px-6 text-[15px] font-semibold tracking-[-0.01em] " +
+  "inline-flex min-h-[52px] items-center justify-center gap-2 px-6 text-body font-semibold tracking-[-0.01em] " +
   "rounded-[4px] transition-[transform,background-color,border-color,color] duration-[160ms] ease-out " +
   "active:scale-[0.975] disabled:pointer-events-none disabled:opacity-45 select-none";
 

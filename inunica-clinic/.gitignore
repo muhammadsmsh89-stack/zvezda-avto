@@ -1,0 +1,16 @@
+/node_modules
+/.next/
+/out/
+/build
+.DS_Store
+*.pem
+.env*
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Сырьё импортёра: 23 МБ оригиналов с Tilda и скачанный HTML.
+# Всё это восстанавливается запуском scripts/import/crawl.mjs и fetch_assets.mjs,
+# а в репозитории лежат уже отобранные и пережатые кадры в public/.
+/scripts/import/raw/
+/scripts/import/text/
+/scripts/import/assets-orig/

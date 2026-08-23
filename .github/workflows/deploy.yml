@@ -200,6 +200,21 @@ jobs:
           mkdir -p out/modnoe-mesto
           cp -r modnoe-mesto/out/. out/modnoe-mesto/
 
+      - name: Install inunica-clinic dependencies
+        run: npm ci
+        working-directory: ./inunica-clinic
+
+      - name: Build inunica-clinic (static export)
+        run: npm run build
+        working-directory: ./inunica-clinic
+        env:
+          NODE_ENV: production
+
+      - name: Merge inunica-clinic into Pages output
+        run: |
+          mkdir -p out/inunica-clinic
+          cp -r inunica-clinic/out/. out/inunica-clinic/
+
       - name: Merge dnk-tsveta into Pages output (static, no build step)
         run: |
           mkdir -p out/dnk-tsveta

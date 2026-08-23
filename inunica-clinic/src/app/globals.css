@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+/*
+  INUNICA clinic — дизайн-система.
+
+  Направление: премиум-нейтраль. Фон тёплый, почти бумажный; текст — графит
+  с фиолетовым подтоном, чтобы фирменный цвет не выглядел на нём инородным.
+  Фуксия клиники остаётся ровно одним акцентом: логотип, одна кнопка, тонкие
+  подчёркивания. Уровень держится на воздухе, фотографии и типографике,
+  а не на заливках.
+
+  Акцент --color-accent — это ТОЧНЫЙ фирменный цвет клиники #9D4F81. Он даёт
+  4,95:1 на основном фоне, то есть проходит WCAG AA как обычный текст, и
+  менять его на «более тёмный ради доступности» не пришлось.
+  Вся палитра проверена: node scripts/check-contrast.mjs
+*/
+
+@theme {
+  /* ——— Поверхности ——— */
+  --color-shell: #f7f4f1; /* основной фон — тёплый off-white */
+  --color-paper: #fffdfb; /* карточки и светлые полосы */
+  --color-veil: #efe9e5; /* разделительные полосы, hover */
+  --color-line: #d6cbc4; /* границы */
+
+  /* ——— Чернила ——— */
+  --color-ink: #241c21; /* основной текст — 15,2:1 на shell */
+  --color-ink-soft: #574a52; /* вторичный текст — 7,7:1 */
+  --color-ink-mute: #6c5c66; /* подписи — 5,7:1, проходит AA */
+
+  /* ——— Тёмные секции ——— */
+  --color-plum: #2a1e26;
+  --color-plum-soft: #3b2b34;
+
+  /* ——— Единственный акцент: фирменная фуксия ——— */
+  --color-accent: #9d4f81; /* 4,95:1 на shell — можно ставить текстом */
+  --color-accent-deep: #7e2d63; /* hover и крупные заливки */
+  --color-accent-lift: #d9a9c6; /* акцент внутри тёмных секций — 7,9:1 на plum */
+
+  /* ——— Типографика ——— */
+  --font-display: var(--font-cormorant), "Times New Roman", Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ——— Движение ——— */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Якорные переходы не должны прятать заголовок под липкой шапкой. */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-shell);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    /* 17px, а не привычные 16 — текста на сайте много, и лишний пиксель
+       снимает усталость при чтении прайса и описаний процедур. */
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    /* Гарантия против горизонтального скролла на мобильных. */
+    overflow-x: hidden;
+  }
+
+  /* Cormorant мелкий по умолчанию — используем только крупно. */
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.04;
+  }
+
+  /* Точечный акцентный гротеск: печатающийся эффект в Hero, больше нигде. */
+  .font-golos {
+    font-family: var(--font-golos), var(--font-sans);
+    font-weight: 500;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Фокус виден всегда — и он не съедается overflow. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-paper);
+  }
+}
+
+@layer utilities {
+  /* Надзаголовок: единственное место, где допустим caps + трекинг. */
+  .eyebrow {
+    font-size: 0.8125rem;
+    /* Разрядка уже даёт капсу структуру — сильнее 0.14em буквы начинают
+       рассыпаться на мелких экранах и в русской раскладке читаются хуже. */
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-ink-mute);
+  }
+
+  /* Тонкая линия-разделитель вместо карточек. */
+  .rule {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .rule-dark {
+    border-top: 1px solid rgb(255 255 255 / 0.14);
+  }
+
+  /*
+    Мягкое появление при скролле.
+    Скрытое стартовое состояние включается только когда есть JS (класс .js
+    ставится инлайн-скриптом до первой отрисовки). Без JS текст виден сразу —
+    это важно и для доступности, и для индексации.
+  */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 700ms var(--ease-out-strong),
+      transform 700ms var(--ease-out-strong);
+    will-change: opacity, transform;
+  }
+
+  .js .reveal[data-shown="true"] {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  /*
+    Пословное проявление (см. TextReveal). Задержка каждого слова задаётся
+    инлайн-стилем в компоненте — здесь только само состояние.
+  */
+  .js .word-rise > span {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(0.3em);
+    transition:
+      opacity 620ms var(--ease-out-strong),
+      filter 620ms var(--ease-out-strong),
+      transform 620ms var(--ease-out-strong);
+  }
+
+  .js .word-rise[data-shown="true"] > span {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  /* Сдержанный zoom фотографии по ховеру — только на точных указателях. */
+  @media (hover: hover) and (pointer: fine) {
+    .img-zoom img {
+      transition: transform 900ms var(--ease-out-strong);
+    }
+    .img-zoom:hover img {
+      transform: scale(1.028);
+    }
+  }
+
+  /*
+    Появление первого экрана. Не reveal: над сгибом нельзя зависеть от
+    IntersectionObserver — CSS-анимация с `both` доигрывает сама и не оставит
+    заголовок невидимым, если наблюдатель не запустится.
+  */
+  .hero-rise > * {
+    animation: hero-rise 850ms var(--ease-out-strong) both;
+  }
+  .hero-rise > *:nth-child(2) {
+    animation-delay: 70ms;
+  }
+  .hero-rise > *:nth-child(3) {
+    animation-delay: 140ms;
+  }
+  .hero-rise > *:nth-child(4) {
+    animation-delay: 210ms;
+  }
+  .hero-rise > *:nth-child(5) {
+    animation-delay: 300ms;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Никакого движения там, где его попросили выключить. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .js .word-rise > span {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

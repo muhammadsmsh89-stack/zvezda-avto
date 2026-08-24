@@ -230,6 +230,21 @@ jobs:
           mkdir -p out/inunica-clinic
           cp -r inunica-clinic/out/. out/inunica-clinic/
 
+      - name: Install etel-clinic dependencies
+        run: npm ci
+        working-directory: ./etel-clinic
+
+      - name: Build etel-clinic (static export)
+        run: npm run build
+        working-directory: ./etel-clinic
+        env:
+          NODE_ENV: production
+
+      - name: Merge etel-clinic into Pages output
+        run: |
+          mkdir -p out/etel-clinic
+          cp -r etel-clinic/out/. out/etel-clinic/
+
       - name: Merge dnk-tsveta into Pages output (static, no build step)
         run: |
           mkdir -p out/dnk-tsveta

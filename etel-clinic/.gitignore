@@ -1,0 +1,15 @@
+/node_modules
+/.next/
+/out/
+/build
+.DS_Store
+*.pem
+.env*
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Сырьё импортёра: скачанные с etel37.ru оригиналы и HTML.
+# Восстанавливается запуском scripts/import/*, а в public/ лежат уже
+# отобранные и пережатые кадры.
+/scripts/import/raw/
+/scripts/import/assets-orig/

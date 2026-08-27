@@ -137,7 +137,7 @@ export function PhotoPlaceholder({
       <span
         className={clsx(
           "absolute left-4 top-4 text-[10px] font-semibold uppercase tracking-[0.18em] sm:left-5 sm:top-5",
-          isPaper ? "text-ink/45" : "text-background/60"
+          isPaper ? "text-foreground/45" : "text-cream/60"
         )}
         aria-hidden
       >
@@ -145,7 +145,7 @@ export function PhotoPlaceholder({
       </span>
 
       <Monogram
-        ink={isPaper}
+        ink={!isPaper}
         className="absolute right-4 top-4 h-6 w-6 opacity-40 sm:right-5 sm:top-5"
       />
 
@@ -159,11 +159,11 @@ export function PhotoPlaceholder({
           )}
           aria-hidden
         >
-          <span className={clsx("h-px flex-1", isPaper ? "bg-ink/20" : "bg-background/25")} />
+          <span className={clsx("h-px flex-1", isPaper ? "bg-foreground/20" : "bg-cream/25")} />
           <p
             className={clsx(
               "shrink-0 text-[11px] font-semibold uppercase tracking-[0.12em]",
-              isPaper ? "text-ink/70" : "text-background/75"
+              isPaper ? "text-foreground/70" : "text-cream/75"
             )}
           >
             {label}

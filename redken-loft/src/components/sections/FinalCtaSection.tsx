@@ -6,23 +6,14 @@ import { whatsappBookingLink } from "@/lib/contacts";
 
 export function FinalCtaSection() {
   return (
-    <section className="relative overflow-hidden bg-background py-20 lg:py-28">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-20 [mask-image:radial-gradient(ellipse_50%_60%_at_50%_50%,black,transparent)]" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 opacity-35 blur-[110px]"
-        style={{
-          background:
-            "radial-gradient(35% 45% at 30% 45%, var(--accent) 0%, transparent 70%), radial-gradient(30% 40% at 70% 55%, var(--violet) 0%, transparent 70%)",
-        }}
-      />
-      <Container className="relative text-center">
+    <section className="bg-noir py-20 text-cream lg:py-28">
+      <Container className="text-center">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Запись</p>
-          <h2 className="mx-auto mt-4 max-w-2xl text-pretty font-display text-3xl leading-[1.1] text-foreground sm:text-4xl lg:text-5xl">
+          <span className="mx-auto block h-px w-12 bg-accent" />
+          <h2 className="mx-auto mt-6 max-w-2xl text-pretty font-display text-3xl italic leading-[1.15] text-cream sm:text-4xl lg:text-5xl">
             {studio.tagline}
           </h2>
-          <p className="mx-auto mt-5 max-w-md text-pretty text-base leading-relaxed text-foreground/70">
+          <p className="mx-auto mt-5 max-w-md text-pretty text-base leading-relaxed text-cream/70">
             Расскажите о волосах и желаемом результате в WhatsApp — подберём стилиста
             и свободное время.
           </p>
@@ -31,7 +22,7 @@ export function FinalCtaSection() {
           <Button size="lg" href={whatsappBookingLink()}>
             {ctaLabels.primary}
           </Button>
-          <Button size="lg" variant="secondary" href="/masters">
+          <Button size="lg" variant="ink-outline" href="/masters">
             {ctaLabels.chooseMaster}
           </Button>
         </Reveal>

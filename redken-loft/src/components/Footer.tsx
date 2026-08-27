@@ -19,13 +19,13 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="bg-surface text-foreground">
+    <footer className="bg-noir text-cream">
       <Container className="py-10 lg:py-12">
         <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
           <div className="max-w-xs">
-            <Wordmark className="text-sm" />
-            <p className="mt-3 text-sm leading-relaxed text-muted">{studio.city} · {contacts.address}</p>
-            <p className="mt-3 flex items-center gap-1.5 text-sm text-foreground/80">
+            <Wordmark ink className="text-sm" />
+            <p className="mt-3 text-sm leading-relaxed text-cream-muted">{studio.city} · {contacts.address}</p>
+            <p className="mt-3 flex items-center gap-1.5 text-sm text-cream/80">
               <Star className="h-3.5 w-3.5 text-accent" />
               {rating.yandex.value} · {rating.yandex.reviewsCount} отзывов на {rating.yandex.source}
             </p>
@@ -37,7 +37,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/15 text-cream/80 transition-colors hover:border-cream hover:text-cream"
                 >
                   <s.icon className="h-3.5 w-3.5" />
                 </a>
@@ -47,11 +47,11 @@ export function Footer() {
 
           <div className="grid grid-cols-2 gap-8 sm:flex sm:gap-14">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Навигация</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cream-muted">Навигация</p>
               <ul className="mt-4 space-y-2.5">
                 {footerNavLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-foreground/80 transition-colors hover:text-foreground">
+                    <Link href={link.href} className="text-sm text-cream/80 transition-colors hover:text-cream">
                       {link.label}
                     </Link>
                   </li>
@@ -60,12 +60,12 @@ export function Footer() {
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Контакты</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cream-muted">Контакты</p>
               <ul className="mt-4 space-y-2.5">
                 {contactRows.map((row) => (
-                  <li key={row.label} className="text-sm text-foreground/80">
+                  <li key={row.label} className="text-sm text-cream/80">
                     {row.href ? (
-                      <a href={row.href} target={row.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="hover:text-foreground">
+                      <a href={row.href} target={row.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="hover:text-cream">
                         {row.value}
                       </a>
                     ) : (
@@ -77,11 +77,11 @@ export function Footer() {
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Документы</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cream-muted">Документы</p>
               <ul className="mt-4 space-y-2.5">
                 {footerDocuments.map((doc) => (
                   <li key={doc.label}>
-                    <Link href={doc.href} className="text-sm text-foreground/80 transition-colors hover:text-foreground">
+                    <Link href={doc.href} className="text-sm text-cream/80 transition-colors hover:text-cream">
                       {doc.label}
                     </Link>
                   </li>
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-border pt-5 text-xs text-muted">
+        <div className="mt-8 border-t border-cream/15 pt-5 text-xs text-cream-muted">
           {studio.name} · {studio.city}. Актуальную стоимость услуг уточняйте при записи.
         </div>
       </Container>

@@ -1,32 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  /* True near-black, glass-first surface system */
-  --background: #07070a;
-  --surface: #0d0d12;
-  --surface-2: #131319;
-  --surface-3: #1a1a22;
-  --glass: rgba(255, 255, 255, 0.035);
-  --glass-strong: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --foreground: #f5f4f7;
-  --muted: #9b98a8;
+  /* Editorial paper base — warm cream, ink type. Not another dark SaaS panel. */
+  --background: #f3ede0;
+  --surface: #fbf8f1;
+  --surface-2: #ece2cc;
+  --surface-3: #ddceac;
+  --border: rgba(23, 19, 15, 0.14);
+  --border-strong: rgba(23, 19, 15, 0.32);
+  --foreground: #19140f;
+  --muted: #6b6154;
 
-  /* Copper stays the brand accent; violet/rose join for the aurora glow */
-  --accent: #d98a52;
-  --accent-2: #b56a3a;
-  --accent-foreground: #0c0a08;
-  --violet: #8b7cf6;
-  --rose: #f0678f;
+  /* Copper stays the one brand colour — used flat, never as a rainbow gradient */
+  --accent: #b3502a;
+  --accent-2: #8c3c1c;
+  --accent-foreground: #f9f3e6;
 
-  /* Bright "paper" chapters for readability contrast (price, reviews) */
-  --paper: #efe7da;
-  --paper-2: #e2d6c1;
-  --ink: #17130d;
-  --ink-muted: #5c5346;
+  /* Noir — the dark colophon chapters that punctuate the paper page */
+  --noir: #16120e;
+  --noir-2: #201a14;
+  --cream: #f3ede0;
+  --cream-muted: #b4a993;
 
-  --error: #e8654a;
+  /* Legacy aliases kept so existing utility classes (bg-paper/text-ink) still work,
+     now pointing at the same paper/ink pairing used everywhere by default. */
+  --paper: var(--noir);
+  --paper-2: var(--noir-2);
+  --ink: var(--cream);
+  --ink-muted: var(--cream-muted);
+
+  --error: #a83a24;
 }
 
 @theme inline {
@@ -34,8 +37,6 @@
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-surface-3: var(--surface-3);
-  --color-glass: var(--glass);
-  --color-glass-strong: var(--glass-strong);
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
   --color-foreground: var(--foreground);
@@ -43,15 +44,17 @@
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
   --color-accent-foreground: var(--accent-foreground);
-  --color-violet: var(--violet);
-  --color-rose: var(--rose);
+  --color-noir: var(--noir);
+  --color-noir-2: var(--noir-2);
+  --color-cream: var(--cream);
+  --color-cream-muted: var(--cream-muted);
   --color-paper: var(--paper);
   --color-paper-2: var(--paper-2);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
   --color-error: var(--error);
   --font-sans: var(--font-sans);
-  --font-display: var(--font-sans);
+  --font-display: var(--font-display);
 }
 
 body {
@@ -61,14 +64,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans), Arial, sans-serif;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.01em;
+  font-weight: 500;
 }
 
 .font-display {
-  font-family: var(--font-sans), Arial, sans-serif;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display), Georgia, serif;
 }
 
 ::selection {
@@ -109,42 +111,29 @@ html {
 }
 
 .header-tactile {
-  background: rgba(9, 9, 12, 0.72);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(16px) saturate(140%);
+  background: rgba(243, 237, 224, 0.92);
+  border-bottom: 1px solid var(--border);
 }
 
+/* Flat, printed-card look — a thin rule and a soft lift, no glass/blur. */
 .glass-card {
-  background: var(--glass);
+  background: var(--surface);
   border: 1px solid var(--border);
-  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 2px rgba(23, 19, 15, 0.03);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .glass-card:hover {
-  background: var(--glass-strong);
   border-color: var(--border-strong);
-}
-
-.text-gradient {
-  background: linear-gradient(100deg, var(--accent) 0%, var(--rose) 55%, var(--violet) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  box-shadow: 0 10px 24px -12px rgba(23, 19, 15, 0.14);
 }
 
 .glow-accent {
-  box-shadow: 0 0 0 1px rgba(217, 138, 82, 0.4), 0 8px 30px -8px rgba(217, 138, 82, 0.55);
+  box-shadow: 0 1px 2px rgba(23, 19, 15, 0.06);
 }
 
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-}
-
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 44px 44px;
 }
 
 @keyframes marquee {
@@ -153,7 +142,7 @@ html {
 }
 
 .animate-marquee {
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

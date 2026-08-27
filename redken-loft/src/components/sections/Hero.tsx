@@ -5,123 +5,121 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { FrameReveal, EASE } from "@/components/ui/Reveal";
-import { Star, WhatsAppIcon } from "@/components/ui/Icons";
+import { Star } from "@/components/ui/Icons";
 import { studio, ctaLabels, rating } from "@/lib/site";
 import { contacts, whatsappBookingLink } from "@/lib/contacts";
+import { colorTechniques } from "@/lib/services";
 
-const trustPills = [
-  { label: `${rating.yandex.value} на Яндексе`, icon: "star" as const },
-  { label: `${rating.yandex.reviewsCount} отзывов` },
-  { label: studio.yearsNote },
-  { label: "Redken · Kevin Murphy · La Biosthetique" },
-];
-
-const bento = [
-  { id: "01", label: "Airtouch", tone: "copper" as const, subject: "portrait" as const, span: "lg:row-span-2" },
-  { id: "02", label: "Balayage", tone: "espresso" as const, subject: "detail" as const, span: "" },
-  { id: "03", label: "Shatush", tone: "charcoal" as const, subject: "portrait" as const, span: "" },
-  { id: "04", label: "Блонд", tone: "copper" as const, subject: "portrait" as const, span: "" },
-  { id: "05", label: "Стрижки", tone: "charcoal" as const, subject: "detail" as const, span: "" },
+const filmStrip = [
+  { id: "01", label: "Airtouch", tone: "copper" as const, subject: "portrait" as const, ratio: "aspect-[3/4]", grow: "lg:basis-[19%]" },
+  { id: "02", label: "Balayage", tone: "espresso" as const, subject: "wide" as const, ratio: "aspect-[4/3]", grow: "lg:basis-[26%]" },
+  { id: "03", label: "Shatush", tone: "charcoal" as const, subject: "detail" as const, ratio: "aspect-square", grow: "lg:basis-[15%]" },
+  { id: "04", label: "Блонд", tone: "copper" as const, subject: "portrait" as const, ratio: "aspect-[3/4]", grow: "lg:basis-[19%]" },
+  { id: "05", label: "Стрижки", tone: "charcoal" as const, subject: "wide" as const, ratio: "aspect-[4/3]", grow: "lg:basis-[21%]" },
 ];
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-background pt-8 sm:pt-10">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-30 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[-20%] h-[720px] w-[1100px] -translate-x-1/2 opacity-40 blur-[100px]"
-        style={{
-          background:
-            "radial-gradient(38% 45% at 25% 40%, var(--accent) 0%, transparent 70%), radial-gradient(35% 40% at 70% 25%, var(--rose) 0%, transparent 70%), radial-gradient(30% 40% at 55% 65%, var(--violet) 0%, transparent 70%)",
-        }}
-      />
-
-      <Container className="relative z-10 pb-16 pt-8 text-center sm:pb-20 sm:pt-12 lg:pt-16">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
+    <section id="top" className="relative bg-background">
+      <Container className="pb-14 pt-10 sm:pt-14 lg:pb-20 lg:pt-20">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.03] px-4 py-1.5 backdrop-blur-md"
+          className="text-xs font-semibold uppercase tracking-[0.22em] text-muted"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          <span className="text-xs font-medium uppercase tracking-[0.1em] text-foreground/75">
-            Авторская колористика · Краснодар
-          </span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
-          className="mx-auto mt-7 max-w-3xl text-pretty font-display text-[2.5rem] font-bold leading-[1.06] tracking-tight text-foreground sm:text-6xl lg:text-[4rem]"
-        >
-          Цвет и форма,
-          <br />
-          которые <span className="text-gradient">действительно</span>
-          <br />
-          вам подходят
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.24, ease: EASE }}
-          className="mx-auto mt-6 max-w-lg text-pretty text-base leading-relaxed text-muted"
-        >
-          Авторские стрижки, сложные окрашивания и профессиональный уход в центре
-          Краснодара. Сначала изучаем волосы, стиль и пожелания — затем создаём
-          индивидуальный образ.
+          Redken Loft · Краснодар · Авторская колористика
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.36, ease: EASE }}
-          className="mt-9 flex flex-wrap items-center justify-center gap-3"
-        >
-          <Button size="lg" href={whatsappBookingLink()}>
-            {ctaLabels.primary}
-          </Button>
-          <Button size="lg" variant="secondary" href="/works">
-            {ctaLabels.works}
-          </Button>
-          <a
-            href={contacts.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={ctaLabels.whatsapp}
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border-strong text-foreground transition-colors hover:border-accent hover:text-accent"
+        <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-10">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.08, ease: EASE }}
+            className="max-w-3xl text-pretty font-display text-[2.6rem] font-medium leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-[4.4rem]"
           >
-            <WhatsAppIcon className="h-5 w-5" />
-          </a>
-        </motion.div>
+            Цвет и форма,
+            <br />
+            которые <em className="font-medium italic text-accent">действительно</em>
+            <br />
+            вам подходят
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
+            className="flex items-end gap-3 lg:pb-2"
+          >
+            <span className="font-display text-6xl leading-none text-foreground sm:text-7xl">{rating.yandex.value}</span>
+            <div className="pb-1">
+              <div className="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 text-accent" />
+                ))}
+              </div>
+              <p className="mt-1 text-[0.7rem] uppercase tracking-[0.08em] text-muted">
+                {rating.yandex.reviewsCount} отзывов
+                <br />
+                на Яндексе
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-8 border-t border-border pt-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: EASE }}
+            className="max-w-md text-pretty text-base leading-relaxed text-foreground/75"
+          >
+            Авторские стрижки, сложные окрашивания и профессиональный уход в центре
+            Краснодара. Сначала изучаем волосы, стиль и пожелания — затем создаём
+            индивидуальный образ.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.38, ease: EASE }}
+            className="flex flex-col gap-6 lg:items-end"
+          >
+            <div className="flex flex-wrap items-center gap-3 lg:justify-end">
+              <Button size="lg" href={whatsappBookingLink()}>
+                {ctaLabels.primary}
+              </Button>
+              <Button size="lg" variant="secondary" href="/works">
+                {ctaLabels.works}
+              </Button>
+            </div>
+            <p className="text-xs uppercase tracking-[0.1em] text-muted lg:text-right">
+              {colorTechniques.map((t) => t.name).join(" · ")}
+            </p>
+          </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-2.5"
+          className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-border pt-5 text-xs text-muted"
         >
-          {trustPills.map((p) => (
-            <span
-              key={p.label}
-              className="glass-card inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium text-foreground/80 transition-colors"
-            >
-              {p.icon === "star" && <Star className="h-3 w-3 text-accent" />}
-              {p.label}
-            </span>
-          ))}
+          <span>{studio.yearsNote}</span>
+          <span className="h-1 w-1 rounded-full bg-border-strong" />
+          <span>Redken · Kevin Murphy · La Biosthetique</span>
+          <span className="h-1 w-1 rounded-full bg-border-strong" />
+          <span>{contacts.city}, {contacts.address}</span>
         </motion.div>
       </Container>
 
-      <Container className="relative z-10 pb-20 lg:pb-28">
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 lg:auto-rows-[260px]">
-          {bento.map((item, i) => (
+      <div className="mt-2 overflow-x-auto pb-2 lg:overflow-visible">
+        <div className="flex w-max gap-3 px-5 sm:gap-4 sm:px-8 lg:w-full lg:px-12">
+          {filmStrip.map((item, i) => (
             <FrameReveal
               key={item.id}
-              delay={0.1 + i * 0.08}
-              className={`aspect-square overflow-hidden rounded-2xl border border-border lg:aspect-auto lg:h-full ${item.span}`}
+              delay={0.1 + i * 0.07}
+              className={`w-[62vw] shrink-0 overflow-hidden border border-border sm:w-[38vw] lg:w-auto lg:shrink lg:grow ${item.grow} ${item.ratio}`}
             >
               <PhotoPlaceholder
                 shotNumber={item.id}
@@ -135,7 +133,7 @@ export function Hero() {
             </FrameReveal>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

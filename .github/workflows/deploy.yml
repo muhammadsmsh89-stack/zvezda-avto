@@ -245,6 +245,21 @@ jobs:
           mkdir -p out/etel-clinic
           cp -r etel-clinic/out/. out/etel-clinic/
 
+      - name: Install redken-loft dependencies
+        run: npm ci
+        working-directory: ./redken-loft
+
+      - name: Build redken-loft (static export)
+        run: npm run build
+        working-directory: ./redken-loft
+        env:
+          NODE_ENV: production
+
+      - name: Merge redken-loft into Pages output
+        run: |
+          mkdir -p out/redken-loft
+          cp -r redken-loft/out/. out/redken-loft/
+
       - name: Merge dnk-tsveta into Pages output (static, no build step)
         run: |
           mkdir -p out/dnk-tsveta

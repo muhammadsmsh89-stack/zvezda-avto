@@ -1,13 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
-import { FrameReveal, EASE } from "@/components/ui/Reveal";
-import { Star } from "@/components/ui/Icons";
-import { studio, ctaLabels, rating } from "@/lib/site";
-import { contacts, whatsappBookingLink } from "@/lib/contacts";
+import { FrameReveal } from "@/components/ui/Reveal";
+import { studio, ctaLabels } from "@/lib/site";
+import { whatsappBookingLink } from "@/lib/contacts";
 import { colorTechniques } from "@/lib/services";
 
 const filmStrip = [
@@ -20,101 +17,73 @@ const filmStrip = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative bg-background">
-      <Container className="pb-14 pt-10 sm:pt-14 lg:pb-20 lg:pt-20">
-        <motion.p
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: EASE }}
-          className="text-xs font-semibold uppercase tracking-[0.22em] text-muted"
-        >
-          Redken Loft · Краснодар · Авторская колористика
-        </motion.p>
+    <>
+      <section
+        id="hero"
+        className="relative mx-auto w-full overflow-hidden px-6 pt-32 text-center
+        min-h-[calc(100vh-64px)] md:px-8
+        bg-[linear-gradient(to_bottom,var(--surface),var(--background)_50%,var(--surface-3)_92%)]"
+      >
+        {/* Grid background */}
+        <div
+          aria-hidden
+          className="absolute -z-10 inset-0 h-[640px] w-full opacity-70
+          bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)]
+          bg-[size:6rem_5rem]
+          [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_65%,transparent_105%)]"
+        />
 
-        <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.08, ease: EASE }}
-            className="max-w-3xl text-pretty font-display text-[2.6rem] font-medium leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-[4.4rem]"
-          >
-            Цвет и форма,
-            <br />
-            которые <em className="font-medium italic text-accent">действительно</em>
-            <br />
-            вам подходят
-          </motion.h1>
+        {/* Radial accent */}
+        <div
+          aria-hidden
+          className="animate-fade-up absolute left-1/2 top-[calc(100%-120px)] -z-10 -translate-x-1/2
+          h-[520px] w-[130%] rounded-[100%]
+          bg-[radial-gradient(closest-side,var(--background)_78%,var(--accent)_100%)] opacity-[0.14]
+          md:h-[600px] lg:h-[720px]"
+        />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
-            className="flex items-end gap-3 lg:pb-2"
+        <a href="#works" className="group inline-block">
+          <span
+            className="animate-fade-in mx-auto flex w-fit items-center justify-center gap-1 rounded-full
+            border-2 border-border bg-surface/70 px-5 py-2 text-sm uppercase tracking-tight text-muted"
           >
-            <span className="font-display text-6xl leading-none text-foreground sm:text-7xl">{rating.yandex.value}</span>
-            <div className="pb-1">
-              <div className="flex items-center gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-3 w-3 text-accent" />
-                ))}
-              </div>
-              <p className="mt-1 text-[0.7rem] uppercase tracking-[0.08em] text-muted">
-                {rating.yandex.reviewsCount} отзывов
-                <br />
-                на Яндексе
-              </p>
-            </div>
-          </motion.div>
+            {studio.name} · {studio.city}
+            <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </a>
+
+        <h1 className="animate-fade-in mx-auto mt-8 max-w-4xl text-balance font-display text-5xl font-medium leading-[1.04] tracking-tight text-foreground opacity-0 [animation-delay:0.1s] sm:text-6xl md:text-7xl lg:text-8xl">
+          Цвет и форма,
+          <br />
+          которые <em className="italic text-accent">действительно</em>
+          <br />
+          вам подходят
+        </h1>
+
+        <p className="animate-fade-in mx-auto mb-10 mt-6 max-w-xl text-balance text-lg tracking-tight text-muted opacity-0 [animation-delay:0.2s] md:text-xl">
+          Авторские стрижки, сложные окрашивания и профессиональный уход в
+          центре Краснодара. Сначала изучаем волосы и пожелания — затем
+          создаём индивидуальный образ.
+        </p>
+
+        <div className="animate-fade-in flex flex-col items-center gap-4 opacity-0 [animation-delay:0.3s]">
+          <Button size="lg" href={whatsappBookingLink()} className="w-fit text-lg">
+            {ctaLabels.primary}
+          </Button>
+          <p className="text-xs uppercase tracking-[0.14em] text-muted">
+            {colorTechniques.map((t) => t.name).join(" · ")}
+          </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 border-t border-border pt-8 lg:grid-cols-[1fr_1fr] lg:items-start">
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: EASE }}
-            className="max-w-md text-pretty text-base leading-relaxed text-foreground/75"
-          >
-            Авторские стрижки, сложные окрашивания и профессиональный уход в центре
-            Краснодара. Сначала изучаем волосы, стиль и пожелания — затем создаём
-            индивидуальный образ.
-          </motion.p>
+        <div
+          aria-hidden
+          className="animate-fade-up relative mt-16 h-24 opacity-0
+          after:absolute after:inset-0 after:[background:linear-gradient(to_top,var(--background)_15%,transparent)]"
+        />
+      </section>
 
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.38, ease: EASE }}
-            className="flex flex-col gap-6 lg:items-end"
-          >
-            <div className="flex flex-wrap items-center gap-3 lg:justify-end">
-              <Button size="lg" href={whatsappBookingLink()}>
-                {ctaLabels.primary}
-              </Button>
-              <Button size="lg" variant="secondary" href="/works">
-                {ctaLabels.works}
-              </Button>
-            </div>
-            <p className="text-xs uppercase tracking-[0.1em] text-muted lg:text-right">
-              {colorTechniques.map((t) => t.name).join(" · ")}
-            </p>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-border pt-5 text-xs text-muted"
-        >
-          <span>{studio.yearsNote}</span>
-          <span className="h-1 w-1 rounded-full bg-border-strong" />
-          <span>Redken · Kevin Murphy · La Biosthetique</span>
-          <span className="h-1 w-1 rounded-full bg-border-strong" />
-          <span>{contacts.city}, {contacts.address}</span>
-        </motion.div>
-      </Container>
-
-      <div className="mt-2 overflow-x-auto pb-2 lg:overflow-visible">
-        <div className="flex w-max gap-3 px-5 sm:gap-4 sm:px-8 lg:w-full lg:px-12">
+      <Container className="pb-16 lg:pb-24">
+        <div className="flex gap-3 overflow-x-auto pb-2 sm:gap-4 lg:overflow-visible">
           {filmStrip.map((item, i) => (
             <FrameReveal
               key={item.id}
@@ -133,7 +102,7 @@ export function Hero() {
             </FrameReveal>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </>
   );
 }

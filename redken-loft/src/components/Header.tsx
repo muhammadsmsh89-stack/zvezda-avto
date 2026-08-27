@@ -30,8 +30,8 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "header-tactile" : "border-b border-transparent bg-transparent"
+      className={`sticky top-0 z-50 header-tactile transition-shadow duration-300 ${
+        scrolled ? "shadow-[0_1px_0_rgba(23,19,15,0.06)]" : ""
       }`}
     >
       <div className="mx-auto flex max-w-[80rem] items-center justify-between px-5 py-4 sm:px-8 lg:px-12">

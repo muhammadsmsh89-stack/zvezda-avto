@@ -1,9 +1,12 @@
-import { ChevronRight } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { FrameReveal } from "@/components/ui/Reveal";
-import { studio, ctaLabels } from "@/lib/site";
+import { WordsPullUpMultiStyle } from "@/components/ui/WordsPullUp";
+import { ctaLabels } from "@/lib/site";
 import { whatsappBookingLink } from "@/lib/contacts";
 import { colorTechniques } from "@/lib/services";
 
@@ -18,71 +21,74 @@ const filmStrip = [
 export function Hero() {
   return (
     <>
-      <section
-        id="hero"
-        className="relative mx-auto w-full overflow-hidden px-6 pt-32 text-center
-        min-h-[calc(100vh-64px)] md:px-8
-        bg-[linear-gradient(to_bottom,var(--surface),var(--background)_50%,var(--surface-3)_92%)]"
-      >
-        {/* Grid background */}
-        <div
-          aria-hidden
-          className="absolute -z-10 inset-0 h-[640px] w-full opacity-70
-          bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)]
-          bg-[size:6rem_5rem]
-          [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_65%,transparent_105%)]"
-        />
+      <section className="px-3 pt-3 sm:px-5 sm:pt-5">
+        <div className="relative h-[88vh] min-h-[560px] w-full overflow-hidden rounded-2xl bg-noir md:rounded-[2rem]">
+          {/* Background photo — a real interior/portrait shot replaces this once the salon supplies one */}
+          <PhotoPlaceholder
+            shotNumber="HERO"
+            label="Redken Loft"
+            description="Интерьер студии Redken Loft, широкий кадр во весь экран"
+            tone="espresso"
+            subject="wide"
+            aspectClassName="h-full"
+            className="absolute inset-0"
+            hideCaption
+          />
 
-        {/* Radial accent */}
-        <div
-          aria-hidden
-          className="animate-fade-up absolute left-1/2 top-[calc(100%-120px)] -z-10 -translate-x-1/2
-          h-[520px] w-[130%] rounded-[100%]
-          bg-[radial-gradient(closest-side,var(--background)_78%,var(--accent)_100%)] opacity-[0.14]
-          md:h-[600px] lg:h-[720px]"
-        />
+          {/* Legibility gradient for the bottom-anchored content */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-noir/10 via-transparent to-noir/85" />
 
-        <a href="#works" className="group inline-block">
-          <span
-            className="animate-fade-in mx-auto flex w-fit items-center justify-center gap-1 rounded-full
-            border-2 border-border bg-surface/70 px-5 py-2 text-sm uppercase tracking-tight text-muted"
-          >
-            {studio.name} · {studio.city}
-            <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </span>
-        </a>
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-6 sm:px-8 md:px-10 md:pb-8">
+            <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-4">
+              <div className="lg:col-span-8">
+                <h1
+                  className="font-sans font-bold uppercase leading-[0.86] tracking-[-0.03em] text-[15vw] sm:text-[13vw] md:text-[11vw] lg:text-[8.4vw]"
+                >
+                  <WordsPullUpMultiStyle
+                    segments={[
+                      { text: "Redken", className: "text-cream" },
+                      { text: "Loft", className: "text-accent" },
+                    ]}
+                  />
+                </h1>
+              </div>
 
-        <h1 className="animate-fade-in mx-auto mt-8 max-w-4xl text-balance font-display text-5xl font-medium leading-[1.04] tracking-tight text-foreground opacity-0 [animation-delay:0.1s] sm:text-6xl md:text-7xl lg:text-8xl">
-          Цвет и форма,
-          <br />
-          которые <em className="italic text-accent">действительно</em>
-          <br />
-          вам подходят
-        </h1>
+              <div className="flex flex-col gap-5 pb-2 lg:col-span-4 lg:pb-4">
+                <motion.p
+                  initial={{ y: 16, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-sm leading-[1.35] text-cream/75 sm:text-base"
+                >
+                  Команда стилистов Краснодара, объединённая любовью к цвету и форме —
+                  авторские окрашивания, стрижки и уход, подобранные под вас.
+                </motion.p>
 
-        <p className="animate-fade-in mx-auto mb-10 mt-6 max-w-xl text-balance text-lg tracking-tight text-muted opacity-0 [animation-delay:0.2s] md:text-xl">
-          Авторские стрижки, сложные окрашивания и профессиональный уход в
-          центре Краснодара. Сначала изучаем волосы и пожелания — затем
-          создаём индивидуальный образ.
-        </p>
+                <motion.a
+                  href={whatsappBookingLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ y: 16, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                  className="group inline-flex w-fit items-center gap-2 self-start rounded-full bg-accent py-1 pl-5 pr-1 text-sm font-medium text-accent-foreground transition-all hover:gap-3 sm:text-base"
+                >
+                  {ctaLabels.primary}
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-noir transition-transform group-hover:scale-110 sm:h-10 sm:w-10">
+                    <ArrowRight className="h-4 w-4 text-cream" />
+                  </span>
+                </motion.a>
 
-        <div className="animate-fade-in flex flex-col items-center gap-4 opacity-0 [animation-delay:0.3s]">
-          <Button size="lg" href={whatsappBookingLink()} className="w-fit text-lg">
-            {ctaLabels.primary}
-          </Button>
-          <p className="text-xs uppercase tracking-[0.14em] text-muted">
-            {colorTechniques.map((t) => t.name).join(" · ")}
-          </p>
+                <p className="text-[0.68rem] uppercase tracking-[0.12em] text-cream-muted">
+                  {colorTechniques.map((t) => t.name).join(" · ")}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div
-          aria-hidden
-          className="animate-fade-up relative mt-16 h-24 opacity-0
-          after:absolute after:inset-0 after:[background:linear-gradient(to_top,var(--background)_15%,transparent)]"
-        />
       </section>
 
-      <Container className="pb-16 lg:pb-24">
+      <Container className="pb-16 pt-8 lg:pb-24 lg:pt-10">
         <div className="flex gap-3 overflow-x-auto pb-2 sm:gap-4 lg:overflow-visible">
           {filmStrip.map((item, i) => (
             <FrameReveal

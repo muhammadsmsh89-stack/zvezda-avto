@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { navLinks, mobileNavLinks, ctaLabels } from "@/lib/site";
 import { contacts, whatsappBookingLink } from "@/lib/contacts";
@@ -13,6 +14,7 @@ import { Menu, Close, InstagramIcon, VkIcon } from "@/components/ui/Icons";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -42,16 +44,28 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Основная навигация">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[0.78rem] font-medium uppercase tracking-[0.1em] text-foreground/65 transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav
+          className="gloss-pill hidden items-center gap-1 rounded-full px-2 py-1.5 lg:flex"
+          aria-label="Основная навигация"
+        >
+          {navLinks.map((link) => {
+            const isActive =
+              !link.href.includes("#") &&
+              pathname?.replace(/\/$/, "") === link.href.replace(/\/$/, "");
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`rounded-full px-4 py-2 text-[0.78rem] tracking-[0.02em] transition-colors ${
+                  isActive
+                    ? "font-semibold text-foreground"
+                    : "font-medium text-foreground/55 hover:text-foreground/80"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-6 lg:flex">

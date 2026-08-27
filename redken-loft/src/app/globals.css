@@ -1,20 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  /* Loft base — warm near-black concrete, not pure black */
-  --background: #0c0b09;
-  --surface: #151310;
-  --surface-2: #1e1a15;
-  --surface-3: #2a241c;
-  --border: rgba(243, 236, 224, 0.1);
-  --border-strong: rgba(243, 236, 224, 0.22);
-  --foreground: #f3ece0;
-  --muted: #a89a89;
+  /* True near-black, glass-first surface system */
+  --background: #07070a;
+  --surface: #0d0d12;
+  --surface-2: #131319;
+  --surface-3: #1a1a22;
+  --glass: rgba(255, 255, 255, 0.035);
+  --glass-strong: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --foreground: #f5f4f7;
+  --muted: #9b98a8;
 
-  /* Single accent — copper, echoes pigment/colouring craft */
-  --accent: #c17a4a;
-  --accent-2: #9c5f36;
-  --accent-foreground: #17130d;
+  /* Copper stays the brand accent; violet/rose join for the aurora glow */
+  --accent: #d98a52;
+  --accent-2: #b56a3a;
+  --accent-foreground: #0c0a08;
+  --violet: #8b7cf6;
+  --rose: #f0678f;
 
   /* Bright "paper" chapters for readability contrast (price, reviews) */
   --paper: #efe7da;
@@ -22,7 +26,7 @@
   --ink: #17130d;
   --ink-muted: #5c5346;
 
-  --error: #c65a3f;
+  --error: #e8654a;
 }
 
 @theme inline {
@@ -30,6 +34,8 @@
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-surface-3: var(--surface-3);
+  --color-glass: var(--glass);
+  --color-glass-strong: var(--glass-strong);
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
   --color-foreground: var(--foreground);
@@ -37,13 +43,15 @@
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
   --color-accent-foreground: var(--accent-foreground);
+  --color-violet: var(--violet);
+  --color-rose: var(--rose);
   --color-paper: var(--paper);
   --color-paper-2: var(--paper-2);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
   --color-error: var(--error);
   --font-sans: var(--font-sans);
-  --font-display: var(--font-display);
+  --font-display: var(--font-sans);
 }
 
 body {
@@ -53,12 +61,14 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), Arial, sans-serif;
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans), Arial, sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 .font-display {
-  font-family: var(--font-display), Arial, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 ::selection {
@@ -99,9 +109,31 @@ html {
 }
 
 .header-tactile {
-  background: rgba(12, 11, 9, 0.86);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(10px);
+  background: rgba(9, 9, 12, 0.72);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(140%);
+}
+
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+}
+
+.glass-card:hover {
+  background: var(--glass-strong);
+  border-color: var(--border-strong);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--accent) 0%, var(--rose) 55%, var(--violet) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-accent {
+  box-shadow: 0 0 0 1px rgba(217, 138, 82, 0.4), 0 8px 30px -8px rgba(217, 138, 82, 0.55);
 }
 
 .bg-noise {
@@ -110,9 +142,18 @@ html {
 
 .bg-grid {
   background-image:
-    linear-gradient(rgba(243, 236, 224, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(243, 236, 224, 0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

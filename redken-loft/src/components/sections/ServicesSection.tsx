@@ -15,9 +15,9 @@ export function ServicesSection() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
           {serviceGroups.map((group, i) => (
-            <Reveal key={group.id} delay={i * 0.07} className="bg-background p-8 lg:p-10">
+            <Reveal key={group.id} delay={i * 0.07} className="glass-card rounded-3xl p-8 transition-colors lg:p-10">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
                 {String(i + 1).padStart(2, "0")}
               </p>

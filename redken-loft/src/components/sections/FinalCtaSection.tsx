@@ -6,11 +6,15 @@ import { whatsappBookingLink } from "@/lib/contacts";
 
 export function FinalCtaSection() {
   return (
-    <section className="relative overflow-hidden bg-surface py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-background py-20 lg:py-28">
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-20 [mask-image:radial-gradient(ellipse_50%_60%_at_50%_50%,black,transparent)]" />
       <div
         aria-hidden
-        className="pointer-events-none absolute right-[-10%] top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full opacity-25 blur-[110px]"
-        style={{ background: "radial-gradient(circle, var(--accent) 0%, transparent 70%)" }}
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 opacity-35 blur-[110px]"
+        style={{
+          background:
+            "radial-gradient(35% 45% at 30% 45%, var(--accent) 0%, transparent 70%), radial-gradient(30% 40% at 70% 55%, var(--violet) 0%, transparent 70%)",
+        }}
       />
       <Container className="relative text-center">
         <Reveal>

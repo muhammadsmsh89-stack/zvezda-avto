@@ -26,7 +26,7 @@ export function ReviewsSection() {
 
         <div className="mt-12 grid gap-3 sm:grid-cols-4">
           {reviewCategories.map((cat, i) => (
-            <Reveal key={cat.label} delay={i * 0.06} className="rounded-2xl border border-border bg-surface p-6">
+            <Reveal key={cat.label} delay={i * 0.06} className="glass-card rounded-2xl p-6 transition-colors">
               <p className="font-display text-4xl text-foreground">{cat.value}%</p>
               <p className="mt-2 text-sm text-muted">{cat.label}</p>
             </Reveal>
@@ -35,7 +35,7 @@ export function ReviewsSection() {
 
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
           {reviewThemes.map((r, i) => (
-            <Reveal key={r.title} delay={0.1 + i * 0.06} className="rounded-2xl border border-border bg-surface p-7">
+            <Reveal key={r.title} delay={0.1 + i * 0.06} className="glass-card rounded-2xl p-7 transition-colors">
               <span className="rounded-full border border-border-strong px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-accent">
                 {r.tag}
               </span>

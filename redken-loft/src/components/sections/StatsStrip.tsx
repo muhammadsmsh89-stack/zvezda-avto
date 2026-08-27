@@ -7,8 +7,9 @@ import { contacts } from "@/lib/contacts";
 
 export function StatsStrip() {
   return (
-    <section className="border-y border-border bg-surface">
-      <Container className="flex flex-col gap-8 py-10 lg:flex-row lg:items-center lg:justify-between lg:py-12">
+    <section className="pb-6">
+      <Container>
+        <div className="glass-card flex flex-col gap-8 rounded-3xl px-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-12">
         <Reveal className="flex flex-wrap items-baseline gap-x-8 gap-y-4">
           <div className="flex items-baseline gap-3">
             <span className="font-display text-6xl leading-none text-foreground sm:text-7xl">{rating.yandex.value}</span>
@@ -47,6 +48,7 @@ export function StatsStrip() {
           </span>
           <span className="text-xs text-muted">данные проверены {formatDate(rating.verifiedAt)}</span>
         </Reveal>
+        </div>
       </Container>
     </section>
   );

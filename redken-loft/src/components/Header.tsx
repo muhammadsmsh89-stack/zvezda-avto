@@ -29,58 +29,50 @@ export function Header() {
   }, [open]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "header-tactile" : "bg-transparent"
-      }`}
-    >
+    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
       <div
-        className={`mx-auto flex max-w-[85rem] items-center justify-between px-5 transition-all duration-300 sm:px-8 lg:px-16 ${
-          scrolled ? "py-3.5" : "py-5"
+        className={`mx-auto flex max-w-[74rem] items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 sm:px-5 ${
+          scrolled ? "header-tactile shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6)]" : "border border-transparent bg-transparent"
         }`}
       >
-        <Link href="/" className="group flex items-center gap-3">
-          <Monogram className="h-9 w-9 transition-transform duration-300 group-hover:scale-105" />
+        <Link href="/" className="group flex items-center gap-2.5">
+          <Monogram className="h-8 w-8 transition-transform duration-300 group-hover:scale-105" />
           <span className="hidden flex-col leading-[1.05] sm:flex">
-            <span className="text-[0.9rem] font-semibold uppercase tracking-[0.1em] text-foreground">
-              Redken
-            </span>
-            <span className="text-[0.9rem] font-semibold uppercase tracking-[0.1em] text-accent">
-              Loft
+            <span className="text-[0.85rem] font-bold uppercase tracking-[0.06em] text-foreground">
+              Redken <span className="text-accent">Loft</span>
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Основная навигация">
+        <nav className="hidden items-center gap-1 rounded-full border border-border bg-white/[0.02] p-1 lg:flex" aria-label="Основная навигация">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="group relative py-1 text-sm text-foreground/75 transition-colors hover:text-foreground"
+              className="rounded-full px-4 py-2 text-sm text-foreground/70 transition-colors hover:bg-white/[0.06] hover:text-foreground"
             >
               {link.label}
-              <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-accent transition-transform duration-300 ease-out group-hover:scale-x-100" />
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a
             href={contacts.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Написать в WhatsApp"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-foreground"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-foreground"
           >
-            <WhatsAppIcon className="h-4.5 w-4.5" />
+            <WhatsAppIcon className="h-4 w-4" />
           </a>
-          <Button href={whatsappBookingLink()}>{ctaLabels.primary}</Button>
+          <Button size="md" href={whatsappBookingLink()}>{ctaLabels.primary}</Button>
         </div>
 
         <button
           aria-label="Открыть меню"
           onClick={() => setOpen(true)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground lg:hidden"
         >
           <Menu className="h-4.5 w-4.5" />
         </button>
@@ -98,7 +90,7 @@ export function Header() {
             <div className="flex items-center justify-between py-5">
               <span className="flex items-center gap-3">
                 <Monogram className="h-9 w-9" />
-                <span className="text-sm font-semibold uppercase tracking-[0.1em] text-foreground">
+                <span className="text-sm font-bold uppercase tracking-[0.08em] text-foreground">
                   Redken Loft
                 </span>
               </span>
@@ -123,7 +115,7 @@ export function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block py-4 font-display text-2xl text-foreground/90 transition-colors hover:text-accent"
+                    className="block py-4 font-display text-2xl font-bold text-foreground/90 transition-colors hover:text-accent"
                   >
                     {link.label}
                   </Link>

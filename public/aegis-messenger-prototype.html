@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>Aegis — Private Messenger</title>
+  <style>
+    :root{
+      --bg:#080b12;
+      --panel:#0f1420;
+      --panel-2:#131a28;
+      --panel-3:#171f2f;
+      --line:rgba(255,255,255,.075);
+      --text:#f5f7fb;
+      --muted:#8f9bb0;
+      --soft:#b8c1d2;
+      --accent:#8b7cff;
+      --accent-2:#42d4ff;
+      --success:#45e3a6;
+      --danger:#ff6b7b;
+      --shadow:0 30px 80px rgba(0,0,0,.35);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);overflow:hidden}
+    button,input{font:inherit}
+    button{color:inherit}
+    ::selection{background:rgba(139,124,255,.35)}
+
+    body:before{
+      content:"";
+      position:fixed; inset:-35vh -20vw auto auto;
+      width:70vw; height:70vw; border-radius:50%;
+      background:radial-gradient(circle,rgba(139,124,255,.16),transparent 66%);
+      pointer-events:none;
+    }
+
+    body:after{
+      content:"";
+      position:fixed; inset:auto auto -45vh -25vw;
+      width:75vw; height:75vw; border-radius:50%;
+      background:radial-gradient(circle,rgba(66,212,255,.10),transparent 66%);
+      pointer-events:none;
+    }
+
+    .app{
+      height:100dvh;
+      display:grid;
+      grid-template-columns:88px minmax(300px,360px) 1fr;
+      background:linear-gradient(135deg,rgba(255,255,255,.018),transparent 30%);
+      position:relative;
+      z-index:1;
+    }
+
+    .rail{
+      border-right:1px solid var(--line);
+      background:rgba(8,11,18,.76);
+      backdrop-filter:blur(22px);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:20px 12px max(20px,env(safe-area-inset-bottom));
+      gap:14px;
+    }
+
+    .logo{
+      width:50px;height:50px;border-radius:17px;
+      display:grid;place-items:center;
+      background:
+        linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.04)),
+        linear-gradient(135deg,var(--accent),#6356ff 55%,#18c6f6);
+      box-shadow:0 16px 35px rgba(99,86,255,.28), inset 0 1px 0 rgba(255,255,255,.22);
+      margin-bottom:14px;
+    }
+    .logo svg{width:25px;height:25px}
+
+    .icon-btn{
+      width:48px;height:48px;border-radius:16px;border:1px solid transparent;
+      background:transparent;display:grid;place-items:center;cursor:pointer;
+      color:#8794aa;transition:.18s ease;
+    }
+    .icon-btn:hover{background:rgba(255,255,255,.055);color:#fff;border-color:var(--line);transform:translateY(-1px)}
+    .icon-btn.active{background:linear-gradient(145deg,rgba(139,124,255,.2),rgba(66,212,255,.09));color:#fff;border-color:rgba(139,124,255,.23)}
+    .icon-btn svg{width:22px;height:22px}
+    .rail-spacer{flex:1}
+
+    .sidebar{
+      min-width:0;
+      background:rgba(15,20,32,.84);
+      border-right:1px solid var(--line);
+      backdrop-filter:blur(26px);
+      display:flex;flex-direction:column;
+    }
+
+    .side-head{padding:24px 20px 16px}
+    .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6f7d94;font-weight:800}
+    .title-row{display:flex;align-items:center;justify-content:space-between;margin:7px 0 18px}
+    .title-row h1{font-size:27px;letter-spacing:-.04em;margin:0;font-weight:760}
+    .new-chat{
+      width:38px;height:38px;border-radius:13px;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);cursor:pointer;display:grid;place-items:center;
+      transition:.18s ease;
+    }
+    .new-chat:hover{background:rgba(139,124,255,.15);border-color:rgba(139,124,255,.28)}
+    .new-chat svg{width:18px}
+
+    .search{
+      height:46px;border:1px solid var(--line);border-radius:15px;background:rgba(7,10,16,.5);
+      display:flex;align-items:center;padding:0 13px;gap:9px;
+    }
+    .search svg{width:18px;color:#6f7d94;flex:0 0 auto}
+    .search input{width:100%;border:0;outline:0;background:transparent;color:#fff;font-size:14px}
+    .search input::placeholder{color:#667388}
+
+    .section-label{padding:8px 20px 10px;color:#647188;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .chat-list{overflow:auto;padding:0 10px 16px}
+    .chat-list::-webkit-scrollbar,.messages::-webkit-scrollbar{width:8px}
+    .chat-list::-webkit-scrollbar-thumb,.messages::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:20px}
+
+    .contact{
+      width:100%;border:1px solid transparent;background:transparent;color:inherit;
+      padding:12px 10px;border-radius:18px;display:grid;grid-template-columns:48px 1fr auto;
+      gap:11px;text-align:left;cursor:pointer;transition:.18s ease;
+    }
+    .contact:hover{background:rgba(255,255,255,.035)}
+    .contact.active{background:linear-gradient(110deg,rgba(139,124,255,.14),rgba(66,212,255,.045));border-color:rgba(139,124,255,.16)}
+    .avatar{
+      width:48px;height:48px;border-radius:17px;display:grid;place-items:center;font-weight:800;
+      letter-spacing:-.02em;position:relative;overflow:hidden;
+      background:linear-gradient(135deg,#252d43,#141a27);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .avatar:after{
+      content:"";position:absolute;inset:0;background:radial-gradient(circle at 25% 15%,rgba(255,255,255,.2),transparent 38%);
+    }
+    .online-dot{
+      width:12px;height:12px;border-radius:50%;background:var(--success);border:3px solid var(--panel);
+      position:absolute;right:-1px;bottom:-1px;z-index:2;
+    }
+    .c-main{min-width:0;padding-top:2px}
+    .c-top{display:flex;gap:8px;align-items:center}
+    .c-name{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .verified{
+      width:15px;height:15px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;flex:0 0 auto;
+    }
+    .verified svg{width:9px}
+    .c-preview{font-size:12px;color:#7f8ca2;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .c-meta{text-align:right;padding-top:3px}
+    .c-time{font-size:10px;color:#647188}
+    .badge{margin-top:8px;margin-left:auto;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--accent);font-size:10px;display:grid;place-items:center;font-weight:800}
+
+    .main{
+      min-width:0;display:flex;flex-direction:column;position:relative;
+      background:
+        radial-gradient(circle at 74% 22%,rgba(139,124,255,.065),transparent 26%),
+        radial-gradient(circle at 26% 78%,rgba(66,212,255,.045),transparent 25%),
+        #0a0e16;
+    }
+
+    .chat-head{
+      height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;
+      padding:0 22px;gap:14px;background:rgba(10,14,22,.68);backdrop-filter:blur(20px);
+      z-index:4;
+    }
+    .back{display:none}
+    .chat-head .avatar{width:44px;height:44px;border-radius:15px}
+    .head-info{min-width:0}
+    .head-name{font-weight:760;letter-spacing:-.01em;display:flex;align-items:center;gap:7px}
+    .head-status{color:var(--success);font-size:12px;margin-top:4px}
+    .head-actions{margin-left:auto;display:flex;gap:5px}
+    .head-actions .icon-btn{width:40px;height:40px;border-radius:13px}
+
+    .secure-strip{
+      align-self:center;margin:14px 0 0;padding:7px 12px;border:1px solid rgba(69,227,166,.15);
+      background:rgba(69,227,166,.055);color:#7debbd;border-radius:999px;font-size:11px;
+      display:flex;gap:7px;align-items:center;
+    }
+    .secure-strip svg{width:14px}
+
+    .messages{
+      flex:1;overflow:auto;padding:22px clamp(18px,4vw,56px) 26px;scroll-behavior:smooth;
+      display:flex;flex-direction:column;gap:9px;
+    }
+
+    .date-pill{
+      align-self:center;color:#65738a;font-size:10px;text-transform:uppercase;letter-spacing:.12em;
+      background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:999px;padding:6px 9px;margin:8px 0 10px;
+    }
+    .message-row{display:flex;max-width:min(72%,660px);gap:8px;align-items:flex-end}
+    .message-row.me{align-self:flex-end}
+    .message-row.them{align-self:flex-start}
+    .bubble{
+      padding:11px 13px 9px;border-radius:18px;box-shadow:0 10px 26px rgba(0,0,0,.11);
+      line-height:1.42;font-size:14px;border:1px solid var(--line);word-wrap:break-word;
+    }
+    .them .bubble{background:rgba(20,27,41,.93);border-bottom-left-radius:6px}
+    .me .bubble{
+      background:
+        linear-gradient(145deg,rgba(139,124,255,.33),rgba(78,87,180,.28)),
+        rgba(23,27,48,.98);
+      border-color:rgba(139,124,255,.18);border-bottom-right-radius:6px;
+    }
+    .bubble-meta{display:flex;gap:5px;justify-content:flex-end;align-items:center;color:#8490a5;font-size:9px;margin-top:5px}
+    .ticks{color:#74e2ff}
+
+    .composer-wrap{
+      padding:13px clamp(14px,3vw,30px) max(16px,env(safe-area-inset-bottom));
+      background:linear-gradient(180deg,transparent,rgba(10,14,22,.92) 28%);
+    }
+    .composer{
+      min-height:58px;display:flex;align-items:flex-end;gap:8px;padding:7px 8px 7px 10px;
+      border:1px solid var(--line);border-radius:20px;background:rgba(16,22,34,.93);
+      box-shadow:0 24px 70px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.025);
+    }
+    .composer .icon-btn{width:42px;height:42px;border-radius:14px;flex:0 0 auto}
+    .composer textarea{
+      flex:1;resize:none;max-height:120px;min-height:42px;border:0;outline:0;background:transparent;
+      color:#fff;padding:11px 4px 8px;line-height:1.4;font-size:14px;
+    }
+    .composer textarea::placeholder{color:#657188}
+    .send{
+      width:44px;height:44px;border-radius:15px;border:0;cursor:pointer;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent),#6558ff 60%,var(--accent-2));
+      box-shadow:0 10px 25px rgba(102,88,255,.28);transition:.18s ease;flex:0 0 auto;
+    }
+    .send:hover{transform:translateY(-1px) scale(1.02)}
+    .send:active{transform:scale(.98)}
+    .send svg{width:18px}
+
+    .security-panel{
+      position:absolute;right:18px;top:88px;width:min(360px,calc(100% - 36px));z-index:10;
+      border:1px solid var(--line);border-radius:22px;background:rgba(17,23,35,.95);
+      box-shadow:var(--shadow);backdrop-filter:blur(28px);padding:16px;display:none;
+    }
+    .security-panel.open{display:block;animation:pop .18s ease}
+    @keyframes pop{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
+    .sec-title{font-size:15px;font-weight:780;display:flex;align-items:center;gap:8px}
+    .shield-chip{width:32px;height:32px;border-radius:11px;background:rgba(69,227,166,.09);color:var(--success);display:grid;place-items:center}
+    .shield-chip svg{width:17px}
+    .sec-text{font-size:12px;color:#8b98ad;line-height:1.55;margin:12px 0}
+    .sec-card{padding:12px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.025);margin-top:9px}
+    .sec-card small{color:#69758a;display:block;margin-bottom:4px}
+    .fingerprint{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#b6c0d2;word-break:break-all}
+    .sec-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+    .soft-btn,.danger-btn{
+      border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035);
+      padding:10px 11px;cursor:pointer;font-size:12px;font-weight:700;
+    }
+    .soft-btn:hover{background:rgba(255,255,255,.065)}
+    .danger-btn{color:#ff8592;background:rgba(255,107,123,.06);border-color:rgba(255,107,123,.13)}
+
+    .overlay{
+      position:fixed;inset:0;background:
+        radial-gradient(circle at 50% 20%,rgba(139,124,255,.17),transparent 28%),
+        rgba(5,7,12,.9);
+      backdrop-filter:blur(16px);z-index:100;display:grid;place-items:center;padding:20px;
+    }
+    .overlay.hidden{display:none}
+    .vault{
+      width:min(430px,100%);border:1px solid var(--line);border-radius:30px;
+      background:linear-gradient(160deg,rgba(25,31,47,.97),rgba(11,15,24,.98));
+      box-shadow:0 40px 120px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.04);
+      padding:28px;
+    }
+    .vault-brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+    .vault .logo{margin:0;width:46px;height:46px;border-radius:15px}
+    .vault-brand strong{font-size:18px;letter-spacing:-.02em}
+    .vault-brand span{display:block;font-size:11px;color:#6f7c91;margin-top:3px}
+    .vault h2{font-size:28px;line-height:1.1;letter-spacing:-.04em;margin:0 0 10px}
+    .vault p{color:#8995a9;font-size:13px;line-height:1.6;margin:0 0 20px}
+    .vault label{font-size:11px;color:#78859a;font-weight:760;display:block;margin-bottom:7px}
+    .vault input{
+      width:100%;height:50px;border:1px solid var(--line);border-radius:15px;background:#0c111b;
+      color:#fff;outline:none;padding:0 14px;margin-bottom:10px;
+    }
+    .vault input:focus{border-color:rgba(139,124,255,.38);box-shadow:0 0 0 4px rgba(139,124,255,.07)}
+    .primary{
+      width:100%;height:50px;border:0;border-radius:15px;cursor:pointer;font-weight:800;margin-top:6px;
+      background:linear-gradient(135deg,var(--accent),#6356ff 58%,var(--accent-2));color:white;
+      box-shadow:0 16px 35px rgba(99,86,255,.23);
+    }
+    .vault-note{display:flex;gap:8px;color:#677489;font-size:10px;line-height:1.45;margin-top:14px}
+    .vault-note svg{width:14px;flex:0 0 auto;margin-top:1px;color:#7debbd}
+    .error{min-height:18px;color:#ff7f8e;font-size:11px;margin-top:4px}
+
+    .toast{
+      position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);
+      background:#171e2c;border:1px solid var(--line);border-radius:14px;padding:10px 14px;
+      box-shadow:var(--shadow);font-size:12px;color:#c4cbd8;opacity:0;pointer-events:none;
+      transition:.2s ease;z-index:200;
+    }
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+
+    @media (max-width: 980px){
+      .app{grid-template-columns:72px 320px 1fr}
+      .rail{padding-inline:10px}
+      .message-row{max-width:82%}
+    }
+
+    @media (max-width: 760px){
+      .app{display:block}
+      .rail{display:none}
+      .sidebar{position:absolute;inset:0;z-index:6;border:0}
+      .sidebar.mobile-hidden{display:none}
+      .main{position:absolute;inset:0;z-index:5}
+      .main.mobile-hidden{display:none}
+      .side-head{padding-top:max(24px,env(safe-area-inset-top))}
+      .chat-head{padding-top:env(safe-area-inset-top);height:calc(72px + env(safe-area-inset-top));padding-inline:12px}
+      .back{display:grid}
+      .head-actions .icon-btn:nth-child(1){display:none}
+      .messages{padding:16px 13px 22px}
+      .message-row{max-width:88%}
+      .composer-wrap{padding-inline:10px}
+      .security-panel{top:calc(76px + env(safe-area-inset-top));right:10px;width:calc(100% - 20px)}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <aside class="rail">
+      <div class="logo" title="Aegis">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 3 19 6v5c0 4.4-2.7 8.1-7 10-4.3-1.9-7-5.6-7-10V6l7-3Z"/>
+          <path d="m9.2 12 1.8 1.8 3.9-4"/>
+        </svg>
+      </div>
+
+      <button class="icon-btn active" aria-label="Чаты">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" aria-label="Звонки">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" id="railSecurity" aria-label="Безопасность">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </button>
+
+      <div class="rail-spacer"></div>
+
+      <button class="icon-btn" id="lockBtn" aria-label="Заблокировать">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="4" y="10" width="16" height="11" rx="3"/>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+        </svg>
+      </button>
+    </aside>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="side-head">
+        <div class="eyebrow">Private space</div>
+        <div class="title-row">
+          <h1>Messages</h1>
+          <button class="new-chat" title="Новый чат">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </button>
+        </div>
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+          </svg>
+          <input id="searchInput" placeholder="Поиск диалогов" autocomplete="off" />
+        </div>
+      </div>
+      <div class="section-label">Зашифрованные чаты</div>
+      <div class="chat-list" id="chatList"></div>
+    </aside>
+
+    <main class="main mobile-hidden" id="main">
+      <header class="chat-head">
+        <button class="icon-btn back" id="backBtn" aria-label="Назад">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="avatar" id="headAvatar">L</div>
+        <div class="head-info">
+          <div class="head-name">
+            <span id="headName">Lena</span>
+            <span class="verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="m6 12 4 4 8-8"/></svg>
+            </span>
+          </div>
+          <div class="head-status" id="headStatus">online · protected</div>
+        </div>
+
+        <div class="head-actions">
+          <button class="icon-btn" aria-label="Позвонить">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9"/>
+            </svg>
+          </button>
+          <button class="icon-btn" id="securityBtn" aria-label="Информация о защите">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="secure-strip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+          <rect x="5" y="10" width="14" height="10" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+        </svg>
+        Локальное хранилище зашифровано AES-GCM
+      </div>
+
+      <section class="messages" id="messages">
+        <div class="date-pill">Сегодня</div>
+      </section>
+
+      <div class="composer-wrap">
+        <div class="composer">
+          <button class="icon-btn" aria-label="Прикрепить">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="m21.4 11.6-8.9 8.9a6 6 0 0 1-8.5-8.5l9.5-9.5a4 4 0 0 1 5.7 5.7l-9.5 9.5a2 2 0 0 1-2.8-2.8l8.8-8.8"/>
+            </svg>
+          </button>
+
+          <textarea id="messageInput" rows="1" placeholder="Сообщение…" maxlength="4000"></textarea>
+
+          <button class="send" id="sendBtn" aria-label="Отправить">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <aside class="security-panel" id="securityPanel">
+        <div class="sec-title">
+          <span class="shield-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+              <path d="M12 3 19 6v5c0 4.4-2.7 8.1-7 10-4.3-1.9-7-5.6-7-10V6l7-3Z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          Защита Aegis
+        </div>
+        <div class="sec-text">
+          Эта демо-версия шифрует историю сообщений в браузере. Для настоящего сетевого E2EE
+          используй проверенный протокол с Double Ratchet и независимый аудит.
+        </div>
+        <div class="sec-card">
+          <small>Локальный fingerprint vault</small>
+          <div class="fingerprint" id="fingerprint">—</div>
+        </div>
+        <div class="sec-card">
+          <small>Автоблокировка</small>
+          <div style="font-size:12px;color:#b9c2d2">5 минут бездействия</div>
+        </div>
+        <div class="sec-actions">
+          <button class="soft-btn" id="backupBtn">Экспорт backup</button>
+          <button class="danger-btn" id="panelLockBtn">Заблокировать</button>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <section class="vault">
+      <div class="vault-brand">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3 19 6v5c0 4.4-2.7 8.1-7 10-4.3-1.9-7-5.6-7-10V6l7-3Z"/>
+            <path d="m9.2 12 1.8 1.8 3.9-4"/>
+          </svg>
+        </div>
+        <div>
+          <strong>AEGIS</strong>
+          <span>private messenger prototype</span>
+        </div>
+      </div>
+
+      <h2 id="vaultTitle">Создай локальный vault</h2>
+      <p id="vaultText">Пароль используется только для получения ключа шифрования на этом устройстве. Он нигде не отправляется.</p>
+
+      <label for="passwordInput">MASTER PASSWORD</label>
+      <input id="passwordInput" type="password" placeholder="Минимум 10 символов" autocomplete="current-password" />
+      <button class="primary" id="vaultBtn">Создать защищённый vault</button>
+      <div class="error" id="vaultError"></div>
+
+      <div class="vault-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+          <path d="M12 3 19 6v5c0 4.4-2.7 8.1-7 10-4.3-1.9-7-5.6-7-10V6l7-3Z"/>
+        </svg>
+        Это прототип клиентской части. Не называй его «абсолютно защищённым» без аудита, защиты метаданных,
+        безопасного сервера, управления ключами и полноценного E2EE-протокола.
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast">Готово</div>
+
+  <script>
+    "use strict";
+
+    const $ = (s) => document.querySelector(s);
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+
+    const STORAGE = {
+      meta: "aegis:vault:meta",
+      data: "aegis:vault:data"
+    };
+
+    const contacts = [
+      { id:"lena", name:"Lena Morozova", initials:"LM", status:"online · protected", online:true, verified:true, unread:2, time:"00:42", hue:"linear-gradient(135deg,#6f66ff,#3fbef4)" },
+      { id:"alex", name:"Alex N.", initials:"AN", status:"last seen recently", online:false, verified:true, unread:0, time:"23:18", hue:"linear-gradient(135deg,#37516d,#6e8aa6)" },
+      { id:"team", name:"Aegis Core", initials:"AC", status:"4 members · protected", online:true, verified:true, unread:5, time:"22:51", hue:"linear-gradient(135deg,#13a077,#45e3a6)" },
+      { id:"maya", name:"Maya", initials:"M", status:"offline", online:false, verified:false, unread:0, time:"Mon", hue:"linear-gradient(135deg,#8c5d93,#5a3b78)" },
+      { id:"saved", name:"Encrypted Notes", initials:"✦", status:"only you", online:false, verified:true, unread:0, time:"Sun", hue:"linear-gradient(135deg,#353b50,#252a3a)" }
+    ];
+
+    const seed = {
+      lena:[
+        {from:"them", text:"Увидела новый интерфейс. Выглядит очень чисто.", ts:Date.now()-1000*60*16},
+        {from:"me", text:"Главное — чтобы приватность была не только в дизайне.", ts:Date.now()-1000*60*14},
+        {from:"them", text:"Согласна. Проверка ключей и минимум метаданных должны быть базой.", ts:Date.now()-1000*60*12}
+      ],
+      alex:[
+        {from:"them", text:"Созвонимся завтра по архитектуре?", ts:Date.now()-1000*60*70}
+      ],
+      team:[
+        {from:"them", text:"Security review: local vault prototype passed basic checks.", ts:Date.now()-1000*60*120},
+        {from:"me", text:"Следующий этап — настоящий E2EE слой и threat model.", ts:Date.now()-1000*60*110}
+      ],
+      maya:[],
+      saved:[
+        {from:"me", text:"Идея: usernames без обязательного публичного номера телефона.", ts:Date.now()-1000*60*60*26}
+      ]
+    };
+
+    let vaultKey = null;
+    let state = null;
+    let currentChat = "lena";
+    let inactivityTimer = null;
+
+    function b64(bytes){
+      let binary = "";
+      bytes.forEach(b => binary += String.fromCharCode(b));
+      return btoa(binary);
+    }
+
+    function unb64(s){
+      const binary = atob(s);
+      return Uint8Array.from(binary, c => c.charCodeAt(0));
+    }
+
+    async function deriveKey(password, salt){
+      const base = await crypto.subtle.importKey(
+        "raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]
+      );
+
+      return crypto.subtle.deriveKey(
+        { name:"PBKDF2", salt, iterations:310000, hash:"SHA-256" },
+        base,
+        { name:"AES-GCM", length:256 },
+        false,
+        ["encrypt","decrypt"]
+      );
+    }
+
+    async function encryptObject(key, obj){
+      const iv = crypto.getRandomValues(new Uint8Array(12));
+      const plaintext = enc.encode(JSON.stringify(obj));
+      const ciphertext = await crypto.subtle.encrypt(
+        {name:"AES-GCM", iv, additionalData:enc.encode("aegis:v1")},
+        key,
+        plaintext
+      );
+      return { iv:b64(iv), ct:b64(new Uint8Array(ciphertext)) };
+    }
+
+    async function decryptObject(key, payload){
+      const plaintext = await crypto.subtle.decrypt(
+        {
+          name:"AES-GCM",
+          iv:unb64(payload.iv),
+          additionalData:enc.encode("aegis:v1")
+        },
+        key,
+        unb64(payload.ct)
+      );
+      return JSON.parse(dec.decode(plaintext));
+    }
+
+    async function createVault(password){
+      const salt = crypto.getRandomValues(new Uint8Array(16));
+      const key = await deriveKey(password, salt);
+      const verifier = await encryptObject(key, {ok:"aegis-vault-v1"});
+      localStorage.setItem(STORAGE.meta, JSON.stringify({
+        version:1,
+        salt:b64(salt),
+        verifier
+      }));
+      vaultKey = key;
+      state = structuredClone(seed);
+      await saveState();
+      await setFingerprint(salt);
+    }
+
+    async function unlockVault(password){
+      const meta = JSON.parse(localStorage.getItem(STORAGE.meta));
+      if(!meta) throw new Error("Vault не найден");
+      const key = await deriveKey(password, unb64(meta.salt));
+      const check = await decryptObject(key, meta.verifier);
+      if(check.ok !== "aegis-vault-v1") throw new Error("Неверный пароль");
+      const data = JSON.parse(localStorage.getItem(STORAGE.data));
+      state = data ? await decryptObject(key, data) : structuredClone(seed);
+      vaultKey = key;
+      await setFingerprint(unb64(meta.salt));
+    }
+
+    async function saveState(){
+      if(!vaultKey || !state) return;
+      const encrypted = await encryptObject(vaultKey, state);
+      localStorage.setItem(STORAGE.data, JSON.stringify(encrypted));
+    }
+
+    async function setFingerprint(salt){
+      const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", salt));
+      const hex = [...digest].map(x=>x.toString(16).padStart(2,"0")).join("").toUpperCase();
+      $("#fingerprint").textContent = hex.match(/.{1,4}/g).slice(0,8).join(" · ");
+    }
+
+    function lockVault(){
+      vaultKey = null;
+      state = null;
+      $("#passwordInput").value = "";
+      $("#overlay").classList.remove("hidden");
+      $("#securityPanel").classList.remove("open");
+      updateVaultMode();
+    }
+
+    function updateVaultMode(){
+      const exists = !!localStorage.getItem(STORAGE.meta);
+      $("#vaultTitle").textContent = exists ? "Vault заблокирован" : "Создай локальный vault";
+      $("#vaultText").textContent = exists
+        ? "Введи master password. Ключ существует только в памяти этой вкладки после разблокировки."
+        : "Пароль используется только для получения ключа шифрования на этом устройстве. Он нигде не отправляется.";
+      $("#vaultBtn").textContent = exists ? "Разблокировать" : "Создать защищённый vault";
+    }
+
+    function showToast(text){
+      const t = $("#toast");
+      t.textContent = text;
+      t.classList.add("show");
+      clearTimeout(t._timer);
+      t._timer = setTimeout(()=>t.classList.remove("show"),1800);
+    }
+
+    function resetAutoLock(){
+      clearTimeout(inactivityTimer);
+      if(vaultKey){
+        inactivityTimer = setTimeout(()=>{
+          lockVault();
+          showToast("Vault автоматически заблокирован");
+        }, 5 * 60 * 1000);
+      }
+    }
+
+    function clearChildren(el){
+      while(el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function makeVerified(){
+      const v = document.createElement("span");
+      v.className = "verified";
+      v.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="m6 12 4 4 8-8"/></svg>';
+      return v;
+    }
+
+    function lastMessage(id){
+      const list = state?.[id] || [];
+      if(!list.length) return "Новый защищённый диалог";
+      return list[list.length-1].text;
+    }
+
+    function renderContacts(filter=""){
+      const root = $("#chatList");
+      clearChildren(root);
+
+      contacts
+        .filter(c => c.name.toLowerCase().includes(filter.toLowerCase()))
+        .forEach(c=>{
+          const btn = document.createElement("button");
+          btn.className = "contact" + (c.id===currentChat ? " active" : "");
+          btn.type = "button";
+
+          const av = document.createElement("div");
+          av.className = "avatar";
+          av.style.background = c.hue;
+          av.textContent = c.initials;
+          if(c.online){
+            const dot = document.createElement("span");
+            dot.className = "online-dot";
+            av.appendChild(dot);
+          }
+
+          const main = document.createElement("div");
+          main.className = "c-main";
+          const top = document.createElement("div");
+          top.className = "c-top";
+          const name = document.createElement("span");
+          name.className = "c-name";
+          name.textContent = c.name;
+          top.appendChild(name);
+          if(c.verified) top.appendChild(makeVerified());
+
+          const preview = document.createElement("div");
+          preview.className = "c-preview";
+          preview.textContent = lastMessage(c.id);
+          main.append(top,preview);
+
+          const meta = document.createElement("div");
+          meta.className = "c-meta";
+          const time = document.createElement("div");
+          time.className = "c-time";
+          time.textContent = c.time;
+          meta.appendChild(time);
+          if(c.unread){
+            const badge = document.createElement("div");
+            badge.className = "badge";
+            badge.textContent = c.unread;
+            meta.appendChild(badge);
+          }
+
+          btn.append(av,main,meta);
+          btn.addEventListener("click",()=>{
+            currentChat = c.id;
+            c.unread = 0;
+            renderContacts($("#searchInput").value);
+            renderHeader();
+            renderMessages();
+            if(innerWidth <= 760){
+              $("#sidebar").classList.add("mobile-hidden");
+              $("#main").classList.remove("mobile-hidden");
+            }
+          });
+          root.appendChild(btn);
+        });
+    }
+
+    function renderHeader(){
+      const c = contacts.find(x=>x.id===currentChat);
+      $("#headName").textContent = c.name;
+      $("#headStatus").textContent = c.status;
+      $("#headAvatar").textContent = c.initials;
+      $("#headAvatar").style.background = c.hue;
+    }
+
+    function renderMessages(){
+      const root = $("#messages");
+      clearChildren(root);
+      const date = document.createElement("div");
+      date.className = "date-pill";
+      date.textContent = "Сегодня";
+      root.appendChild(date);
+
+      (state?.[currentChat] || []).forEach(msg=>{
+        const row = document.createElement("div");
+        row.className = `message-row ${msg.from}`;
+
+        const bubble = document.createElement("div");
+        bubble.className = "bubble";
+
+        const text = document.createElement("div");
+        text.textContent = msg.text;
+
+        const meta = document.createElement("div");
+        meta.className = "bubble-meta";
+        const d = new Date(msg.ts);
+        const time = document.createElement("span");
+        time.textContent = d.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+        meta.appendChild(time);
+
+        if(msg.from==="me"){
+          const ticks = document.createElement("span");
+          ticks.className = "ticks";
+          ticks.textContent = "✓✓";
+          meta.appendChild(ticks);
+        }
+
+        bubble.append(text,meta);
+        row.appendChild(bubble);
+        root.appendChild(row);
+      });
+
+      requestAnimationFrame(()=>root.scrollTop = root.scrollHeight);
+    }
+
+    async function sendMessage(){
+      const input = $("#messageInput");
+      const text = input.value.trim();
+      if(!text || !vaultKey) return;
+
+      state[currentChat] ??= [];
+      state[currentChat].push({from:"me", text, ts:Date.now()});
+      input.value = "";
+      autoGrow();
+      renderMessages();
+      renderContacts($("#searchInput").value);
+      await saveState();
+      resetAutoLock();
+    }
+
+    function autoGrow(){
+      const el = $("#messageInput");
+      el.style.height = "42px";
+      el.style.height = Math.min(el.scrollHeight,120) + "px";
+    }
+
+    async function exportBackup(){
+      const meta = localStorage.getItem(STORAGE.meta);
+      const data = localStorage.getItem(STORAGE.data);
+      if(!meta || !data) return;
+      const payload = JSON.stringify({
+        format:"aegis-local-backup-v1",
+        exportedAt:new Date().toISOString(),
+        meta:JSON.parse(meta),
+        data:JSON.parse(data)
+      },null,2);
+      const blob = new Blob([payload],{type:"application/json"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "aegis-encrypted-backup.json";
+      a.click();
+      setTimeout(()=>URL.revokeObjectURL(url),500);
+      showToast("Зашифрованный backup экспортирован");
+    }
+
+    $("#vaultBtn").addEventListener("click", async()=>{
+      const password = $("#passwordInput").value;
+      const error = $("#vaultError");
+      error.textContent = "";
+      const exists = !!localStorage.getItem(STORAGE.meta);
+
+      if(!exists && password.length < 10){
+        error.textContent = "Используй пароль минимум из 10 символов.";
+        return;
+      }
+
+      try{
+        $("#vaultBtn").disabled = true;
+        $("#vaultBtn").textContent = "Обработка…";
+        exists ? await unlockVault(password) : await createVault(password);
+        $("#overlay").classList.add("hidden");
+        renderContacts();
+        renderHeader();
+        renderMessages();
+        resetAutoLock();
+      }catch(e){
+        error.textContent = "Не удалось разблокировать vault. Проверь пароль.";
+      }finally{
+        $("#vaultBtn").disabled = false;
+        updateVaultMode();
+      }
+    });
+
+    $("#passwordInput").addEventListener("keydown",e=>{
+      if(e.key==="Enter") $("#vaultBtn").click();
+    });
+
+    $("#sendBtn").addEventListener("click",sendMessage);
+    $("#messageInput").addEventListener("input",autoGrow);
+    $("#messageInput").addEventListener("keydown",e=>{
+      if(e.key==="Enter" && !e.shiftKey){
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    $("#searchInput").addEventListener("input",e=>renderContacts(e.target.value));
+    $("#lockBtn").addEventListener("click",lockVault);
+    $("#panelLockBtn").addEventListener("click",lockVault);
+    $("#backupBtn").addEventListener("click",exportBackup);
+
+    function toggleSecurity(){
+      $("#securityPanel").classList.toggle("open");
+    }
+    $("#securityBtn").addEventListener("click",toggleSecurity);
+    $("#railSecurity").addEventListener("click",toggleSecurity);
+
+    $("#backBtn").addEventListener("click",()=>{
+      $("#main").classList.add("mobile-hidden");
+      $("#sidebar").classList.remove("mobile-hidden");
+    });
+
+    document.addEventListener("click",e=>{
+      const panel = $("#securityPanel");
+      if(panel.classList.contains("open") &&
+         !panel.contains(e.target) &&
+         !$("#securityBtn").contains(e.target) &&
+         !$("#railSecurity").contains(e.target)){
+        panel.classList.remove("open");
+      }
+    });
+
+    ["pointerdown","keydown","touchstart"].forEach(ev=>{
+      window.addEventListener(ev,resetAutoLock,{passive:true});
+    });
+
+    window.addEventListener("resize",()=>{
+      if(innerWidth > 760){
+        $("#sidebar").classList.remove("mobile-hidden");
+        $("#main").classList.remove("mobile-hidden");
+      }else if(!$("#sidebar").classList.contains("mobile-hidden")){
+        $("#main").classList.add("mobile-hidden");
+      }
+    });
+
+    updateVaultMode();
+  </script>
+</body>
+</html>

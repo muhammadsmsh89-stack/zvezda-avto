@@ -1,0 +1,16 @@
+{
+  "name": "ai-money-start-build",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build pipeline for the AI MONEY START final product (Guide/Workbook/Prompt Pack/Action Plan PDFs + Lead Tracker xlsx).",
+  "scripts": {
+    "build:pdf": "node scripts/build-pdf.js",
+    "build:tracker": "node scripts/build-tracker.js",
+    "build": "npm run build:pdf && npm run build:tracker"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.48.0"
+  }
+}

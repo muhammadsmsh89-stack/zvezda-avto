@@ -4,10 +4,10 @@ function cover() {
   return `<div class="page" id="ap-cover" style="display:flex;flex-direction:column;justify-content:space-between;min-height:257mm;">
     <div style="margin-top:60mm">
       ${label('AI MONEY START')}
-      <h1 class="cover-title">30-DAY<br>PLAN<span class="cover-accent-dot">.</span></h1>
-      <p class="cover-sub">Один день — один блок. Не читай вперёд, не читай Guide заново — просто открывай сегодняшний день и делай.</p>
+      <h1 class="cover-title">ПЛАН<br>НА 30 ДНЕЙ<span class="cover-accent-dot">.</span></h1>
+      <p class="cover-sub">Один день — один блок. Не читай вперёд, не читай гайд заново — просто открывай сегодняшний день и делай.</p>
     </div>
-    <div>${label('04 · 30-DAY ACTION PLAN')}</div>
+    <div>${label('04 · ПЛАН НА 30 ДНЕЙ')}</div>
   </div>`;
 }
 
@@ -15,54 +15,54 @@ function intro() {
   return page('ap-intro', `
     ${label('Как этим пользоваться')}
     ${h1('Правило')}
-    ${p('Обучение и поиск клиентов идут параллельно с Дня 9. Не каждый день требует делать всё — объём зависит от твоей нагрузки. Если сегодня уже есть активный проект в работе (Won), приоритет — delivery, а не новые лиды.')}
-    ${p('С Дня 10 в каждом дне встречается комбинация: New Leads · Outreach · Follow-Up · Replies · Sales Conversations · Portfolio/Offer Improvement · Delivery (если есть Won-проект). Раз в неделю (Дни 14, 21, 28) — короткий weekly review вместо новых лидов.')}
+    ${p('Обучение и поиск клиентов идут параллельно с Дня 9. Не каждый день требует делать всё — объём зависит от твоей нагрузки. Если сегодня уже есть активный проект в работе (сделка закрыта), приоритет — сдача проекта, а не новые лиды.')}
+    ${p('С Дня 10 в каждом дне встречается комбинация: новые лиды · первый контакт · повторный контакт · ответы · продажи · улучшение портфолио/оффера · сдача проекта (если есть закрытая сделка). Раз в неделю (Дни 14, 21, 28) — короткий еженедельный обзор вместо новых лидов.')}
   `);
 }
 
 const week1 = [
-  { day: 'День 1', objective: 'Choose Primary Service', doItems: ['Пройти Service Fit Test', 'Заполнить Decision Matrix', 'Выбрать Primary + Backup Service'], output: 'Service Card (Primary + Backup)', track: 'Service Selected', doneWhen: ['Подписан 30-Day Commitment'] },
-  { day: 'День 2', objective: 'References + Deconstruction', doItems: ['Найти 10 референсов, разобрать 3', 'Выписать повторяющиеся паттерны'], output: 'Quality Checklist', track: 'Референсов разобрано: 3' },
-  { day: 'День 3', objective: 'Rebuild', doItems: ['Повторить механику референса на другой теме', 'Не копировать текст/бренд напрямую'], output: 'Training Result (не в портфолио)', track: 'Rebuild сделан: да/нет' },
-  { day: 'День 4', objective: 'Independent Creation', doItems: ['Practice Brief → Draft → AI Critique → Human Review'], output: 'Skill Card', track: 'Собственная работа готова' },
-  { day: 'День 5', objective: 'Portfolio Case #1 (Core)', doItems: ['Brief → Production → Quality Check → Case Study'], output: 'Case 1 + Case Study', track: 'Кейсов готово: 1/3' },
-  { day: 'День 6', objective: 'Portfolio Case #2 (Different Problem)', doItems: ['Выбрать другую задачу той же услугой', 'Свериться с Case Diversity Matrix'], output: 'Case 2 + Case Study', track: 'Кейсов готово: 2/3' },
-  { day: 'День 7', objective: 'Case #3 + Packaging + Offer/Scope/Price', doItems: ['Закончить Case 3', 'Собрать 3 кейса по одной ссылке', 'Заполнить Offer Builder, Scope, STARTER/CORE/PLUS'], output: 'Portfolio + Offer + Price готовы', track: 'Кейсов готово: 3/3', doneWhen: ['Portfolio Scorecard пройден', 'Готово сообщение с предложением'] },
+  { day: 'День 1', objective: 'Выбрать основную услугу', doItems: ['Пройти тест на соответствие услуге', 'Заполнить матрицу решения', 'Выбрать основную и запасную услугу'], output: 'Карточка услуги (основная + запасная)', track: 'Услуга выбрана', doneWhen: ['Подписано обязательство на 30 дней'] },
+  { day: 'День 2', objective: 'Референсы и разбор', doItems: ['Найти 10 референсов, разобрать 3', 'Выписать повторяющиеся паттерны'], output: 'Чек-лист качества', track: 'Референсов разобрано: 3' },
+  { day: 'День 3', objective: 'Повтор (rebuild)', doItems: ['Повторить механику референса на другой теме', 'Не копировать текст/бренд напрямую'], output: 'Тренировочный результат (не в портфолио)', track: 'Повтор сделан: да/нет' },
+  { day: 'День 4', objective: 'Самостоятельное создание', doItems: ['Тренировочный бриф → черновик → критика от ИИ → проверка человеком'], output: 'Карточка навыка', track: 'Собственная работа готова' },
+  { day: 'День 5', objective: 'Кейс портфолио №1 (базовый)', doItems: ['Бриф → производство → контроль качества → оформление кейса'], output: 'Кейс 1 + оформленный кейс', track: 'Кейсов готово: 1/3' },
+  { day: 'День 6', objective: 'Кейс портфолио №2 (другая задача)', doItems: ['Выбрать другую задачу той же услугой', 'Свериться с матрицей разнообразия кейсов'], output: 'Кейс 2 + оформленный кейс', track: 'Кейсов готово: 2/3' },
+  { day: 'День 7', objective: 'Кейс №3 + упаковка + оффер/объём/цена', doItems: ['Закончить Кейс 3', 'Собрать 3 кейса по одной ссылке', 'Заполнить конструктор оффера, объём работ, три уровня пакета'], output: 'Портфолио + оффер + цена готовы', track: 'Кейсов готово: 3/3', doneWhen: ['Оценка портфолио пройдена', 'Готово сообщение с предложением'] },
 ];
 
 const week2 = [
-  { day: 'День 8', objective: '50 Leads Sprint', doItems: ['Заполнить ICP, выбрать каналы', 'Round 1–3: 20+20+10 лидов', 'Lead Score + A/B/C, выбрать First 15'], output: 'Lead Tracker с 50 лидами', track: 'Leads Found: 50', doneWhen: ['First 15 выбраны с рабочим контактом'] },
-  { day: 'День 9', objective: 'First 15 Outreach', doItems: ['Выбрать шаблон + персонализацию для каждого', 'Отправить 15 сообщений', 'Поставить Follow-Up Date'], output: '15 отправленных сообщений', track: 'Messages Sent: 15' },
-  { day: 'День 10', objective: 'New Outreach + Replies', doItems: ['Ответить на входящие', 'Отправить 10 новых сообщений'], output: 'Обновлённый Lead Tracker', track: 'Messages Sent, Replies' },
-  { day: 'День 11', objective: 'Outreach + First Follow-Ups', doItems: ['Follow-up по лидам без ответа', '10 новых сообщений'], output: 'Follow-ups отправлены', track: 'Follow-Ups Sent' },
-  { day: 'День 12', objective: 'Replenish Leads + Outreach', doItems: ['Найти ещё 10 лидов', 'Отправить 10 сообщений'], output: 'Пополненный pipeline', track: 'Leads Found (накопительно)' },
-  { day: 'День 13', objective: 'Sales Conversations', doItems: ['Провести discovery по заинтересованным', 'Сделать summary + предложить решение'], output: 'Offers Sent (если applicable)', track: 'Discussions, Offers' },
-  { day: 'День 14', objective: 'Weekly Review', doItems: ['Проверить Reply Rate / Positive Reply Rate в Dashboard', 'Если есть Won-проект — Kickoff и Brief', 'Иначе — докрутить portfolio/offer по одному слабому месту'], output: 'Обновлённый Dashboard', track: 'Reply Rate, Positive Reply Rate' },
+  { day: 'День 8', objective: 'Спринт 50 лидов', doItems: ['Заполнить портрет клиента, выбрать каналы', 'Раунды 1–3: 20+20+10 лидов', 'Оценка + A/B/C, выбрать первые 15'], output: 'Таблица лидов с 50 записями', track: 'Найдено лидов: 50', doneWhen: ['Первые 15 выбраны с рабочим контактом'] },
+  { day: 'День 9', objective: 'Первый контакт с первыми 15', doItems: ['Выбрать шаблон + персонализацию для каждого', 'Отправить 15 сообщений', 'Поставить дату повторного контакта'], output: '15 отправленных сообщений', track: 'Отправлено сообщений: 15' },
+  { day: 'День 10', objective: 'Новый контакт + ответы', doItems: ['Ответить на входящие', 'Отправить 10 новых сообщений'], output: 'Обновлённая таблица лидов', track: 'Отправлено сообщений, ответы' },
+  { day: 'День 11', objective: 'Первый контакт + первые повторные', doItems: ['Повторный контакт по лидам без ответа', '10 новых сообщений'], output: 'Повторные контакты отправлены', track: 'Отправлено повторных контактов' },
+  { day: 'День 12', objective: 'Пополнить лидов + первый контакт', doItems: ['Найти ещё 10 лидов', 'Отправить 10 сообщений'], output: 'Пополненная база лидов', track: 'Найдено лидов (накопительно)' },
+  { day: 'День 13', objective: 'Продажные разговоры', doItems: ['Провести выявление потребности по заинтересованным', 'Сделать резюме + предложить решение'], output: 'Офферы отправлены (если применимо)', track: 'Обсуждения, офферы' },
+  { day: 'День 14', objective: 'Еженедельный обзор', doItems: ['Проверить долю ответов / долю позитивных ответов в Dashboard', 'Если есть закрытая сделка — стартовое сообщение и бриф', 'Иначе — докрутить портфолио/оффер по одному слабому месту'], output: 'Обновлённый Dashboard', track: 'Доля ответов, доля позитивных ответов' },
 ];
 
 const week3 = [
-  { day: 'День 15', objective: 'Replenish Leads + Outreach', doItems: ['Найти 10 лидов', 'Отправить 10 сообщений'], output: 'Lead Tracker обновлён', track: 'Leads Found' },
-  { day: 'День 16', objective: 'Outreach + Sales', doItems: ['Follow-ups', 'Discovery по новым «интересно»'], output: 'Discussions', track: 'Discussions' },
-  { day: 'День 17', objective: 'Delivery (если Won) / Outreach', doItems: ['Если есть проект — Kickoff/Brief/Production', 'Если нет — 10 новых сообщений'], output: 'Project Board обновлён или новые сообщения', track: 'Projects in Progress' },
-  { day: 'День 18', objective: 'Follow-Up + Sales + Delivery', doItems: ['Закрыть просроченные follow-up', 'Продолжить production по активному проекту'], output: 'Обновлённый статус по всем активным лидам', track: 'Follow-Ups Due = 0' },
-  { day: 'День 19', objective: 'Replenish Leads + Outreach', doItems: ['Найти 10 лидов', 'Отправить 10 сообщений'], output: 'Lead Tracker обновлён', track: 'Leads Found' },
-  { day: 'День 20', objective: 'Outreach + Sales', doItems: ['Follow-ups', 'Обработать возражения по открытым офферам'], output: 'Offers Sent / Won', track: 'Offer Rate' },
-  { day: 'День 21', objective: 'Weekly Review', doItems: ['Price Review, если завершён проект', 'After-Project Review', 'Funnel Diagnosis по текущим цифрам'], output: 'Обновлённые Offer/Price при необходимости', track: 'Won, Reviews' },
+  { day: 'День 15', objective: 'Пополнить лидов + первый контакт', doItems: ['Найти 10 лидов', 'Отправить 10 сообщений'], output: 'Таблица лидов обновлена', track: 'Найдено лидов' },
+  { day: 'День 16', objective: 'Первый контакт + продажа', doItems: ['Повторные контакты', 'Выявление потребности по новым «интересно»'], output: 'Обсуждения', track: 'Обсуждения' },
+  { day: 'День 17', objective: 'Сдача проекта (если сделка закрыта) / первый контакт', doItems: ['Если есть проект — стартовое сообщение/бриф/производство', 'Если нет — 10 новых сообщений'], output: 'Доска проектов обновлена или новые сообщения', track: 'Проектов в работе' },
+  { day: 'День 18', objective: 'Повторный контакт + продажа + сдача', doItems: ['Закрыть просроченные повторные контакты', 'Продолжить производство по активному проекту'], output: 'Обновлённый статус по всем активным лидам', track: 'Просроченных повторных контактов = 0' },
+  { day: 'День 19', objective: 'Пополнить лидов + первый контакт', doItems: ['Найти 10 лидов', 'Отправить 10 сообщений'], output: 'Таблица лидов обновлена', track: 'Найдено лидов' },
+  { day: 'День 20', objective: 'Первый контакт + продажа', doItems: ['Повторные контакты', 'Обработать возражения по открытым офферам'], output: 'Офферы отправлены / сделки закрыты', track: 'Доля офферов' },
+  { day: 'День 21', objective: 'Еженедельный обзор', doItems: ['Пересмотр цены, если завершён проект', 'Разбор проекта после сдачи', 'Диагностика воронки по текущим цифрам'], output: 'Обновлённые оффер/цена при необходимости', track: 'Закрытые сделки, отзывы' },
 ];
 
 const week4 = [
-  { day: 'День 22', objective: 'Replenish Leads + Outreach', doItems: ['Найти 10 лидов', 'Отправить 10 сообщений'], output: 'Lead Tracker обновлён', track: 'Leads Found' },
-  { day: 'День 23', objective: 'Outreach + Sales', doItems: ['Follow-ups', 'Discovery по новым ответам'], output: 'Discussions', track: 'Discussions' },
-  { day: 'День 24', objective: 'Delivery / Outreach', doItems: ['Production по активному проекту либо', '10 новых сообщений, если проектов нет'], output: 'Progress по Project Board', track: 'Projects in Progress' },
-  { day: 'День 25', objective: 'Follow-Up + Referral', doItems: ['Закрыть просроченные follow-up', 'Если проект завершён — запросить review/referral'], output: 'Review/Referral запрошены', track: 'Reviews, Referrals' },
-  { day: 'День 26', objective: 'Replenish Leads + Outreach', doItems: ['Найти 10 лидов (pipeline не должен пустеть)', 'Отправить 10 сообщений'], output: 'Lead Tracker обновлён', track: 'Leads Found' },
-  { day: 'День 27', objective: 'Outreach + Sales', doItems: ['Follow-ups', 'Закрыть открытые discovery/offers'], output: 'Won / Lost обновлены', track: 'Close Rate' },
-  { day: 'День 28', objective: 'Weekly Review', doItems: ['Specialization Check — виден ли паттерн по нише?', 'Client Quality Score по завершённым проектам'], output: 'Заметки для Day 30', track: 'Specialization signal' },
+  { day: 'День 22', objective: 'Пополнить лидов + первый контакт', doItems: ['Найти 10 лидов', 'Отправить 10 сообщений'], output: 'Таблица лидов обновлена', track: 'Найдено лидов' },
+  { day: 'День 23', objective: 'Первый контакт + продажа', doItems: ['Повторные контакты', 'Выявление потребности по новым ответам'], output: 'Обсуждения', track: 'Обсуждения' },
+  { day: 'День 24', objective: 'Сдача проекта / первый контакт', doItems: ['Производство по активному проекту либо', '10 новых сообщений, если проектов нет'], output: 'Прогресс по доске проектов', track: 'Проектов в работе' },
+  { day: 'День 25', objective: 'Повторный контакт + рекомендации', doItems: ['Закрыть просроченные повторные контакты', 'Если проект завершён — запросить отзыв/рекомендацию'], output: 'Отзыв/рекомендация запрошены', track: 'Отзывы, рекомендации' },
+  { day: 'День 26', objective: 'Пополнить лидов + первый контакт', doItems: ['Найти 10 лидов (база не должна пустеть)', 'Отправить 10 сообщений'], output: 'Таблица лидов обновлена', track: 'Найдено лидов' },
+  { day: 'День 27', objective: 'Первый контакт + продажа', doItems: ['Повторные контакты', 'Закрыть открытые обсуждения/офферы'], output: 'Статусы «закрыто»/«отказ» обновлены', track: 'Доля закрытых сделок' },
+  { day: 'День 28', objective: 'Еженедельный обзор', doItems: ['Проверка на специализацию — виден ли паттерн по нише?', 'Оценка качества клиента по завершённым проектам'], output: 'Заметки для Дня 30', track: 'Сигнал специализации' },
 ];
 
 const finalDays = [
-  { day: 'День 29', objective: 'Catch-Up Buffer', doItems: ['Закрыть все просроченные follow-up и незавершённые доставки', 'Ничего нового не начинать — только доделать'], output: 'Чистый Lead Tracker без зависших NEXT ACTION', track: 'Overdue items = 0' },
-  { day: 'День 30', objective: 'Full Funnel Review', doItems: ['Заполнить Day 30 Review (Workbook 10)', 'Найти главный bottleneck по Final Funnel Diagnosis', 'Поставить Next 30-Day Target'], output: 'Day 30 Review + план на следующие 30 дней', track: 'Все controllable metrics за месяц', doneWhen: ['Final Client Checkpoint пройден (Guide)'] },
+  { day: 'День 29', objective: 'Буфер для завершения дел', doItems: ['Закрыть все просроченные повторные контакты и незавершённые сдачи', 'Ничего нового не начинать — только доделать'], output: 'Чистая таблица лидов без зависших «следующих действий»', track: 'Просроченных задач = 0' },
+  { day: 'День 30', objective: 'Полный обзор воронки', doItems: ['Заполнить обзор Дня 30 (рабочая тетрадь, раздел 10)', 'Найти главное узкое место по финальной диагностике воронки', 'Поставить цель на следующие 30 дней'], output: 'Обзор Дня 30 + план на следующие 30 дней', track: 'Все контролируемые метрики за месяц', doneWhen: ['Финальный чек-лист пройден (гайд)'] },
 ];
 
 function weekPage(id, title, days) {
@@ -72,13 +72,13 @@ function weekPage(id, title, days) {
 function buildActionPlanHtml() {
   const body = [
     cover(), intro(),
-    weekPage('ap-w1', 'Неделя 1 — Service · Skill · Portfolio', week1),
-    weekPage('ap-w2', 'Неделя 2 — Leads · Outreach старт', week2),
-    weekPage('ap-w3', 'Неделя 3 — Outreach · Sales · Delivery', week3),
-    weekPage('ap-w4', 'Неделя 4 — Outreach · Sales · Delivery · Growth', week4),
+    weekPage('ap-w1', 'Неделя 1 — Услуга · Навык · Портфолио', week1),
+    weekPage('ap-w2', 'Неделя 2 — Лиды · старт первого контакта', week2),
+    weekPage('ap-w3', 'Неделя 3 — Первый контакт · Продажа · Сдача', week3),
+    weekPage('ap-w4', 'Неделя 4 — Первый контакт · Продажа · Сдача · Рост', week4),
     weekPage('ap-final', 'Финал', finalDays),
   ].join('\n');
-  return wrapDocument({ title: 'AI MONEY START — 30-Day Action Plan', bodyHtml: body });
+  return wrapDocument({ title: 'AI MONEY START — План на 30 дней', bodyHtml: body });
 }
 
 module.exports = { buildActionPlanHtml };

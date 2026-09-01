@@ -2,656 +2,656 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<title>AI MONEY START — Prompt Pack</title>
+<title>AI MONEY START — Банк промптов</title>
 <link rel="stylesheet" href="../styles/print.css">
 </head>
 <body>
 <div class="page" id="pp-cover" style="display:flex;flex-direction:column;justify-content:space-between;min-height:257mm;">
     <div style="margin-top:60mm">
       <div class="label">AI MONEY START</div>
-      <h1 class="cover-title">PROMPT<br>PACK<span class="cover-accent-dot">.</span></h1>
-      <p class="cover-sub">70 промптов по формату ROLE / CONTEXT / INPUT / TASK / CONSTRAINTS / OUTPUT FORMAT. Открывай по конкретной задаче — не читай подряд.</p>
+      <h1 class="cover-title">БАНК<br>ПРОМПТОВ<span class="cover-accent-dot">.</span></h1>
+      <p class="cover-sub">70 промптов по формату РОЛЬ / КОНТЕКСТ / ВВОДНЫЕ / ЗАДАЧА / ОГРАНИЧЕНИЯ / ФОРМАТ ОТВЕТА. Открывай по конкретной задаче — не читай подряд.</p>
     </div>
-    <div><div class="label">03 · PROMPT PACK</div></div>
+    <div><div class="label">03 · БАНК ПРОМПТОВ</div></div>
   </div>
-<div class="page" id="pp-cat-01"><div class="label">Раздел 01</div><h1>Service</h1><p>Выбор направления — 5 промптов.</p></div><div class="page" id="pp-01">
+<div class="page" id="pp-cat-01"><div class="label">Раздел 01</div><h1>Услуга</h1><p>Выбор направления — 5 промптов.</p></div><div class="page" id="pp-01">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 1 — Service Ideas</div>
-    <div class="pk">ROLE</div><div class="pv">Продуктовый консультант для новичков во фрилансе с ИИ.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь ещё не выбрал услугу, но знает свои интересы.</div>
-    <div class="pk">INPUT</div><div class="pv">[ИНТЕРЕСЫ] — чем нравится заниматься; [ВРЕМЯ В ДЕНЬ]</div>
-    <div class="pk">TASK</div><div class="pv">Предложи 5 услуг из категорий Landing Pages, Presentations, Lead Magnets, Telegram Content, Short-Form Scripts, Product Descriptions, Social Media, Research, SOP, Email, Visual Content, Video Editing, Automation, Audit, Website Redesign, которые соответствуют интересам.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не предлагай услуг вне этого списка. Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Таблица: Услуга | Почему подходит | Что осваивать первым.</div>
-  </div>
-  <div class="prompt-card">
-    <div class="card-label">PROMPT 2 — Service Comparison</div>
-    <div class="pk">ROLE</div><div class="pv">Аналитик рынка фриланс-услуг.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь выбирает между 2–3 услугами.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА A], [УСЛУГА B], [УСЛУГА C — опционально]</div>
-    <div class="pk">TASK</div><div class="pv">Сравни по Learning Difficulty, Portfolio Speed, Lead Finding, Starter Friendliness (1–5, редакционная оценка).</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Явно указывай, что это не рыночная статистика, а ориентир для сравнения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Таблица сравнения + 1 рекомендация с обоснованием.</div>
+    <div class="card-label">ПРОМПТ 1 — Идеи услуг</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Продуктовый консультант для новичков во фрилансе с ИИ.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь ещё не выбрал услугу, но знает свои интересы.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ИНТЕРЕСЫ] — чем нравится заниматься; [ВРЕМЯ В ДЕНЬ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Предложи 5 услуг из каталога 15 направлений (лендинги, презентации, лид-магниты, Telegram-контент, сценарии, карточки товара, соцсети, исследования, инструкции, email, визуал, монтаж, автоматизации, аудит, редизайн сайта), которые соответствуют интересам.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не предлагай услуг вне этого списка. Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Таблица: Услуга | Почему подходит | Что осваивать первым.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 3 — Service Fit</div>
-    <div class="pk">ROLE</div><div class="pv">Карьерный консультант.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь прошёл Service Fit Test и получил баллы по осям.</div>
-    <div class="pk">INPUT</div><div class="pv">[VISUAL SCORE], [WRITING SCORE], [RESEARCH SCORE], [TECHNICAL SCORE], [МОДИФИКАТОРЫ]</div>
-    <div class="pk">TASK</div><div class="pv">Предложи Primary и Backup Service на основе баллов, объясни логику в 2–3 предложениях.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не придумывай баллы, которые не переданы. Если данных не хватает — попроси их.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Primary Service / Backup Service / Почему.</div>
+    <div class="card-label">ПРОМПТ 2 — Сравнение услуг</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Аналитик рынка фриланс-услуг.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь выбирает между 2–3 услугами.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА A], [УСЛУГА B], [УСЛУГА C — опционально]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сравни по лёгкости освоения, скорости сборки портфолио, доступности лидов, порогу входа (1–5, редакционная оценка).</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Явно указывай, что это не рыночная статистика, а ориентир для сравнения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Таблица сравнения + 1 рекомендация с обоснованием.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 4 — Starter Scope</div>
-    <div class="pk">ROLE</div><div class="pv">Наставник по фрилансу.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь выбрал услугу, но формулирует её слишком широко.</div>
-    <div class="pk">INPUT</div><div class="pv">[ШИРОКАЯ ФОРМУЛИРОВКА УСЛУГИ]</div>
-    <div class="pk">TASK</div><div class="pv">Сузь до Safe Starter Scope — конкретного ограниченного объёма, который новичок может честно выполнить.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не обещай экспертный уровень. Формулировка должна звучать естественно на русском.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Safe Starter Scope одним предложением + список из 3 границ (что не входит).</div>
+    <div class="card-label">ПРОМПТ 3 — Соответствие услуге</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Карьерный консультант.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь прошёл тест на соответствие услуге и получил баллы по осям.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[БАЛЛ ВИЗУАЛ], [БАЛЛ ТЕКСТ], [БАЛЛ ИССЛЕДОВАНИЯ], [БАЛЛ ТЕХНИКА], [МОДИФИКАТОРЫ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Предложи основную и запасную услугу на основе баллов, объясни логику в 2–3 предложениях.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не придумывай баллы, которые не переданы. Если данных не хватает — попроси их.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Основная услуга / Запасная услуга / Почему.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 5 — Skill Requirements</div>
-    <div class="pk">ROLE</div><div class="pv">Методист по обучению навыкам.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь выбрал [УСЛУГА] и должен понять, что учить в первую очередь.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [ТЕКУЩИЙ УРОВЕНЬ]</div>
-    <div class="pk">TASK</div><div class="pv">Перечисли 5 core skills, необходимых для Minimum Sellable Skill по этой услуге.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список из 5 навыков, каждый — строка с конкретным примером.</div>
+    <div class="card-label">ПРОМПТ 4 — Стартовый объём работ</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Наставник по фрилансу.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь выбрал услугу, но формулирует её слишком широко.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ШИРОКАЯ ФОРМУЛИРОВКА УСЛУГИ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сузь до безопасного стартового объёма — конкретного ограниченного результата, который новичок может честно выполнить.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не обещай экспертный уровень. Формулировка должна звучать естественно на русском.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Безопасный стартовый объём одним предложением + список из 3 границ (что не входит).</div>
+  </div>
+  <div class="prompt-card">
+    <div class="card-label">ПРОМПТ 5 — Требования к навыку</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Методист по обучению навыкам.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь выбрал [УСЛУГА] и должен понять, что учить в первую очередь.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [ТЕКУЩИЙ УРОВЕНЬ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Перечисли 5 ключевых навыков, необходимых для минимально продаваемого уровня по этой услуге.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список из 5 навыков, каждый — строка с конкретным примером.</div>
   </div></div>
-<div class="page" id="pp-cat-02"><div class="label">Раздел 02</div><h1>Skill</h1><p>3-Day Skill Sprint — 8 промптов.</p></div><div class="page" id="pp-02">
+<div class="page" id="pp-cat-02"><div class="label">Раздел 02</div><h1>Навык</h1><p>Спринт навыка за 3 дня — 8 промптов.</p></div><div class="page" id="pp-02">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 6 — Concept Explainer</div>
-    <div class="pk">ROLE</div><div class="pv">Терпеливый наставник без профессионального жаргона.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь не понимает термин из своей услуги.</div>
-    <div class="pk">INPUT</div><div class="pv">[ПОНЯТИЕ], [УСЛУГА]</div>
-    <div class="pk">TASK</div><div class="pv">Объясни понятие простыми словами, приведи 1 короткий пример.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не используй профессиональный жаргон без объяснения. Максимум 5 предложений.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Объяснение + 1 пример.</div>
+    <div class="card-label">ПРОМПТ 6 — Объяснение понятия</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Терпеливый наставник без профессионального жаргона.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь не понимает термин из своей услуги.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ПОНЯТИЕ], [УСЛУГА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Объясни понятие простыми словами, приведи 1 короткий пример.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не используй профессиональный жаргон без объяснения. Максимум 5 предложений.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Объяснение + 1 пример.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 7 — Reference Breakdown</div>
-    <div class="pk">ROLE</div><div class="pv">Аналитик референсов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь нашёл хороший пример работы и хочет разобрать его структуру.</div>
-    <div class="pk">INPUT</div><div class="pv">[ОПИСАНИЕ ИЛИ ССЫЛКА НА ПРИМЕР], [УСЛУГА]</div>
-    <div class="pk">TASK</div><div class="pv">Разбери структуру по блокам, объясни назначение каждого блока, найди закономерности.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Задавай уточняющие вопросы, если данных не хватает. Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список блоков структуры + короткий вывод по паттерну.</div>
+    <div class="card-label">ПРОМПТ 7 — Разбор референса</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Аналитик референсов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь нашёл хороший пример работы и хочет разобрать его структуру.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОПИСАНИЕ ИЛИ ССЫЛКА НА ПРИМЕР], [УСЛУГА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Разбери структуру по блокам, объясни назначение каждого блока, найди закономерности.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Задавай уточняющие вопросы, если данных не хватает. Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список блоков структуры + короткий вывод по паттерну.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 8 — Skill Gap Finder</div>
-    <div class="pk">ROLE</div><div class="pv">Диагност учебных пробелов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь готовится к практике по [УСЛУГА] для [НИША].</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [НИША], [ЧТО УЖЕ ПОНИМАЮ]</div>
-    <div class="pk">TASK</div><div class="pv">Определи 5 конкретных навыков/знаний, которых не хватает для базового качественного результата.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Отвечай списком, без общих фраз вроде «нужно больше практики».</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">5 пунктов, каждый — конкретный навык.</div>
+    <div class="card-label">ПРОМПТ 8 — Поиск пробелов в навыке</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Диагност учебных пробелов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь готовится к практике по [УСЛУГА] для [НИША].</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [НИША], [ЧТО УЖЕ ПОНИМАЮ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Определи 5 конкретных навыков/знаний, которых не хватает для базового качественного результата.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Отвечай списком, без общих фраз вроде «нужно больше практики».</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">5 пунктов, каждый — конкретный навык.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 9 — Practice Brief Generator</div>
-    <div class="pk">ROLE</div><div class="pv">Генератор учебных брифов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователю нужен тренировочный проект для Дня 4 Skill Sprint.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [НИША], [ЦЕЛЬ КЛИЕНТА]</div>
-    <div class="pk">TASK</div><div class="pv">Сгенерируй условный бриф: проблема, целевая аудитория, ключевое сообщение, ограничения.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Бриф вымышленный — не привязывай к реальной компании без пометки.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Бриф из 4 полей.</div>
+    <div class="card-label">ПРОМПТ 9 — Генератор тренировочного брифа</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Генератор учебных брифов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователю нужен тренировочный проект для Дня 4 спринта навыка.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [НИША], [ЦЕЛЬ КЛИЕНТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сгенерируй условный бриф: проблема, целевая аудитория, ключевое сообщение, ограничения.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Бриф вымышленный — не привязывай к реальной компании без пометки.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Бриф из 4 полей.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 10 — Critique My Draft</div>
-    <div class="pk">ROLE</div><div class="pv">Строгий, но конструктивный ревьюер.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь прислал черновик работы и свой Quality Checklist.</div>
-    <div class="pk">INPUT</div><div class="pv">[ЧЕРНОВИК], [QUALITY CHECKLIST]</div>
-    <div class="pk">TASK</div><div class="pv">Оцени черновик строго по каждому пункту чек-листа.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не хвали то, что не в чек-листе. Укажи максимум 3 главные проблемы.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Оценка по пунктам чек-листа (выполнено/не выполнено) + топ-3 проблемы.</div>
+    <div class="card-label">ПРОМПТ 10 — Критика черновика</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Строгий, но конструктивный ревьюер.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь прислал черновик работы и свой чек-лист качества.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЧЕРНОВИК], [ЧЕК-ЛИСТ КАЧЕСТВА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Оцени черновик строго по каждому пункту чек-листа.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не хвали то, что не в чек-листе. Укажи максимум 3 главные проблемы.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Оценка по пунктам чек-листа (выполнено/не выполнено) + топ-3 проблемы.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 11 — Checklist Review</div>
-    <div class="pk">ROLE</div><div class="pv">Ревьюер по чек-листу.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет быструю проверку без развёрнутых комментариев.</div>
-    <div class="pk">INPUT</div><div class="pv">[QUALITY CHECKLIST], [РАБОТА]</div>
-    <div class="pk">TASK</div><div class="pv">Пройдись по каждому пункту чек-листа.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Ответ только «выполнено» / «не выполнено» на пункт — без общих комментариев.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список пунктов со статусом.</div>
+    <div class="card-label">ПРОМПТ 11 — Проверка по чек-листу</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ревьюер по чек-листу.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет быструю проверку без развёрнутых комментариев.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЧЕК-ЛИСТ КАЧЕСТВА], [РАБОТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Пройдись по каждому пункту чек-листа.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Ответ только «выполнено» / «не выполнено» на пункт — без общих комментариев.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список пунктов со статусом.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 12 — Mistake Explainer</div>
-    <div class="pk">ROLE</div><div class="pv">Наставник, сравнивающий с эталоном.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет понять разницу между своей работой и референсом.</div>
-    <div class="pk">INPUT</div><div class="pv">[МОЯ РАБОТА], [РЕФЕРЕНС], [QUALITY CHECKLIST]</div>
-    <div class="pk">TASK</div><div class="pv">Объясни, в чём работа слабее референса по структуре и логике решений — не по вкусу.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список конкретных расхождений со структурой референса.</div>
+    <div class="card-label">ПРОМПТ 12 — Объяснение ошибок</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Наставник, сравнивающий с эталоном.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет понять разницу между своей работой и референсом.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[МОЯ РАБОТА], [РЕФЕРЕНС], [ЧЕК-ЛИСТ КАЧЕСТВА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Объясни, в чём работа слабее референса по структуре и логике решений — не по вкусу.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список конкретных расхождений со структурой референса.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 13 — Next Exercise</div>
-    <div class="pk">ROLE</div><div class="pv">Тренер по методу ONE INPUT → ONE OUTPUT.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь только что изучил тему и должен сразу что-то создать.</div>
-    <div class="pk">INPUT</div><div class="pv">[ИЗУЧЕННАЯ ТЕМА], [ДОСТУПНОЕ ВРЕМЯ]</div>
-    <div class="pk">TASK</div><div class="pv">Дай одно конкретное тренировочное задание с готовым артефактом на выходе.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Задание должно укладываться в заданное время и не быть теоретическим.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Одно задание одним предложением + ожидаемый артефакт.</div>
+    <div class="card-label">ПРОМПТ 13 — Следующее упражнение</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Тренер по методу «одно действие → один результат».</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь только что изучил тему и должен сразу что-то создать.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ИЗУЧЕННАЯ ТЕМА], [ДОСТУПНОЕ ВРЕМЯ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Дай одно конкретное тренировочное задание с готовым артефактом на выходе.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Задание должно укладываться в заданное время и не быть теоретическим.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Одно задание одним предложением + ожидаемый артефакт.</div>
   </div></div>
-<div class="page" id="pp-cat-03"><div class="label">Раздел 03</div><h1>Portfolio</h1><p>3-Case Portfolio Sprint — 7 промптов.</p></div><div class="page" id="pp-03">
+<div class="page" id="pp-cat-03"><div class="label">Раздел 03</div><h1>Портфолио</h1><p>Спринт портфолио: 3 кейса — 7 промптов.</p></div><div class="page" id="pp-03">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 14 — Concept Brief</div>
-    <div class="pk">ROLE</div><div class="pv">Генератор демонстрационных брифов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь готовит Concept Project для портфолио.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [НИША], [СЛОЖНОСТЬ], [ЦЕЛЬ ДЛЯ ПОРТФОЛИО]</div>
-    <div class="pk">TASK</div><div class="pv">Сгенерируй реалистичный бриф: Business, Context, Audience, Problem, Goal, Deliverable, Required content, Constraints, Success criteria, Things NOT to invent.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Если бизнес реальный и факты неизвестны — оставь как [PLACEHOLDER]. Никогда не выдумывай выручку, клиентов, награды, результаты, цены.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Бриф строго по перечисленным полям.</div>
+    <div class="card-label">ПРОМПТ 14 — Концептуальный бриф</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Генератор демонстрационных брифов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь готовит концептуальный проект для портфолио.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [НИША], [СЛОЖНОСТЬ], [ЦЕЛЬ ДЛЯ ПОРТФОЛИО]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сгенерируй реалистичный бриф: бизнес, контекст, аудитория, проблема, цель, результат работы, обязательное содержание, ограничения, критерии успеха, что нельзя выдумывать.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Если бизнес реальный и факты неизвестны — оставь как [ЗАГЛУШКА]. Никогда не выдумывай выручку, клиентов, награды, результаты, цены.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Бриф строго по перечисленным полям.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 15 — Case Diversity</div>
-    <div class="pk">ROLE</div><div class="pv">Куратор портфолио.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь должен убедиться, что 3 кейса достаточно различаются.</div>
-    <div class="pk">INPUT</div><div class="pv">[ОПИСАНИЕ CASE 1], [CASE 2], [CASE 3]</div>
-    <div class="pk">TASK</div><div class="pv">Сравни по Niche, Audience, Problem, Deliverable, Style, Complexity — укажи, где кейсы слишком похожи.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Таблица сравнения + вывод: достаточно ли различий (да/нет) и что изменить.</div>
+    <div class="card-label">ПРОМПТ 15 — Разнообразие кейсов</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Куратор портфолио.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь должен убедиться, что 3 кейса достаточно различаются.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОПИСАНИЕ КЕЙСА 1], [КЕЙСА 2], [КЕЙСА 3]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сравни по нише, аудитории, проблеме, результату работы, стилю, сложности — укажи, где кейсы слишком похожи.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Таблица сравнения + вывод: достаточно ли различий (да/нет) и что изменить.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 16 — Case Critique</div>
-    <div class="pk">ROLE</div><div class="pv">Ревьюер портфолио.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет проверить кейс перед публикацией.</div>
-    <div class="pk">INPUT</div><div class="pv">[CASE STUDY]</div>
-    <div class="pk">TASK</div><div class="pv">Оцени по Clarity, Business Logic, Presentation, Credibility.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Сначала назови 3 самых критичных недостатка, не хвали автоматически.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">3 главных недостатка + краткая оценка по 4 категориям.</div>
+    <div class="card-label">ПРОМПТ 16 — Критика кейса</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ревьюер портфолио.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет проверить кейс перед публикацией.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОПИСАНИЕ КЕЙСА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Оцени по ясности, бизнес-логике, подаче, достоверности.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Сначала назови 3 самых критичных недостатка, не хвали автоматически.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">3 главных недостатка + краткая оценка по 4 категориям.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 17 — Case Study Writer</div>
-    <div class="pk">ROLE</div><div class="pv">Копирайтер портфолио-кейсов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь выполнил работу и должен оформить её в Case Study Format.</div>
-    <div class="pk">INPUT</div><div class="pv">[БРИФ], [DELIVERABLE], [КЛЮЧЕВЫЕ РЕШЕНИЯ]</div>
-    <div class="pk">TASK</div><div class="pv">Собери кейс по полям: Title, Status, Client Type, Challenge, Goal, Approach, Deliverable, Key Decisions, What This Case Demonstrates.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Status всегда «Concept Project», если это не оплаченный проект. Поле Results не используется — только Project Outcome.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Заполненный Case Study по всем полям.</div>
+    <div class="card-label">ПРОМПТ 17 — Оформление кейса</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Копирайтер портфолио-кейсов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь выполнил работу и должен оформить её по формату кейса.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[БРИФ], [РЕЗУЛЬТАТ РАБОТЫ], [КЛЮЧЕВЫЕ РЕШЕНИЯ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери кейс по полям: название, статус, тип клиента, задача, цель, подход, результат работы, ключевые решения, что демонстрирует кейс.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Статус всегда «Концептуальный проект», если это не оплаченный проект. Поле «результаты бизнеса» не используется — только «итог работы».</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Заполненный кейс по всем полям.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 18 — Portfolio Audit</div>
-    <div class="pk">ROLE</div><div class="pv">Критичный аудитор портфолио.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет проверить всё портфолио целиком перед отправкой клиентам.</div>
-    <div class="pk">INPUT</div><div class="pv">[ССЫЛКА/ОПИСАНИЕ ПОРТФОЛИО]</div>
-    <div class="pk">TASK</div><div class="pv">Проверь Clarity, Consistency, Credibility, что выглядит любительским, что улучшить перед показом клиентам.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не придумывай проблемы, которых нет в материале. Не хвали автоматически.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список конкретных замечаний, отсортированный по важности.</div>
+    <div class="card-label">ПРОМПТ 18 — Аудит портфолио</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Критичный аудитор портфолио.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет проверить всё портфолио целиком перед отправкой клиентам.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ССЫЛКА/ОПИСАНИЕ ПОРТФОЛИО]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Проверь ясность, единообразие, достоверность, что выглядит любительским, что улучшить перед показом клиентам.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не придумывай проблемы, которых нет в материале. Не хвали автоматически.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список конкретных замечаний, отсортированный по важности.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 19 — 30-Second Pitch</div>
-    <div class="pk">ROLE</div><div class="pv">Тренер по питчингу.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь должен уметь объяснить кейс за 30 секунд.</div>
-    <div class="pk">INPUT</div><div class="pv">[CASE STUDY]</div>
-    <div class="pk">TASK</div><div class="pv">Собери питч по формуле: Это концепт для [TYPE]. Задача — [PROBLEM]. Сделал(а) [DELIVERABLE]. Акцент — [DECISION].</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не длиннее 4 предложений.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 версия на 30 секунд + 1 версия для сообщения клиенту.</div>
+    <div class="card-label">ПРОМПТ 19 — Питч на 30 секунд</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Тренер по питчингу.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь должен уметь объяснить кейс за 30 секунд.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОПИСАНИЕ КЕЙСА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери питч по формуле: Это концепт для [ТИП КЛИЕНТА]. Задача — [ПРОБЛЕМА]. Сделал(а) [РЕЗУЛЬТАТ РАБОТЫ]. Акцент — [РЕШЕНИЕ].</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не длиннее 4 предложений.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 версия на 30 секунд + 1 версия для сообщения клиенту.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 20 — Fake Claim Detector</div>
-    <div class="pk">ROLE</div><div class="pv">Контролёр честности портфолио.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет проверить текст кейса на непроверенные утверждения.</div>
-    <div class="pk">INPUT</div><div class="pv">[ТЕКСТ КЕЙСА]</div>
-    <div class="pk">TASK</div><div class="pv">Найди утверждения, похожие на факт, но не подтверждённые (цифры, результаты, отзывы, «клиент сказал»).</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Помечай каждое найденное утверждение как VERIFIED / CLIENT PROVIDED / UNVERIFIED.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список найденных утверждений с пометкой и рекомендацией (оставить/убрать/заменить на Project Outcome).</div>
+    <div class="card-label">ПРОМПТ 20 — Детектор выдуманных фактов</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Контролёр честности портфолио.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет проверить текст кейса на непроверенные утверждения.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ТЕКСТ КЕЙСА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Найди утверждения, похожие на факт, но не подтверждённые (цифры, результаты, отзывы, «клиент сказал»).</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Помечай каждое найденное утверждение как «подтверждено публично» / «со слов клиента» / «не подтверждено».</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список найденных утверждений с пометкой и рекомендацией (оставить/убрать/заменить на итог работы).</div>
   </div></div>
-<div class="page" id="pp-cat-04"><div class="label">Раздел 04</div><h1>Offer</h1><p>Offer + Pricing — 5 промптов.</p></div><div class="page" id="pp-04">
+<div class="page" id="pp-cat-04"><div class="label">Раздел 04</div><h1>Оффер</h1><p>Оффер и цена — 5 промптов.</p></div><div class="page" id="pp-04">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 21 — Offer Builder</div>
-    <div class="pk">ROLE</div><div class="pv">Копирайтер офферов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь должен превратить услугу в понятное предложение.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [CLIENT TYPE], [DELIVERABLE], [СРОК]</div>
-    <div class="pk">TASK</div><div class="pv">Собери оффер по формуле: Помогаю [КТО] решить [ЗАДАЧА] с помощью [DELIVERABLE] за [СРОК].</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не используй абстрактные результаты вроде «помогаю бизнесу расти».</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Оффер одним предложением + one-sentence версия для сайта/сообщения.</div>
+    <div class="card-label">ПРОМПТ 21 — Конструктор оффера</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Копирайтер офферов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь должен превратить услугу в понятное предложение.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [ТИП КЛИЕНТА], [РЕЗУЛЬТАТ РАБОТЫ], [СРОК]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери оффер по формуле: Помогаю [КТО] решить [ЗАДАЧА] с помощью [РЕЗУЛЬТАТ РАБОТЫ] за [СРОК].</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не используй абстрактные результаты вроде «помогаю бизнесу расти».</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Оффер одним предложением + короткая версия для сайта/сообщения.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 22 — Scope Builder</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по фиксации объёма работ.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь должен зафиксировать, что входит и не входит в проект.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [DELIVERABLE]</div>
-    <div class="pk">TASK</div><div class="pv">Предложи Included / Not Included / Number of Revisions на основе типового объёма для этой услуги.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Таблица: Included | Not Included | Revisions.</div>
+    <div class="card-label">ПРОМПТ 22 — Определение объёма работ</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по фиксации объёма работ.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь должен зафиксировать, что входит и не входит в проект.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [РЕЗУЛЬТАТ РАБОТЫ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Предложи «входит / не входит / количество правок» на основе типового объёма для этой услуги.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Таблица: Входит | Не входит | Правки.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 23 — Package Builder</div>
-    <div class="pk">ROLE</div><div class="pv">Консультант по пакетированию услуг.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь должен собрать STARTER/CORE/PLUS.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [БАЗОВЫЙ SCOPE]</div>
-    <div class="pk">TASK</div><div class="pv">Предложи 3 уровня пакета с разным реальным объёмом deliverable (не «плохой/хороший»).</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не предлагай scope выше уровня новичка из Skill Sprint. Цены — только как пример, помечай явно.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Таблица STARTER/CORE/PLUS: For / Includes / Timeline / Revisions.</div>
+    <div class="card-label">ПРОМПТ 23 — Конструктор пакетов</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Консультант по пакетированию услуг.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь должен собрать три уровня пакета.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [БАЗОВЫЙ ОБЪЁМ РАБОТ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Предложи 3 уровня пакета с разным реальным объёмом результата работы (не «плохой/хороший»).</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не предлагай объём выше уровня новичка из спринта навыка. Цены — только как пример, помечай явно.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Таблица «Старт / Основной / Расширенный»: для кого / что входит / срок / правки.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 24 — Price Message Critique</div>
-    <div class="pk">ROLE</div><div class="pv">Ревьюер сообщений о цене.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь написал сообщение с ценой клиенту.</div>
-    <div class="pk">INPUT</div><div class="pv">[ЧЕРНОВИК СООБЩЕНИЯ]</div>
-    <div class="pk">TASK</div><div class="pv">Проверь на формулу PRICE + SCOPE + TERMS, наличие оправданий или излишней неуверенности.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не переписывай тон на слишком уверенный/агрессивный.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Оценка + переписанная версия, если нужна.</div>
+    <div class="card-label">ПРОМПТ 24 — Критика сообщения о цене</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ревьюер сообщений о цене.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь написал сообщение с ценой клиенту.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЧЕРНОВИК СООБЩЕНИЯ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Проверь на формулу «цена + объём + условия», наличие оправданий или излишней неуверенности.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не переписывай тон на слишком уверенный/агрессивный.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Оценка + переписанная версия, если нужна.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 25 — Offer Critique</div>
-    <div class="pk">ROLE</div><div class="pv">Ревьюер офферов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет проверить оффер перед использованием.</div>
-    <div class="pk">INPUT</div><div class="pv">[ОФФЕР]</div>
-    <div class="pk">TASK</div><div class="pv">Проверь, понимает ли обычный владелец бизнеса предложение за 10 секунд.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Укажи конкретно, какое слово/часть неясны — не общие рекомендации.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Вердикт (ясно/неясно) + конкретная правка.</div>
+    <div class="card-label">ПРОМПТ 25 — Критика оффера</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ревьюер офферов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет проверить оффер перед использованием.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОФФЕР]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Проверь, понимает ли обычный владелец бизнеса предложение за 10 секунд.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Укажи конкретно, какое слово/часть неясны — не общие рекомендации.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Вердикт (ясно/неясно) + конкретная правка.</div>
   </div></div>
-<div class="page" id="pp-cat-05"><div class="label">Раздел 05</div><h1>Leads</h1><p>Lead System — 7 промптов.</p></div><div class="page" id="pp-05">
+<div class="page" id="pp-cat-05"><div class="label">Раздел 05</div><h1>Лиды</h1><p>Система поиска клиентов — 7 промптов.</p></div><div class="page" id="pp-05">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 26 — ICP Builder</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по определению целевой аудитории.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь выбрал услугу и должен описать идеального клиента.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [ЗАМЕТКИ О НИШЕ]</div>
-    <div class="pk">TASK</div><div class="pv">Заполни поля ICP Builder: Niche, Business Type, Common Problem, Visible Signals, Where to Find Them.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Задавай уточняющие вопросы там, где данных не хватает. Не придумывай ниши, которых пользователь не упоминал.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">ICP по всем полям.</div>
+    <div class="card-label">ПРОМПТ 26 — Портрет идеального клиента</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по определению целевой аудитории.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь выбрал услугу и должен описать идеального клиента.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [ЗАМЕТКИ О НИШЕ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Заполни портрет идеального клиента: ниша, тип бизнеса, частая проблема, видимые сигналы, где искать.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Задавай уточняющие вопросы там, где данных не хватает. Не придумывай ниши, которых пользователь не упоминал.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Портрет клиента по всем полям.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 27 — Lead Qualification</div>
-    <div class="pk">ROLE</div><div class="pv">Аналитик лидов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь нашёл компанию и хочет оценить её как лида.</div>
-    <div class="pk">INPUT</div><div class="pv">[ПУБЛИЧНО ДОСТУПНАЯ ИНФОРМАЦИЯ О КОМПАНИИ]</div>
-    <div class="pk">TASK</div><div class="pv">Оцени по Lead Score: Need / Buying Capacity / Contactability / Fit / Timing (0–2 каждый).</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Если по пункту данных недостаточно — пиши UNKNOWN, не придумывай значение.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Оценка по 5 пунктам + Total Score /10.</div>
+    <div class="card-label">ПРОМПТ 27 — Квалификация лида</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Аналитик лидов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь нашёл компанию и хочет оценить её как лида.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ПУБЛИЧНО ДОСТУПНАЯ ИНФОРМАЦИЯ О КОМПАНИИ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Оцени по 5 критериям оценки лида: потребность / платёжеспособность / доступность для связи / соответствие / момент (0–2 каждый).</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Если по пункту данных недостаточно — пиши «неизвестно», не придумывай значение.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Оценка по 5 пунктам + итоговый балл /10.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 28 — Company Research Summary</div>
-    <div class="pk">ROLE</div><div class="pv">Ресёрчер.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь собрал открытые материалы о компании.</div>
-    <div class="pk">INPUT</div><div class="pv">[ССЫЛКИ / ТЕКСТ]</div>
-    <div class="pk">TASK</div><div class="pv">Сделай короткую сводку: что продают, кто аудитория, какие сигналы активности видны.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не добавляй фактов, которых нет в материалах.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Сводка в 4–5 пунктах.</div>
+    <div class="card-label">ПРОМПТ 28 — Сводка по компании</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ресёрчер.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь собрал открытые материалы о компании.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ССЫЛКИ / ТЕКСТ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сделай короткую сводку: что продают, кто аудитория, какие сигналы активности видны.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не добавляй фактов, которых нет в материалах.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Сводка в 4–5 пунктах.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 29 — Website / Profile Observation</div>
-    <div class="pk">ROLE</div><div class="pv">Наблюдатель, не эксперт по продажам.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь описал сайт или профиль потенциального лида.</div>
-    <div class="pk">INPUT</div><div class="pv">[ОПИСАНИЕ САЙТА/ПРОФИЛЯ]</div>
-    <div class="pk">TASK</div><div class="pv">Перечисли конкретные наблюдения (что видно буквально), отдельно от предположений (что это может значить).</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не смешивай два списка. Не утверждай проблему как факт.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Два отдельных списка: Observations / Hypotheses.</div>
+    <div class="card-label">ПРОМПТ 29 — Наблюдение по сайту/профилю</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Наблюдатель, не эксперт по продажам.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь описал сайт или профиль потенциального лида.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОПИСАНИЕ САЙТА/ПРОФИЛЯ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Перечисли конкретные наблюдения (что видно буквально), отдельно от предположений (что это может значить).</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не смешивай два списка. Не утверждай проблему как факт.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Два отдельных списка: наблюдения / гипотезы.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 30 — Personalization Hook Generator</div>
-    <div class="pk">ROLE</div><div class="pv">Автор персонализации.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь имеет конкретное наблюдение о лиде.</div>
-    <div class="pk">INPUT</div><div class="pv">[НАБЛЮДЕНИЕ], [УСЛУГА]</div>
-    <div class="pk">TASK</div><div class="pv">Сформулируй personalization hook на 1 предложение.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Запрещены комплименты общего характера («классный бизнес», «потрясающая компания»).</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 предложение-крючок.</div>
+    <div class="card-label">ПРОМПТ 30 — Генератор зацепки для персонализации</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор персонализации.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь имеет конкретное наблюдение о лиде.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[НАБЛЮДЕНИЕ], [УСЛУГА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сформулируй зацепку для персонализации на 1 предложение.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Запрещены комплименты общего характера («классный бизнес», «потрясающая компания»).</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 предложение-крючок.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 31 — Lead Prioritization</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по приоритизации.</div>
-    <div class="pk">CONTEXT</div><div class="pv">У пользователя есть список лидов с их Lead Score.</div>
-    <div class="pk">INPUT</div><div class="pv">[СПИСОК ЛИДОВ С БАЛЛАМИ]</div>
-    <div class="pk">TASK</div><div class="pv">Распредели по A/B/C по правилам: A = сильный fit + проблема + хороший контакт.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список с категорией A/B/C + причина одним предложением на лид.</div>
+    <div class="card-label">ПРОМПТ 31 — Приоритизация лидов</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по приоритизации.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">У пользователя есть список лидов с их оценкой.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[СПИСОК ЛИДОВ С БАЛЛАМИ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Распредели по A/B/C по правилам: A = сильное соответствие + проблема + хороший контакт.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список с категорией A/B/C + причина одним предложением на лид.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 32 — Economic Fit</div>
-    <div class="pk">ROLE</div><div class="pv">Аналитик экономики сделки.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь оценивает, оправдана ли его цена для этого лида.</div>
-    <div class="pk">INPUT</div><div class="pv">[ЧТО ПРОДАЁТ КЛИЕНТ], [ПУБЛИЧНО ВИДИМЫЙ ORDER VALUE], [ЦЕНА УСЛУГИ]</div>
-    <div class="pk">TASK</div><div class="pv">Оцени соразмерность цены масштабу бизнеса клиента.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай ROI и не гарантируй окупаемость.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Вывод: вероятно соразмерно / вероятно нет / недостаточно данных — с обоснованием.</div>
+    <div class="card-label">ПРОМПТ 32 — Проверка экономики сделки</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Аналитик экономики сделки.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь оценивает, оправдана ли его цена для этого лида.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЧТО ПРОДАЁТ КЛИЕНТ], [ПУБЛИЧНО ВИДИМЫЙ ЧЕК], [ЦЕНА УСЛУГИ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Оцени соразмерность цены масштабу бизнеса клиента.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай окупаемость и не гарантируй результат.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Вывод: вероятно соразмерно / вероятно нет / недостаточно данных — с обоснованием.</div>
   </div></div>
-<div class="page" id="pp-cat-06"><div class="label">Раздел 06</div><h1>Outreach</h1><p>Outreach Engine — 8 промптов.</p></div><div class="page" id="pp-06">
+<div class="page" id="pp-cat-06"><div class="label">Раздел 06</div><h1>Первый контакт</h1><p>Первый контакт с клиентом — 8 промптов.</p></div><div class="page" id="pp-06">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 33 — Personalized First Message</div>
-    <div class="pk">ROLE</div><div class="pv">Автор первых сообщений.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь готовит первое касание с лидом.</div>
-    <div class="pk">INPUT</div><div class="pv">[НАБЛЮДЕНИЕ], [УСЛУГА], [КАНАЛ]</div>
-    <div class="pk">TASK</div><div class="pv">Собери сообщение по формуле CONTEXT → OBSERVATION → RELEVANCE → NEXT STEP.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Максимум 4 строки. Без ложной срочности и обещаний результата.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 готовое сообщение.</div>
+    <div class="card-label">ПРОМПТ 33 — Персонализированное первое сообщение</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор первых сообщений.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь готовит первое касание с лидом.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[НАБЛЮДЕНИЕ], [УСЛУГА], [КАНАЛ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери сообщение по формуле: контекст → наблюдение → релевантность → следующий шаг.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Максимум 4 строки. Без ложной срочности и обещаний результата.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 готовое сообщение.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 34 — Message Shortener</div>
-    <div class="pk">ROLE</div><div class="pv">Редактор.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Сообщение пользователя получилось слишком длинным.</div>
-    <div class="pk">INPUT</div><div class="pv">[ЧЕРНОВИК СООБЩЕНИЯ]</div>
-    <div class="pk">TASK</div><div class="pv">Сократи до 2–4 строк, сохранив наблюдение и next step.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не убирай персонализацию ради краткости.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Короткая версия сообщения.</div>
+    <div class="card-label">ПРОМПТ 34 — Сокращение сообщения</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Редактор.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Сообщение пользователя получилось слишком длинным.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЧЕРНОВИК СООБЩЕНИЯ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сократи до 2–4 строк, сохранив наблюдение и следующий шаг.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не убирай персонализацию ради краткости.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Короткая версия сообщения.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 35 — Observation → Outreach</div>
-    <div class="pk">ROLE</div><div class="pv">Связующее звено между research и outreach.</div>
-    <div class="pk">CONTEXT</div><div class="pv">У пользователя есть сырое наблюдение из Lead Research Card.</div>
-    <div class="pk">INPUT</div><div class="pv">[НАБЛЮДЕНИЕ], [КОМПАНИЯ], [УСЛУГА]</div>
-    <div class="pk">TASK</div><div class="pv">Преобразуй наблюдение в первое сообщение по формуле CONTEXT→OBSERVATION→RELEVANCE→NEXT STEP.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не превращай наблюдение в критику бизнеса.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 готовое сообщение.</div>
+    <div class="card-label">ПРОМПТ 35 — Из наблюдения в сообщение</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Связующее звено между исследованием и первым контактом.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">У пользователя есть сырое наблюдение из карточки исследования лида.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[НАБЛЮДЕНИЕ], [КОМПАНИЯ], [УСЛУГА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Преобразуй наблюдение в первое сообщение по формуле контекст → наблюдение → релевантность → следующий шаг.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не превращай наблюдение в критику бизнеса.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 готовое сообщение.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 36 — Follow-Up Generator</div>
-    <div class="pk">ROLE</div><div class="pv">Автор follow-up сообщений.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент не ответил на первое сообщение.</div>
-    <div class="pk">INPUT</div><div class="pv">[ПЕРВОЕ СООБЩЕНИЕ], [СКОЛЬКО ДНЕЙ ПРОШЛО], [НОМЕР FOLLOW-UP]</div>
-    <div class="pk">TASK</div><div class="pv">Сгенерируй follow-up соответствующего типа (gentle / value-based / timing-signal / close-the-loop).</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Без пассивной агрессии и намёков вроде «вы наверное не видели».</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 follow-up сообщение.</div>
+    <div class="card-label">ПРОМПТ 36 — Генератор повторного контакта</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор сообщений повторного контакта.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент не ответил на первое сообщение.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ПЕРВОЕ СООБЩЕНИЕ], [СКОЛЬКО ДНЕЙ ПРОШЛО], [НОМЕР ПОВТОРНОГО КОНТАКТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сгенерируй сообщение соответствующего типа (мягкое / с пользой / по сигналу момента / закрытие цикла).</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Без пассивной агрессии и намёков вроде «вы наверное не видели».</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 сообщение повторного контакта.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 37 — Reply Classifier</div>
-    <div class="pk">ROLE</div><div class="pv">Классификатор ответов клиентов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь получил ответ и не понимает, что это значит.</div>
-    <div class="pk">INPUT</div><div class="pv">[ОТВЕТ КЛИЕНТА]</div>
-    <div class="pk">TASK</div><div class="pv">Классифицируй: Interested / Price Question / Objection / No / Needs More Info.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Если ответ неоднозначен — укажи это, не выбирай категорию силой.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Категория + рекомендованный следующий шаг.</div>
+    <div class="card-label">ПРОМПТ 37 — Классификатор ответов</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Классификатор ответов клиентов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь получил ответ и не понимает, что это значит.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОТВЕТ КЛИЕНТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Классифицируй: заинтересован / вопрос о цене / возражение / отказ / нужно больше информации.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Если ответ неоднозначен — укажи это, не выбирай категорию силой.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Категория + рекомендованный следующий шаг.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 38 — Message Critique</div>
-    <div class="pk">ROLE</div><div class="pv">Ревьюер outreach-сообщений.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет проверить сообщение перед отправкой.</div>
-    <div class="pk">INPUT</div><div class="pv">[СООБЩЕНИЕ]</div>
-    <div class="pk">TASK</div><div class="pv">Проверь на длину, наличие наблюдения, ложную срочность, шаблонность.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Укажи максимум 3 проблемы, не переписывай тон полностью.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">До 3 замечаний + одна конкретная правка.</div>
+    <div class="card-label">ПРОМПТ 38 — Критика сообщения</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ревьюер сообщений первого контакта.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет проверить сообщение перед отправкой.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[СООБЩЕНИЕ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Проверь на длину, наличие наблюдения, ложную срочность, шаблонность.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Укажи максимум 3 проблемы, не переписывай тон полностью.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">До 3 замечаний + одна конкретная правка.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 39 — A/B Variant Generator</div>
-    <div class="pk">ROLE</div><div class="pv">Автор вариантов сообщений.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет протестировать альтернативный вариант сообщения.</div>
-    <div class="pk">INPUT</div><div class="pv">[СООБЩЕНИЕ A], [ЧТО МЕНЯЕМ: opening/CTA/offer framing/personalization]</div>
-    <div class="pk">TASK</div><div class="pv">Создай вариант B, меняя только указанный элемент.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не меняй остальные элементы сообщения одновременно.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Message B.</div>
+    <div class="card-label">ПРОМПТ 39 — Генератор A/B-варианта</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор вариантов сообщений.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет протестировать альтернативный вариант сообщения.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[СООБЩЕНИЕ A], [ЧТО МЕНЯЕМ: начало/призыв к действию/подача оффера/персонализация]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Создай вариант B, меняя только указанный элемент.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не меняй остальные элементы сообщения одновременно.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Сообщение B.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 40 — Freelance Proposal Builder</div>
-    <div class="pk">ROLE</div><div class="pv">Автор откликов на фриланс-биржах.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь отвечает на опубликованную задачу.</div>
-    <div class="pk">INPUT</div><div class="pv">[ТЕКСТ ЗАДАЧИ], [УСЛУГА], [РЕЛЕВАНТНЫЙ КЕЙС]</div>
-    <div class="pk">TASK</div><div class="pv">Собери отклик: понял задачу → релевантный опыт → как бы подошёл → что уточнить → следующий шаг.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не писать «готов выполнить быстро и качественно» и подобные пустые фразы.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Готовый отклик по 5 пунктам.</div>
+    <div class="card-label">ПРОМПТ 40 — Отклик на фриланс-бирже</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор откликов на фриланс-биржах.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь отвечает на опубликованную задачу.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ТЕКСТ ЗАДАЧИ], [УСЛУГА], [РЕЛЕВАНТНЫЙ КЕЙС]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери отклик: понял задачу → релевантный опыт → как бы подошёл → что уточнить → следующий шаг.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не писать «готов выполнить быстро и качественно» и подобные пустые фразы.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Готовый отклик по 5 пунктам.</div>
   </div></div>
-<div class="page" id="pp-cat-07"><div class="label">Раздел 07</div><h1>Sales</h1><p>Sales Engine — 10 промптов.</p></div><div class="page" id="pp-07">
+<div class="page" id="pp-cat-07"><div class="label">Раздел 07</div><h1>Продажа</h1><p>Механика продажи — 10 промптов.</p></div><div class="page" id="pp-07">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 41 — Discovery Questions</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по продажам.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент проявил интерес, нужно начать discovery.</div>
-    <div class="pk">INPUT</div><div class="pv">[КОНТЕКСТ ЛИДА]</div>
-    <div class="pk">TASK</div><div class="pv">Предложи 2–3 естественных discovery-вопроса для начала диалога, не анкету.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не задавай больше 3 вопросов за раз.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">2–3 вопроса + короткое обоснование выбора.</div>
+    <div class="card-label">ПРОМПТ 41 — Вопросы для выявления потребности</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по продажам.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент проявил интерес, нужно начать выявление потребности.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[КОНТЕКСТ ЛИДА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Предложи 2–3 естественных вопроса для начала диалога, не анкету.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не задавай больше 3 вопросов за раз.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">2–3 вопроса + короткое обоснование выбора.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 42 — Discovery Summary</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по суммированию диалога.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь провёл discovery и хочет проверить понимание перед предложением.</div>
-    <div class="pk">INPUT</div><div class="pv">[ЗАМЕТКИ ДИАЛОГА]</div>
-    <div class="pk">TASK</div><div class="pv">Собери summary по формуле: сейчас у вас… нужно… главное… срок…</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Summary из 4 предложений.</div>
+    <div class="card-label">ПРОМПТ 42 — Резюме выявления потребности</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по суммированию диалога.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь провёл выявление потребности и хочет проверить понимание перед предложением.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЗАМЕТКИ ДИАЛОГА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери резюме по формуле: сейчас у вас… нужно… главное… срок…</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Резюме из 4 предложений.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 43 — Scope Clarifier</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по объёму работ.</div>
-    <div class="pk">CONTEXT</div><div class="pv">После discovery неясен точный scope.</div>
-    <div class="pk">INPUT</div><div class="pv">[ЗАМЕТКИ ДИАЛОГА]</div>
-    <div class="pk">TASK</div><div class="pv">Предложи Included/Not Included на основе того, что реально обсуждалось.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не добавляй scope, которого не было в диалоге.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Included / Not Included списком.</div>
+    <div class="card-label">ПРОМПТ 43 — Уточнение объёма работ</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по объёму работ.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">После диалога неясен точный объём работ.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЗАМЕТКИ ДИАЛОГА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Предложи «входит/не входит» на основе того, что реально обсуждалось.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не добавляй объём, которого не было в диалоге.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">«Входит / не входит» списком.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 44 — Offer Draft</div>
-    <div class="pk">ROLE</div><div class="pv">Автор предложений по итогам discovery.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Discovery завершён, нужно сформулировать решение.</div>
-    <div class="pk">INPUT</div><div class="pv">[SUMMARY], [УСЛУГА], [SCOPE]</div>
-    <div class="pk">TASK</div><div class="pv">Собери предложение по формуле YOU SAID → SO I RECOMMEND → IT INCLUDES.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Предлагай только то, что связано с discovery — не весь список возможностей.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">3–4 предложения.</div>
+    <div class="card-label">ПРОМПТ 44 — Черновик предложения</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор предложений по итогам диалога.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Диалог завершён, нужно сформулировать решение.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[РЕЗЮМЕ], [УСЛУГА], [ОБЪЁМ РАБОТ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери предложение по формуле: вы сказали → поэтому я предлагаю → в это входит.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Предлагай только то, что связано с диалогом — не весь список возможностей.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">3–4 предложения.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 45 — Price Message</div>
-    <div class="pk">ROLE</div><div class="pv">Автор сообщений о цене.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь готов назвать цену клиенту.</div>
-    <div class="pk">INPUT</div><div class="pv">[SCOPE], [ЦЕНА], [СРОК], [ПРАВКИ]</div>
-    <div class="pk">TASK</div><div class="pv">Собери сообщение по формуле PRICE + SCOPE + TERMS.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Без оправданий и извинений за цену.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 готовое сообщение.</div>
+    <div class="card-label">ПРОМПТ 45 — Сообщение о цене</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор сообщений о цене.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь готов назвать цену клиенту.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОБЪЁМ РАБОТ], [ЦЕНА], [СРОК], [ПРАВКИ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери сообщение по формуле «цена + объём + условия».</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Без оправданий и извинений за цену.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 готовое сообщение.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 46 — Objection Analyzer</div>
-    <div class="pk">ROLE</div><div class="pv">Аналитик возражений.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент написал возражение.</div>
-    <div class="pk">INPUT</div><div class="pv">[ВОЗРАЖЕНИЕ КЛИЕНТА]</div>
-    <div class="pk">TASK</div><div class="pv">Определи, к какой из 15 категорий Objection Library оно ближе всего и что может стоять за ним.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выбирай одну причину как единственно верную — перечисли 2–3 варианта.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Категория + возможные скрытые причины.</div>
+    <div class="card-label">ПРОМПТ 46 — Анализатор возражения</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Аналитик возражений.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент написал возражение.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ВОЗРАЖЕНИЕ КЛИЕНТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Определи, к какой из 15 категорий библиотеки возражений оно ближе всего и что может стоять за ним.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выбирай одну причину как единственно верную — перечисли 2–3 варианта.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Категория + возможные скрытые причины.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 47 — Objection Response</div>
-    <div class="pk">ROLE</div><div class="pv">Автор ответов на возражения.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь знает категорию возражения и хочет ответ.</div>
-    <div class="pk">INPUT</div><div class="pv">[ВОЗРАЖЕНИЕ], [КАТЕГОРИЯ]</div>
-    <div class="pk">TASK</div><div class="pv">Собери ответ по формуле ACKNOWLEDGE → CLARIFY → RESPOND → NEXT STEP.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не предлагай скидку без изменения scope.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 готовый ответ.</div>
+    <div class="card-label">ПРОМПТ 47 — Ответ на возражение</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор ответов на возражения.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь знает категорию возражения и хочет ответ.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ВОЗРАЖЕНИЕ], [КАТЕГОРИЯ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери ответ по формуле: признай → уточни → ответь → следующий шаг.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не предлагай скидку без изменения объёма работ.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 готовый ответ.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 48 — Sales Conversation Critique</div>
-    <div class="pk">ROLE</div><div class="pv">Ревьюер продажных диалогов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь хочет проверить переписку с клиентом.</div>
-    <div class="pk">INPUT</div><div class="pv">[ПЕРЕПИСКА]</div>
-    <div class="pk">TASK</div><div class="pv">Оцени: не питчил ли слишком рано, назвал ли цену со scope, не гарантировал ли лишнего.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Укажи максимум 3 проблемы.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">До 3 замечаний с конкретным местом в переписке.</div>
+    <div class="card-label">ПРОМПТ 48 — Критика продажного диалога</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ревьюер продажных диалогов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь хочет проверить переписку с клиентом.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ПЕРЕПИСКА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Оцени: не питчил ли слишком рано, назвал ли цену с объёмом работ, не гарантировал ли лишнего.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Укажи максимум 3 проблемы.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">До 3 замечаний с конкретным местом в переписке.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 49 — Project Summary Generator</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по фиксации условий.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Сделка согласована, нужна письменная фиксация.</div>
-    <div class="pk">INPUT</div><div class="pv">[SCOPE], [ЦЕНА], [СРОК], [ПРАВКИ], [ОПЛАТА]</div>
-    <div class="pk">TASK</div><div class="pv">Собери Project Summary по 9 полям (Project, Deliverables, Deadline, Price, Payment terms, Revisions, Not Included, Client materials, Final delivery).</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Заполненный Project Summary.</div>
+    <div class="card-label">ПРОМПТ 49 — Генератор резюме проекта</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по фиксации условий.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Сделка согласована, нужна письменная фиксация.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОБЪЁМ РАБОТ], [ЦЕНА], [СРОК], [ПРАВКИ], [ОПЛАТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери резюме проекта по 9 полям (проект, результаты работы, срок, цена, условия оплаты, правки, не входит, материалы клиента, финальная передача).</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Заполненное резюме проекта.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 50 — Offer Follow-Up</div>
-    <div class="pk">ROLE</div><div class="pv">Автор follow-up после отправленного предложения.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь отправил цену/предложение и не получил ответ.</div>
-    <div class="pk">INPUT</div><div class="pv">[ЧТО БЫЛО ПРЕДЛОЖЕНО], [СКОЛЬКО ДНЕЙ ПРОШЛО]</div>
-    <div class="pk">TASK</div><div class="pv">Сгенерируй мягкий follow-up без давления.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Без «просто напоминаю» и пассивной агрессии.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 сообщение.</div>
+    <div class="card-label">ПРОМПТ 50 — Повторный контакт после оффера</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор повторного контакта после отправленного предложения.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь отправил цену/предложение и не получил ответ.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЧТО БЫЛО ПРЕДЛОЖЕНО], [СКОЛЬКО ДНЕЙ ПРОШЛО]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сгенерируй мягкий повторный контакт без давления.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Без «просто напоминаю» и пассивной агрессии.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 сообщение.</div>
   </div></div>
-<div class="page" id="pp-cat-08"><div class="label">Раздел 08</div><h1>Delivery</h1><p>Client Delivery System — 10 промптов.</p></div><div class="page" id="pp-08">
+<div class="page" id="pp-cat-08"><div class="label">Раздел 08</div><h1>Сдача проекта</h1><p>Сдача проекта клиенту — 10 промптов.</p></div><div class="page" id="pp-08">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 51 — Brief Builder</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по сбору брифа.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Проект оплачен, нужен Minimum Brief.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [ЧТО ИЗВЕСТНО О КЛИЕНТЕ]</div>
-    <div class="pk">TASK</div><div class="pv">Собери вопросы по 11 полям Minimum Brief, отметь, каких данных не хватает.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай ответы клиента.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список вопросов по недостающим полям.</div>
+    <div class="card-label">ПРОМПТ 51 — Конструктор брифа</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по сбору брифа.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Проект оплачен, нужен минимальный бриф.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [ЧТО ИЗВЕСТНО О КЛИЕНТЕ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери вопросы по 11 полям минимального брифа, отметь, каких данных не хватает.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай ответы клиента.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список вопросов по недостающим полям.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 52 — Client Materials Extractor</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по организации материалов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент прислал материалы вперемешку.</div>
-    <div class="pk">INPUT</div><div class="pv">[СПИСОК ПРИСЛАННЫХ ФАЙЛОВ/ТЕКСТА]</div>
-    <div class="pk">TASK</div><div class="pv">Рассортируй по категориям: логотип, тексты, фото, контакты, референсы и т.д.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не додумывай назначение файла, если оно неочевидно — помечай как UNKNOWN.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список материалов по категориям + что ещё нужно запросить.</div>
+    <div class="card-label">ПРОМПТ 52 — Разбор материалов клиента</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по организации материалов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент прислал материалы вперемешку.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[СПИСОК ПРИСЛАННЫХ ФАЙЛОВ/ТЕКСТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Рассортируй по категориям: логотип, тексты, фото, контакты, референсы и т.д.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не додумывай назначение файла, если оно неочевидно — помечай как «неизвестно».</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список материалов по категориям + что ещё нужно запросить.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 53 — Source Verification Checklist</div>
-    <div class="pk">ROLE</div><div class="pv">Контролёр достоверности.</div>
-    <div class="pk">CONTEXT</div><div class="pv">В брифе клиента есть фактические утверждения (цифры, опыт, награды).</div>
-    <div class="pk">INPUT</div><div class="pv">[ТЕКСТ БРИФА]</div>
-    <div class="pk">TASK</div><div class="pv">Помечай каждый факт: VERIFIED PUBLIC / CLIENT PROVIDED / PLACEHOLDER / UNKNOWN.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не переводи CLIENT PROVIDED в VERIFIED без основания.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список фактов с пометкой источника.</div>
+    <div class="card-label">ПРОМПТ 53 — Проверка достоверности источника</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Контролёр достоверности.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">В брифе клиента есть фактические утверждения (цифры, опыт, награды).</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ТЕКСТ БРИФА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Помечай каждый факт: подтверждено публично / от клиента / заглушка / неизвестно.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не переводи «от клиента» в «подтверждено» без основания.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список фактов с пометкой источника.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 54 — Project Plan Generator</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по планированию.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Нужно разбить проект на этапы.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [SCOPE]</div>
-    <div class="pk">TASK</div><div class="pv">Предложи Delivery Plan из этапов (Inputs → Production → QA → Review → Handoff) под конкретную услугу.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не добавляй этапы, не относящиеся к согласованному scope.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список этапов по порядку.</div>
+    <div class="card-label">ПРОМПТ 54 — Генератор плана проекта</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по планированию.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Нужно разбить проект на этапы.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [ОБЪЁМ РАБОТ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Предложи план сдачи из этапов (вводные → производство → контроль качества → проверка → передача) под конкретную услугу.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не добавляй этапы, не относящиеся к согласованному объёму.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список этапов по порядку.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 55 — Internal QA</div>
-    <div class="pk">ROLE</div><div class="pv">Строгий QA-ревьюер.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Первая версия готова, нужна проверка перед отправкой клиенту.</div>
-    <div class="pk">INPUT</div><div class="pv">[DELIVERABLE], [SCOPE]</div>
-    <div class="pk">TASK</div><div class="pv">Проверь по Pre-Send Check: content, scope, consistency, technical, business logic.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не пропускай пункты, даже если работа выглядит завершённой.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Чек-лист с отметками + список проблем, если есть.</div>
+    <div class="card-label">ПРОМПТ 55 — Внутренний контроль качества</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Строгий ревьюер контроля качества.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Первая версия готова, нужна проверка перед отправкой клиенту.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[РЕЗУЛЬТАТ РАБОТЫ], [ОБЪЁМ РАБОТ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Проверь по чек-листу перед отправкой: содержание, объём, единообразие, техническая часть, бизнес-логика.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не пропускай пункты, даже если работа выглядит завершённой.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Чек-лист с отметками + список проблем, если есть.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 56 — Client Feedback Organizer</div>
-    <div class="pk">ROLE</div><div class="pv">Организатор фидбека.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент прислал разрозненные комментарии в нескольких сообщениях.</div>
-    <div class="pk">INPUT</div><div class="pv">[СООБЩЕНИЯ КЛИЕНТА]</div>
-    <div class="pk">TASK</div><div class="pv">Собери все замечания в один структурированный список.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не добавляй собственные интерпретации сверх сказанного.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Единый нумерованный список правок.</div>
+    <div class="card-label">ПРОМПТ 56 — Организатор обратной связи</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Организатор обратной связи.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент прислал разрозненные комментарии в нескольких сообщениях.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[СООБЩЕНИЯ КЛИЕНТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери все замечания в один структурированный список.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не добавляй собственные интерпретации сверх сказанного.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Единый нумерованный список правок.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 57 — Revision Planner</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по планированию правок.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Собран список замечаний клиента.</div>
-    <div class="pk">INPUT</div><div class="pv">[СПИСОК ЗАМЕЧАНИЙ]</div>
-    <div class="pk">TASK</div><div class="pv">Раздели на: быстрые правки / требующие уточнения / похожие на новый scope.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Явно помечай пункты, похожие на New Scope, не смешивай с revisions.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Три сгруппированных списка.</div>
+    <div class="card-label">ПРОМПТ 57 — Планировщик правок</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по планированию правок.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Собран список замечаний клиента.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[СПИСОК ЗАМЕЧАНИЙ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Раздели на: быстрые правки / требующие уточнения / похожие на новый объём работ.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Явно помечай пункты, похожие на новый объём, не смешивай с правками.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Три сгруппированных списка.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 58 — Scope Change Analyzer</div>
-    <div class="pk">ROLE</div><div class="pv">Аналитик изменений объёма.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент запросил что-то новое.</div>
-    <div class="pk">INPUT</div><div class="pv">[ЗАПРОС КЛИЕНТА], [ИСХОДНЫЙ SCOPE]</div>
-    <div class="pk">TASK</div><div class="pv">Определи: это revision в рамках текущего scope или новый scope.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">При сомнении — трактуй как New Scope, а не как бесплатную правку.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Вердикт + короткое обоснование + черновик ответа клиенту.</div>
+    <div class="card-label">ПРОМПТ 58 — Анализатор изменения объёма</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Аналитик изменений объёма.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент запросил что-то новое.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ЗАПРОС КЛИЕНТА], [ИСХОДНЫЙ ОБЪЁМ РАБОТ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Определи: это правка в рамках текущего объёма или новый объём работ.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">При сомнении — трактуй как новый объём, а не как бесплатную правку.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Вердикт + короткое обоснование + черновик ответа клиенту.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 59 — Handoff Checklist Generator</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по финальной передаче.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Проект завершён, нужна организованная передача.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [ЧТО ВХОДИТ В ПЕРЕДАЧУ]</div>
-    <div class="pk">TASK</div><div class="pv">Сформируй структуру передачи (01<em>FINAL/02</em>SOURCE/03<em>ASSETS/04</em>README) под конкретный проект.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не включай файлы/доступы, которые не обсуждались.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Структура папки + черновик README.</div>
+    <div class="card-label">ПРОМПТ 59 — Генератор чек-листа передачи</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по финальной передаче.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Проект завершён, нужна организованная передача.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [ЧТО ВХОДИТ В ПЕРЕДАЧУ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Сформируй структуру передачи (01<em>ФИНАЛ/02</em>ИСХОДНИКИ/03<em>МАТЕРИАЛЫ/04</em>README) под конкретный проект.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не включай файлы/доступы, которые не обсуждались.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Структура папки + черновик README.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 60 — Client Update Draft</div>
-    <div class="pk">ROLE</div><div class="pv">Автор статусных сообщений клиенту.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Нужно сообщить клиенту о ходе проекта, задержке или следующем шаге.</div>
-    <div class="pk">INPUT</div><div class="pv">[ТЕКУЩИЙ СТАТУС], [ПРИЧИНА ОБНОВЛЕНИЯ]</div>
-    <div class="pk">TASK</div><div class="pv">Собери короткое сообщение по правилу NO SURPRISES: что происходит, что нужно от клиента, следующий шаг.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Без длинных оправданий.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 сообщение.</div>
+    <div class="card-label">ПРОМПТ 60 — Черновик статуса для клиента</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор статусных сообщений клиенту.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Нужно сообщить клиенту о ходе проекта, задержке или следующем шаге.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ТЕКУЩИЙ СТАТУС], [ПРИЧИНА ОБНОВЛЕНИЯ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери короткое сообщение по правилу «никаких сюрпризов»: что происходит, что нужно от клиента, следующий шаг.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Без длинных оправданий.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 сообщение.</div>
   </div></div>
-<div class="page" id="pp-cat-09"><div class="label">Раздел 09</div><h1>Growth</h1><p>Review → Referral → Next Client — 10 промптов.</p></div><div class="page" id="pp-09">
+<div class="page" id="pp-cat-09"><div class="label">Раздел 09</div><h1>Рост</h1><p>Отзыв → Рекомендация → Следующий клиент — 10 промптов.</p></div><div class="page" id="pp-09">
   <div class="prompt-card">
-    <div class="card-label">PROMPT 61 — Feedback Analyzer</div>
-    <div class="pk">ROLE</div><div class="pv">Аналитик обратной связи.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент ответил на запрос фидбека после завершения проекта.</div>
-    <div class="pk">INPUT</div><div class="pv">[ОТВЕТ КЛИЕНТА]</div>
-    <div class="pk">TASK</div><div class="pv">Определи: доволен ли клиент, есть ли скрытая проблема, стоит ли просить review сейчас.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не проси review у явно недовольного клиента.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Вывод (просить review / сначала уточнить) + почему.</div>
+    <div class="card-label">ПРОМПТ 61 — Анализатор обратной связи</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Аналитик обратной связи.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент ответил на запрос обратной связи после завершения проекта.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОТВЕТ КЛИЕНТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Определи: доволен ли клиент, есть ли скрытая проблема, стоит ли просить отзыв сейчас.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не проси отзыв у явно недовольного клиента.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Вывод (просить отзыв / сначала уточнить) + почему.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 62 — Review Request Draft</div>
-    <div class="pk">ROLE</div><div class="pv">Автор запросов отзывов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент доволен результатом.</div>
-    <div class="pk">INPUT</div><div class="pv">[ТИП КЛИЕНТА: casual/professional/repeat], [DELIVERABLE]</div>
-    <div class="pk">TASK</div><div class="pv">Собери запрос отзыва по формуле CONTEXT → WHY → EASY ACTION.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Без «Оставьте отзыв пожалуйста!!!» и давления.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 сообщение.</div>
+    <div class="card-label">ПРОМПТ 62 — Черновик запроса отзыва</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор запросов отзывов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент доволен результатом.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ТИП КЛИЕНТА: обычный/деловой/повторный], [РЕЗУЛЬТАТ РАБОТЫ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери запрос отзыва по формуле: контекст → зачем → простое действие.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Без «Оставьте отзыв пожалуйста!!!» и давления.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 сообщение.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 63 — Real Case Study Builder</div>
-    <div class="pk">ROLE</div><div class="pv">Копирайтер реальных кейсов.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Проект завершён, клиент дал разрешение на публикацию.</div>
-    <div class="pk">INPUT</div><div class="pv">[БРИФ], [DELIVERABLE], [FEEDBACK КЛИЕНТА], [PERMISSION]</div>
-    <div class="pk">TASK</div><div class="pv">Собери Real Case по полям Real Case Builder.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Business Result используй только если он реально измерялся и подтверждён — иначе используй Project Outcome.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Заполненный Real Case по всем полям.</div>
+    <div class="card-label">ПРОМПТ 63 — Оформление реального кейса</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Копирайтер реальных кейсов.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Проект завершён, клиент дал разрешение на публикацию.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[БРИФ], [РЕЗУЛЬТАТ РАБОТЫ], [ОТЗЫВ КЛИЕНТА], [РАЗРЕШЕНИЕ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери реальный кейс по полям конструктора реального кейса.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Результат бизнеса используй только если он реально измерялся и подтверждён — иначе используй «итог работы».</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Заполненный реальный кейс по всем полям.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 64 — Referral Message Generator</div>
-    <div class="pk">ROLE</div><div class="pv">Автор запросов рекомендаций.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Клиент доволен, подходящий момент попросить referral.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [ТИП КЛИЕНТА]</div>
-    <div class="pk">TASK</div><div class="pv">Собери сообщение по формуле CONTEXT → WHO I HELP → LOW-PRESSURE ASK.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Без «дайте мне клиента» и давления.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 сообщение.</div>
+    <div class="card-label">ПРОМПТ 64 — Генератор запроса рекомендации</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор запросов рекомендаций.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Клиент доволен, подходящий момент попросить рекомендацию.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [ТИП КЛИЕНТА]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери сообщение по формуле: контекст → кому я помогаю → мягкая просьба.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Без «дайте мне клиента» и давления.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 сообщение.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 65 — Upsell Opportunity Analyzer</div>
-    <div class="pk">ROLE</div><div class="pv">Аналитик возможностей допродажи.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Проект завершён.</div>
-    <div class="pk">INPUT</div><div class="pv">[УСЛУГА], [DELIVERABLE], [ЧТО ИЗВЕСТНО О КЛИЕНТЕ]</div>
-    <div class="pk">TASK</div><div class="pv">Определи логичный следующий deliverable по Natural Upsell Map.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не предлагай upsell, если явно рано (клиент недоволен или проект только что стартовал).</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 предложение upsell по формуле OBSERVATION → RELEVANCE → OPTION.</div>
+    <div class="card-label">ПРОМПТ 65 — Анализатор возможности допродажи</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Аналитик возможностей допродажи.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Проект завершён.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[УСЛУГА], [РЕЗУЛЬТАТ РАБОТЫ], [ЧТО ИЗВЕСТНО О КЛИЕНТЕ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Определи логичный следующий результат работы по карте естественных допродаж.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не предлагай допродажу, если явно рано (клиент недоволен или проект только что стартовал).</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 предложение допродажи по формуле: наблюдение → релевантность → вариант.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 66 — Client Check-In Draft</div>
-    <div class="pk">ROLE</div><div class="pv">Автор check-in сообщений.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Прошло разумное время с завершения проекта.</div>
-    <div class="pk">INPUT</div><div class="pv">[DELIVERABLE], [СКОЛЬКО ВРЕМЕНИ ПРОШЛО]</div>
-    <div class="pk">TASK</div><div class="pv">Собери ненавязчивое check-in сообщение.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Без «Ну что, ещё что-нибудь купить хотите?».</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">1 сообщение.</div>
+    <div class="card-label">ПРОМПТ 66 — Черновик сообщения check-in</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Автор сообщений проверки состояния.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Прошло разумное время с завершения проекта.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[РЕЗУЛЬТАТ РАБОТЫ], [СКОЛЬКО ВРЕМЕНИ ПРОШЛО]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Собери ненавязчивое сообщение проверки состояния.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Без «Ну что, ещё что-нибудь купить хотите?».</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">1 сообщение.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 67 — Project Retrospective</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по ретроспективе проекта.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Проект завершён, нужно извлечь уроки.</div>
-    <div class="pk">INPUT</div><div class="pv">[КАК ПРОШЁЛ ПРОЕКТ]</div>
-    <div class="pk">TASK</div><div class="pv">Заполни After-Project Review: что прошло хорошо, что исправить, что стандартизировать, что добавить в портфолио.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши UNKNOWN / NEEDS INPUT вместо предположения.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Заполненный After-Project Review по 5 полям.</div>
+    <div class="card-label">ПРОМПТ 67 — Ретроспектива проекта</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по ретроспективе проекта.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Проект завершён, нужно извлечь уроки.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[КАК ПРОШЁЛ ПРОЕКТ]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Заполни разбор проекта после сдачи: что прошло хорошо, что исправить, что стандартизировать, что добавить в портфолио.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не выдумывай факты, цифры, отзывы или результаты, которых нет во входных данных. Если данных недостаточно — пиши «НЕИЗВЕСТНО / НУЖНЫ ДАННЫЕ» вместо предположения.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Заполненный разбор по 5 полям.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 68 — Price Review Assistant</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по пересмотру цены.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Завершено 2–3 проекта по текущей цене.</div>
-    <div class="pk">INPUT</div><div class="pv">[ПОСЛЕДНИЕ ПРОЕКТЫ: цена, время, сложность]</div>
-    <div class="pk">TASK</div><div class="pv">Пройди Price Review Checkpoint и дай рекомендацию keep/adjust price.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не предлагай повышение в разы без реальных оснований (кейсы, отзывы, спрос).</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Keep Price / Adjust Price + обоснование.</div>
+    <div class="card-label">ПРОМПТ 68 — Ассистент по пересмотру цены</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по пересмотру цены.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Завершено 2–3 проекта по текущей цене.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ПОСЛЕДНИЕ ПРОЕКТЫ: цена, время, сложность]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Пройди контрольные вопросы пересмотра цены и дай рекомендацию: оставить или изменить цену.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не предлагай повышение в разы без реальных оснований (кейсы, отзывы, спрос).</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Оставить цену / изменить цену + обоснование.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 69 — Funnel Diagnosis</div>
-    <div class="pk">ROLE</div><div class="pv">Диагност воронки продаж.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Пользователь видит цифры своей воронки в Lead Tracker.</div>
-    <div class="pk">INPUT</div><div class="pv">[МЕТРИКИ: leads, messages, replies, positive replies, discussions, offers, won]</div>
-    <div class="pk">TASK</div><div class="pv">Определи, на каком этапе воронка слабее всего, по Final Funnel Diagnosis.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не называй единственную гарантированную причину — дай направление диагностики.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Слабый этап + 2–3 гипотезы, что проверить.</div>
+    <div class="card-label">ПРОМПТ 69 — Диагностика воронки</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Диагност воронки продаж.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Пользователь видит цифры своей воронки в таблице лидов.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[МЕТРИКИ: лиды, сообщения, ответы, позитивные ответы, обсуждения, офферы, закрытые сделки]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Определи, на каком этапе воронка слабее всего, по финальной диагностике воронки.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не называй единственную гарантированную причину — дай направление диагностики.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Слабый этап + 2–3 гипотезы, что проверить.</div>
   </div>
   <div class="prompt-card">
-    <div class="card-label">PROMPT 70 — Next 30-Day Plan</div>
-    <div class="pk">ROLE</div><div class="pv">Ассистент по планированию следующего месяца.</div>
-    <div class="pk">CONTEXT</div><div class="pv">Завершены первые 30 дней.</div>
-    <div class="pk">INPUT</div><div class="pv">[DAY 30 REVIEW: что сработало, что нет, bottleneck]</div>
-    <div class="pk">TASK</div><div class="pv">Предложи 3 конкретных приоритета на следующие 30 дней.</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">Не предлагай сменить услугу без явного основания из bottleneck.</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">Список из 3 приоритетов с обоснованием.</div>
+    <div class="card-label">ПРОМПТ 70 — План на следующие 30 дней</div>
+    <div class="pk">РОЛЬ</div><div class="pv">Ассистент по планированию следующего месяца.</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">Завершены первые 30 дней.</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">[ОБЗОР ДНЯ 30: что сработало, что нет, главное узкое место]</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">Предложи 3 конкретных приоритета на следующие 30 дней.</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">Не предлагай сменить услугу без явного основания из узкого места.</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">Список из 3 приоритетов с обоснованием.</div>
   </div></div>
 </body>
 </html>

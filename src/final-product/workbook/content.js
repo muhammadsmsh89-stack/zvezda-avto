@@ -7,10 +7,10 @@ function cover() {
   return `<div class="page" id="wb-cover" style="display:flex;flex-direction:column;justify-content:space-between;min-height:257mm;">
     <div style="margin-top:60mm">
       ${label('AI MONEY START')}
-      <h1 class="cover-title">WORK<br>BOOK<span class="cover-accent-dot">.</span></h1>
-      <p class="cover-sub">Guide = понять. Workbook = сделать. Здесь ты не читаешь — здесь заполняешь.</p>
+      <h1 class="cover-title">РАБОЧАЯ<br>ТЕТРАДЬ<span class="cover-accent-dot">.</span></h1>
+      <p class="cover-sub">Гайд — чтобы понять. Рабочая тетрадь — чтобы сделать. Здесь ты не читаешь — здесь заполняешь.</p>
     </div>
-    <div>${label('02 · WORKBOOK')}</div>
+    <div>${label('02 · РАБОЧАЯ ТЕТРАДЬ')}</div>
   </div>`;
 }
 
@@ -18,22 +18,22 @@ function sectionHeader(num, title, sub) {
   return `${label(`${num} — ${sub || ''}`)}${h1(title)}`;
 }
 
-// 00 — START
+// 00 — СТАРТ
 function s00() {
   return page('wb-00', `
-    ${sectionHeader('00', 'Start', 'Точка старта')}
+    ${sectionHeader('00', 'Старт', 'Точка старта')}
     ${fieldBlock('Сегодняшняя дата')}
     ${fieldBlock('Сколько часов в день я готов(а) уделять')}
     ${fieldBlock('Дата моего Дня 30')}
     ${fieldBox('Что мешало мне начать раньше', 30)}
-    ${h2('30-Day Commitment')}
+    ${h2('Обязательство на 30 дней')}
     ${p('До [дата] я тестирую [услуга]. Я не обязан(а) заниматься этим всю жизнь. Моя задача — провести честный рыночный эксперимент.')}
-    ${checklist(['создать 3 кейса', 'собрать предложение (оффер + цена)', 'найти минимум 50 подходящих лидов', 'начать outreach', 'собрать реальные реакции рынка'])}
+    ${checklist(['создать 3 кейса', 'собрать предложение (оффер + цена)', 'найти минимум 50 подходящих лидов', 'начать первый контакт с клиентами', 'собрать реальные реакции рынка'])}
     ${fieldBlock('Подпись')}${fieldBlock('Дата')}
   `);
 }
 
-// 01 — SERVICE
+// 01 — УСЛУГА
 function s01() {
   const fitQuestions = [
     'Мне нравится визуальная работа', 'Мне нравится писать тексты', 'Мне интересно исследовать информацию',
@@ -44,249 +44,249 @@ function s01() {
     'Мне интересна тема маркетинга и продаж', 'Мне интересен дизайн', 'Мне интересно выстраивать структуру и логику', 'Мне интересно видео как формат',
   ];
   return page('wb-01', `
-    ${sectionHeader('01', 'Service', 'Выбор услуги')}
-    ${h2('Service Fit Test')}
+    ${sectionHeader('01', 'Услуга', 'Выбор услуги')}
+    ${h2('Тест на соответствие услуге')}
     ${p('Оцени каждое утверждение: 0 = нет, 1 = иногда, 2 = да.')}
     ${table({ headers: ['#', 'Утверждение', '0–2'], rows: fitQuestions.map((q, i) => [String(i + 1), q, '']) })}
-    ${h2('Decision Matrix')}
+    ${h2('Матрица решения')}
     ${table({
-    headers: ['Критерий (1–5)', 'Service A', 'Service B', 'Service C'],
+    headers: ['Критерий (1–5)', 'Услуга A', 'Услуга B', 'Услуга C'],
     rows: [
       ['Мне интересно', '', '', ''], ['Могу сделать кейс за 3 дня', '', '', ''],
       ['Понимаю покупателя', '', '', ''], ['Могу найти 50 потенциальных клиентов', '', '', ''],
-      ['Могу показать результат', '', '', ''], ['Понятен deliverable', '', '', ''],
-      ['AI ускоряет работу', '', '', ''], ['Готов(а) делать это 30 дней', '', '', ''],
-      ['TOTAL SCORE', '', '', ''],
+      ['Могу показать результат', '', '', ''], ['Понятен результат работы', '', '', ''],
+      ['ИИ ускоряет работу', '', '', ''], ['Готов(а) делать это 30 дней', '', '', ''],
+      ['ИТОГОВЫЙ БАЛЛ', '', '', ''],
     ],
   })}
-    ${h2('Primary + Backup Service')}
-    ${fieldBlock('MY PRIMARY SERVICE')}${fieldBlock('I SELL')}${fieldBlock('TO')}${fieldBlock('THE CLIENT GETS')}
-    ${fieldBlock('THE PROBLEM I SOLVE')}${fieldBlock('AI HELPS ME WITH')}${fieldBlock('I STILL NEED TO LEARN')}
-    ${fieldBlock('MY FIRST PORTFOLIO PROJECT WILL BE')}${fieldBlock('WHERE I WILL FIND CLIENTS')}
-    ${fieldBlock('MY BACKUP SERVICE')}${fieldBlock('WHY IT IS BACKUP')}
+    ${h2('Основная + запасная услуга')}
+    ${fieldBlock('МОЯ ОСНОВНАЯ УСЛУГА')}${fieldBlock('Я ПРОДАЮ')}${fieldBlock('КОМУ')}${fieldBlock('КЛИЕНТ ПОЛУЧАЕТ')}
+    ${fieldBlock('ПРОБЛЕМА, КОТОРУЮ Я РЕШАЮ')}${fieldBlock('ИИ ПОМОГАЕТ МНЕ С')}${fieldBlock('МНЕ ЕЩЁ НУЖНО НАУЧИТЬСЯ')}
+    ${fieldBlock('МОЙ ПЕРВЫЙ ПРОЕКТ ДЛЯ ПОРТФОЛИО БУДЕТ')}${fieldBlock('ГДЕ Я БУДУ ИСКАТЬ КЛИЕНТОВ')}
+    ${fieldBlock('МОЯ ЗАПАСНАЯ УСЛУГА')}${fieldBlock('ПОЧЕМУ ОНА ЗАПАСНАЯ')}
   `);
 }
 
-// 02 — SKILL
+// 02 — НАВЫК
 function s02() {
   return page('wb-02', `
-    ${sectionHeader('02', 'Skill', '3-Day Skill Sprint')}
-    ${h2('Reference Analysis Cards (×3)')}
+    ${sectionHeader('02', 'Навык', 'Спринт навыка за 3 дня')}
+    ${h2('Карточки анализа референса (×3)')}
     ${[1, 2, 3].map((n) => `
-      ${h3(`Референс #${n}`)}
-      ${fieldBlock('Источник')}${fieldBlock('What works')}${fieldBlock('Structure')}
-      ${fieldBlock('Visual / writing pattern')}${fieldBlock('CTA / business purpose')}
+      ${h3(`Референс №${n}`)}
+      ${fieldBlock('Источник')}${fieldBlock('Что работает')}${fieldBlock('Структура')}
+      ${fieldBlock('Визуальный / текстовый паттерн')}${fieldBlock('CTA / назначение')}
       ${fieldBlock('Что я взял(а) бы как принцип')}${fieldBlock('Что НЕ буду копировать напрямую')}
     `).join('')}
-    ${h2('Quality Checklist Builder')}
+    ${h2('Конструктор чек-листа качества')}
     ${table({ headers: ['#', 'Обязательный пункт качества'], rows: [1, 2, 3, 4, 5].map((n) => [String(n), '']) })}
-    ${h2('Rebuild Review')}
-    ${checklist(['Я взял(а) структуру/принцип, а не текст и визуал целиком', 'Тема/ниша в моём rebuild — другая, не оригинальная', 'Я могу объяснить, что именно повторил(а) и зачем', 'Я не выдаю rebuild за собственный оригинальный проект'])}
-    ${h2('Practice Brief (День 4)')}
+    ${h2('Проверка повтора (rebuild)')}
+    ${checklist(['Я взял(а) структуру/принцип, а не текст и визуал целиком', 'Тема/ниша в моём повторе — другая, не оригинальная', 'Я могу объяснить, что именно повторил(а) и зачем', 'Я не выдаю повтор за собственный оригинальный проект'])}
+    ${h2('Тренировочный бриф (День 4)')}
     ${fieldBlock('Ниша клиента')}${fieldBlock('Цель клиента')}${fieldBox('Ограничения', 25)}
-    ${h2('Skill Card')}
-    ${fieldBlock('PRIMARY SERVICE')}${fieldBlock('MY STARTER SCOPE')}${fieldBox('I CAN CURRENTLY DO', 25)}
-    ${fieldBox('I CANNOT YET DO', 25)}${fieldBlock('MY WORKFLOW')}${fieldBlock('MY TOOLS')}${fieldBlock('MY DELIVERY FORMAT')}${fieldBlock('MY NEXT SKILL TO IMPROVE')}
+    ${h2('Карточка навыка')}
+    ${fieldBlock('ОСНОВНАЯ УСЛУГА')}${fieldBlock('МОЙ СТАРТОВЫЙ ОБЪЁМ')}${fieldBox('Я СЕЙЧАС УМЕЮ', 25)}
+    ${fieldBox('Я ПОКА НЕ УМЕЮ', 25)}${fieldBlock('МОЙ ПРОЦЕСС РАБОТЫ')}${fieldBlock('МОИ ИНСТРУМЕНТЫ')}${fieldBlock('ФОРМАТ СДАЧИ')}${fieldBlock('СЛЕДУЮЩИЙ НАВЫК ДЛЯ РАЗВИТИЯ')}
   `);
 }
 
-// 03 — PORTFOLIO
+// 03 — ПОРТФОЛИО
 function s03() {
   return page('wb-03', `
-    ${sectionHeader('03', 'Portfolio', '3-Case Portfolio Sprint')}
+    ${sectionHeader('03', 'Портфолио', 'Спринт портфолио: 3 кейса')}
     ${[1, 2, 3].map((n) => `
-      ${h3(`Case Brief #${n}`)}
-      ${fieldBlock('Service')}${fieldBlock('Business type')}${fieldBlock('Real or fictional business')}
-      ${fieldBlock('Target audience')}${fieldBlock('Main problem')}${fieldBlock('Project goal')}
-      ${fieldBlock('Deliverable')}${fieldBlock('What I want this case to prove')}
+      ${h3(`Бриф кейса №${n}`)}
+      ${fieldBlock('Услуга')}${fieldBlock('Тип бизнеса')}${fieldBlock('Реальный или вымышленный бизнес')}
+      ${fieldBlock('Целевая аудитория')}${fieldBlock('Главная проблема')}${fieldBlock('Цель проекта')}
+      ${fieldBlock('Результат работы')}${fieldBlock('Что должен доказать этот кейс')}
     `).join('')}
-    ${h2('Case Diversity Matrix')}
+    ${h2('Матрица разнообразия кейсов')}
     ${table({
-    headers: ['', 'Case 1', 'Case 2', 'Case 3'],
-    rows: ['Niche', 'Audience', 'Problem', 'Deliverable', 'Style', 'Business Goal', 'Complexity', 'Main Skill Demonstrated']
+    headers: ['', 'Кейс 1', 'Кейс 2', 'Кейс 3'],
+    rows: ['Ниша', 'Аудитория', 'Проблема', 'Результат работы', 'Стиль', 'Цель бизнеса', 'Сложность', 'Демонстрируемый навык']
       .map((r) => [r, '', '', '']),
   })}
-    ${h2('Case Study Builder (на каждый из 3 кейсов)')}
-    ${fieldBlock('01 Title')}${fieldBlock('02 Status (Concept Project)')}${fieldBlock('03 Client Type')}
-    ${fieldBox('04 Challenge', 20)}${fieldBlock('05 Goal')}${fieldBox('06 Approach', 20)}
-    ${fieldBlock('07 Deliverable')}${fieldBox('08 Key Decisions', 20)}${fieldBlock('09 What This Case Demonstrates')}
-    ${fieldBlock('Project Outcome (не Business Result)')}
-    ${h2('Portfolio Scorecard (0–2 по пункту, самопроверка)')}
+    ${h2('Конструктор кейса (на каждый из 3 кейсов)')}
+    ${fieldBlock('01 Название')}${fieldBlock('02 Статус (Концептуальный проект)')}${fieldBlock('03 Тип клиента')}
+    ${fieldBox('04 Задача', 20)}${fieldBlock('05 Цель')}${fieldBox('06 Подход', 20)}
+    ${fieldBlock('07 Результат работы')}${fieldBox('08 Ключевые решения', 20)}${fieldBlock('09 Что демонстрирует кейс')}
+    ${fieldBlock('Итог работы (не результат бизнеса)')}
+    ${h2('Оценка портфолио (0–2 по пункту, самопроверка)')}
     ${table({
     headers: ['Пункт', '0–2'],
-    rows: ['Clear Service', 'Clear Audience', 'Clear Problem', 'Finished Deliverable', 'Visual / Text Quality',
-      'Business Logic', 'Case Explanation', 'No Fake Claims', 'Easy to View', 'Consistent Presentation',
-      'Different From Other Cases', 'Ready to Send'].map((r) => [r, '']),
+    rows: ['Понятна услуга', 'Понятна аудитория', 'Понятна проблема', 'Результат работы завершён', 'Качество визуала/текста',
+      'Бизнес-логика понятна', 'Кейс объяснён', 'Нет выдуманных фактов', 'Легко посмотреть', 'Единая подача',
+      'Отличается от других кейсов', 'Готово к отправке'].map((r) => [r, '']),
   })}
-    ${h2('30-Second Pitch')}
-    ${fieldBlock('1 предложение')}${fieldBox('20–30 секунд версия', 30)}${fieldBox('Версия для сообщения клиенту', 20)}
+    ${h2('Питч на 30 секунд')}
+    ${fieldBlock('1 предложение')}${fieldBox('Версия на 20–30 секунд', 30)}${fieldBox('Версия для сообщения клиенту', 20)}
   `);
 }
 
-// 04 — OFFER
+// 04 — ОФФЕР
 function s04() {
   return page('wb-04', `
-    ${sectionHeader('04', 'Offer', 'Offer + Pricing')}
-    ${h2('Client Focus Builder')}
-    ${fieldBlock('Service')}${fieldBlock('Client type')}${fieldBlock('Niche')}${fieldBlock('Business size')}
-    ${fieldBlock('What they sell')}${fieldBlock('Who their customer is')}${fieldBlock('Common problem')}
-    ${fieldBlock('Why my service fits')}${fieldBlock('Where I can find these clients')}
-    ${h2('Scope Builder')}
-    ${fieldBlock('Project')}${fieldBox('Included', 25)}${fieldBox('Not included', 25)}
-    ${fieldBlock('Number of revisions')}${fieldBlock('Client must provide')}${fieldBlock('I will provide')}
-    ${fieldBlock('Final delivery')}${fieldBlock('Deadline')}
-    ${h2('Revision Policy')}
-    ${fieldBlock('Rounds included')}${fieldBox('Что считается новым scope', 20)}
-    ${h2('Price Builder')}
-    ${table({ headers: ['Фактор', 'Заметка'], rows: ['Base scope', 'Complexity', 'Deadline', 'Revisions', 'Additional deliverables', 'Experience / proof', 'Client context'].map((r) => [r, '']) })}
-    ${h2('Package Builder')}
+    ${sectionHeader('04', 'Оффер', 'Оффер и цена')}
+    ${h2('Портрет клиента')}
+    ${fieldBlock('Услуга')}${fieldBlock('Тип клиента')}${fieldBlock('Ниша')}${fieldBlock('Размер бизнеса')}
+    ${fieldBlock('Что они продают')}${fieldBlock('Кто их клиент')}${fieldBlock('Частая проблема')}
+    ${fieldBlock('Почему моя услуга подходит')}${fieldBlock('Где я могу найти таких клиентов')}
+    ${h2('Определение объёма работ')}
+    ${fieldBlock('Проект')}${fieldBox('Входит', 25)}${fieldBox('Не входит', 25)}
+    ${fieldBlock('Количество правок')}${fieldBlock('Что предоставляет клиент')}${fieldBlock('Что предоставляю я')}
+    ${fieldBlock('Финальная передача')}${fieldBlock('Срок')}
+    ${h2('Политика правок')}
+    ${fieldBlock('Сколько раундов включено')}${fieldBox('Что считается новым объёмом работ', 20)}
+    ${h2('Конструктор цены')}
+    ${table({ headers: ['Фактор', 'Заметка'], rows: ['Базовый объём', 'Сложность', 'Срок', 'Правки', 'Дополнительные результаты', 'Опыт / доказательства', 'Контекст клиента'].map((r) => [r, '']) })}
+    ${h2('Конструктор пакетов')}
     ${table({
-    headers: ['', 'STARTER', 'CORE', 'PLUS'],
-    rows: ['For', 'Includes', 'Timeline', 'Revisions', 'Price'].map((r) => [r, '', '', '']),
+    headers: ['', 'СТАРТ', 'ОСНОВНОЙ', 'РАСШИРЕННЫЙ'],
+    rows: ['Для кого', 'Что входит', 'Срок', 'Правки', 'Цена'].map((r) => [r, '', '', '']),
   })}
-    ${h2('Offer Builder')}
-    ${fieldBlock('My service')}${fieldBlock('My client')}${fieldBlock('The problem / task')}${fieldBlock('Deliverable')}
-    ${fieldBlock('Timeline')}${fieldBlock('Prepayment')}${fieldBox('Not included', 20)}
-    ${h2('One-Sentence Offer')}
-    ${fieldBox('«Я [DELIVERABLE] для [CLIENT TYPE], чтобы [TASK]. В работу входит [KEY SCOPE].»', 25)}
+    ${h2('Конструктор оффера')}
+    ${fieldBlock('Моя услуга')}${fieldBlock('Мой клиент')}${fieldBlock('Проблема / задача')}${fieldBlock('Результат работы')}
+    ${fieldBlock('Срок')}${fieldBlock('Предоплата')}${fieldBox('Не входит', 20)}
+    ${h2('Оффер одним предложением')}
+    ${fieldBox('«Я [РЕЗУЛЬТАТ РАБОТЫ] для [ТИП КЛИЕНТА], чтобы [ЗАДАЧА]. В работу входит [КЛЮЧЕВОЙ ОБЪЁМ].»', 25)}
   `);
 }
 
-// 05 — LEADS
+// 05 — ЛИДЫ
 function s05() {
   return page('wb-05', `
-    ${sectionHeader('05', 'Leads', 'Lead System')}
-    ${h2('ICP Builder')}
-    ${fieldBlock('My service')}${fieldBlock('Niche')}${fieldBlock('Business type')}${fieldBlock('Location')}
-    ${fieldBlock('Business size')}${fieldBlock('What they sell')}${fieldBlock('Typical customer')}
-    ${fieldBlock('Why this business may need my service')}${fieldBlock('Visible signals')}${fieldBlock('Disqualifiers')}
-    ${fieldBlock('Where I can find them')}${fieldBlock('How I can contact them')}
-    ${h2('Must Have / Nice to Have')}
-    ${table({ headers: ['MUST HAVE', 'NICE TO HAVE'], rows: [['service fit', 'сильный timing signal'], ['business exists / active', 'идеальный прямой контакт'], ['contact', 'крупный соцаккаунт'], ['plausible need', 'очевидная проблема']] })}
-    ${h2('Economic Fit Check')}
-    ${fieldBlock('Что продаёт клиент')}${fieldBlock('Примерный order value (публично видимый)')}${fieldBlock('Насколько digital presence важна для продажи')}
-    ${h2('Channel Selector')}
-    ${fieldBlock('Primary channel 1')}${fieldBlock('Primary channel 2')}${fieldBlock('Backup channel')}
-    ${h2('Lead Research Card (для A-лидов)')}
-    ${fieldBlock('Company')}${fieldBlock('What they sell')}${fieldBlock('Why they fit')}${fieldBlock('Observed signal')}
-    ${fieldBlock('Possible problem')}${fieldBlock('Why now')}${fieldBlock('My service fit')}${fieldBlock('Best contact')}
-    ${fieldBlock('Personalization hook')}${fieldBlock('Source')}
-    ${h2('First 15 Planner')}
-    ${table({ headers: ['#', 'Company', 'Score', 'A/B/C', 'Contact', 'I noticed'], rows: Array.from({ length: 15 }, (_, i) => [String(i + 1), '', '', '', '', '']) })}
-    ${p('Полная CRM (50 лидов, статусы, follow-up даты) — в 05_LEAD-TRACKER.xlsx, не здесь.')}
+    ${sectionHeader('05', 'Лиды', 'Система поиска клиентов')}
+    ${h2('Портрет идеального клиента')}
+    ${fieldBlock('Моя услуга')}${fieldBlock('Ниша')}${fieldBlock('Тип бизнеса')}${fieldBlock('Локация')}
+    ${fieldBlock('Размер бизнеса')}${fieldBlock('Что они продают')}${fieldBlock('Типичный клиент')}
+    ${fieldBlock('Почему этому бизнесу может подойти моя услуга')}${fieldBlock('Видимые сигналы')}${fieldBlock('Причины отказать (дисквалификаторы)')}
+    ${fieldBlock('Где я могу их найти')}${fieldBlock('Как я могу с ними связаться')}
+    ${h2('Обязательно / Желательно')}
+    ${table({ headers: ['ОБЯЗАТЕЛЬНО', 'ЖЕЛАТЕЛЬНО'], rows: [['соответствие услуге', 'сильный сигнал момента'], ['бизнес существует / активен', 'идеальный прямой контакт'], ['есть контакт', 'крупный соцаккаунт'], ['правдоподобная потребность', 'очевидная проблема']] })}
+    ${h2('Проверка экономики сделки')}
+    ${fieldBlock('Что продаёт клиент')}${fieldBlock('Примерный чек клиента (публично видимый)')}${fieldBlock('Насколько цифровое присутствие важно для продажи')}
+    ${h2('Выбор каналов')}
+    ${fieldBlock('Основной канал 1')}${fieldBlock('Основной канал 2')}${fieldBlock('Запасной канал')}
+    ${h2('Карточка исследования лида (для A-лидов)')}
+    ${fieldBlock('Компания')}${fieldBlock('Что они продают')}${fieldBlock('Почему подходят')}${fieldBlock('Замеченный сигнал')}
+    ${fieldBlock('Возможная проблема')}${fieldBlock('Почему сейчас')}${fieldBlock('Соответствие моей услуге')}${fieldBlock('Лучший контакт')}
+    ${fieldBlock('Зацепка для персонализации')}${fieldBlock('Источник')}
+    ${h2('План первых 15')}
+    ${table({ headers: ['#', 'Компания', 'Оценка', 'A/B/C', 'Контакт', 'Что я заметил(а)'], rows: Array.from({ length: 15 }, (_, i) => [String(i + 1), '', '', '', '', '']) })}
+    ${p('Полная база лидов (50 штук, статусы, даты повторного контакта) — в файле «05 Таблица лидов» (xlsx), не здесь.')}
   `);
 }
 
-// 06 — OUTREACH
+// 06 — ПЕРВЫЙ КОНТАКТ
 function s06() {
   return page('wb-06', `
-    ${sectionHeader('06', 'Outreach', 'Outreach Engine')}
-    ${h2('First Message Builder')}
-    ${fieldBlock('Context')}${fieldBlock('Observation')}${fieldBlock('Relevance')}${fieldBlock('Next step')}
-    ${h2('Personalization Builder')}
-    ${table({ headers: ['Lead', 'Level (0/1/2)', 'Hook'], rows: Array.from({ length: 5 }, () => ['', '', '']) })}
-    ${h2('Mini Audit Builder')}
-    ${fieldBlock('Observation')}${fieldBlock('Why it matters')}${fieldBlock('Possible direction')}
-    ${h2('Follow-Up Planner')}
-    ${table({ headers: ['Lead', 'Follow-up #1 date', 'Follow-up #2 date', 'Close loop date'], rows: Array.from({ length: 8 }, () => ['', '', '', '']) })}
-    ${h2('A/B Test Log')}
-    ${table({ headers: ['Элемент теста', 'Message A', 'Message B', 'Наблюдение'], rows: [['Opening', '', '', ''], ['CTA', '', '', ''], ['Offer framing', '', '', '']] })}
+    ${sectionHeader('06', 'Первый контакт', 'Первый контакт с клиентом')}
+    ${h2('Конструктор первого сообщения')}
+    ${fieldBlock('Контекст')}${fieldBlock('Наблюдение')}${fieldBlock('Релевантность')}${fieldBlock('Следующий шаг')}
+    ${h2('Конструктор персонализации')}
+    ${table({ headers: ['Лид', 'Уровень (0/1/2)', 'Зацепка'], rows: Array.from({ length: 5 }, () => ['', '', '']) })}
+    ${h2('Конструктор мини-аудита')}
+    ${fieldBlock('Наблюдение')}${fieldBlock('Почему это важно')}${fieldBlock('Возможное направление')}
+    ${h2('План повторных контактов')}
+    ${table({ headers: ['Лид', 'Дата повторного контакта №1', 'Дата повторного контакта №2', 'Дата закрытия цикла'], rows: Array.from({ length: 8 }, () => ['', '', '', '']) })}
+    ${h2('Журнал A/B-теста')}
+    ${table({ headers: ['Элемент теста', 'Сообщение A', 'Сообщение B', 'Наблюдение'], rows: [['Начало сообщения', '', '', ''], ['Призыв к действию', '', '', ''], ['Подача предложения', '', '', '']] })}
   `);
 }
 
-// 07 — SALES
+// 07 — ПРОДАЖА
 function s07() {
   return page('wb-07', `
-    ${sectionHeader('07', 'Sales', 'Sales Engine')}
-    ${h2('Discovery Notes')}
-    ${fieldBlock('Current state')}${fieldBlock('Desired state')}${fieldBlock('Problem')}${fieldBlock('Scope')}
-    ${fieldBlock('Timing')}${fieldBlock('Decision maker')}${fieldBlock('Constraints')}${fieldBlock('Budget context')}
-    ${h2('Fit Check')}
-    ${table({ headers: ['Критерий', 'Да/Нет'], rows: ['Need', 'Fit', 'Scope', 'Timing', 'Payment', 'Communication'].map((r) => [r, '']) })}
-    ${h2('Client Summary')}
+    ${sectionHeader('07', 'Продажа', 'Механика продажи')}
+    ${h2('Заметки по выявлению потребности')}
+    ${fieldBlock('Текущая ситуация')}${fieldBlock('Желаемая ситуация')}${fieldBlock('Проблема')}${fieldBlock('Объём работ')}
+    ${fieldBlock('Срок')}${fieldBlock('Кто принимает решение')}${fieldBlock('Ограничения')}${fieldBlock('Контекст бюджета')}
+    ${h2('Проверка соответствия')}
+    ${table({ headers: ['Критерий', 'Да/Нет'], rows: ['Потребность', 'Соответствие', 'Объём работ', 'Срок', 'Оплата', 'Коммуникация'].map((r) => [r, '']) })}
+    ${h2('Резюме клиента')}
     ${fieldBox('«Правильно понял: сейчас у вас… Нужно… Главное —… Тогда я бы предложил…»', 25)}
-    ${h2('Solution Builder')}
-    ${fieldBlock('You said')}${fieldBlock('So I recommend')}${fieldBlock('It includes')}
-    ${h2('Objection Notes')}
+    ${h2('Конструктор решения')}
+    ${fieldBlock('Вы сказали')}${fieldBlock('Поэтому я предлагаю')}${fieldBlock('В это входит')}
+    ${h2('Заметки по возражениям')}
     ${fieldBlock('Возражение')}${fieldBlock('Что клиент может иметь в виду')}${fieldBlock('Мой ответ')}
-    ${h2('Project Summary')}
-    ${fieldBlock('Project')}${fieldBlock('Deliverables')}${fieldBlock('Deadline')}${fieldBlock('Price')}
-    ${fieldBlock('Payment terms')}${fieldBlock('Revisions')}${fieldBlock('Not included')}${fieldBlock('Client materials')}${fieldBlock('Final delivery')}
-    ${h2('Next Action')}
-    ${table({ headers: ['Lead / Client', 'Next Action', 'Date'], rows: Array.from({ length: 6 }, () => ['', '', '']) })}
+    ${h2('Резюме проекта')}
+    ${fieldBlock('Проект')}${fieldBlock('Результаты работы')}${fieldBlock('Срок')}${fieldBlock('Цена')}
+    ${fieldBlock('Условия оплаты')}${fieldBlock('Правки')}${fieldBlock('Не входит')}${fieldBlock('Материалы клиента')}${fieldBlock('Финальная передача')}
+    ${h2('Следующее действие')}
+    ${table({ headers: ['Лид / клиент', 'Следующее действие', 'Дата'], rows: Array.from({ length: 6 }, () => ['', '', '']) })}
   `);
 }
 
-// 08 — DELIVERY
+// 08 — СДАЧА ПРОЕКТА
 function s08() {
   return page('wb-08', `
-    ${sectionHeader('08', 'Delivery', 'Client Delivery System')}
-    ${h2('Minimum Brief')}
-    ${fieldBlock('Business / project')}${fieldBlock('Audience')}${fieldBlock('Goal')}${fieldBlock('Offer / product')}
-    ${fieldBlock('Content')}${fieldBlock('CTA')}${fieldBlock('Style')}${fieldBlock('Materials')}
-    ${fieldBlock('Restrictions')}${fieldBlock('Decision maker')}${fieldBlock('Deadline')}
-    ${h2('Materials Checklist')}
-    ${checklist(['Логотип', 'Фотографии', 'Тексты', 'Услуги / цены', 'Контакты', 'Ссылки', 'Кейсы / отзывы', 'References'])}
-    ${h2('Source of Truth')}
-    ${table({ headers: ['Факт', 'Verified Public / Client Provided / Placeholder / Unknown'], rows: Array.from({ length: 5 }, () => ['', '']) })}
-    ${h2('Delivery Plan')}
-    ${table({ headers: ['Этап', 'Статус'], rows: ['Inputs', 'Structure/Storyline', 'Production', 'QA', 'Client review', 'Revisions', 'Handoff'].map((r) => [r, '']) })}
-    ${h2('Pre-Send QA')}
-    ${checklist(['Нет placeholders', 'Нет выдуманных фактов', 'Тексты вычитаны', 'Всё согласованное присутствует', 'Единый стиль и tone', 'Технически работает (links/buttons/mobile)', 'Понятен CTA'])}
-    ${h2('Feedback Notes')}
+    ${sectionHeader('08', 'Сдача проекта', 'Сдача проекта клиенту')}
+    ${h2('Минимальный бриф')}
+    ${fieldBlock('Бизнес / проект')}${fieldBlock('Аудитория')}${fieldBlock('Цель')}${fieldBlock('Оффер / продукт')}
+    ${fieldBlock('Контент')}${fieldBlock('Призыв к действию')}${fieldBlock('Стиль')}${fieldBlock('Материалы')}
+    ${fieldBlock('Ограничения')}${fieldBlock('Кто принимает решение')}${fieldBlock('Срок')}
+    ${h2('Чек-лист материалов')}
+    ${checklist(['Логотип', 'Фотографии', 'Тексты', 'Услуги / цены', 'Контакты', 'Ссылки', 'Кейсы / отзывы', 'Референсы'])}
+    ${h2('Источник истины')}
+    ${table({ headers: ['Факт', 'Подтверждено публично / От клиента / Заглушка / Неизвестно'], rows: Array.from({ length: 5 }, () => ['', '']) })}
+    ${h2('План сдачи')}
+    ${table({ headers: ['Этап', 'Статус'], rows: ['Вводные данные', 'Структура/сценарий', 'Производство', 'Контроль качества', 'Проверка клиентом', 'Правки', 'Передача'].map((r) => [r, '']) })}
+    ${h2('Проверка перед отправкой')}
+    ${checklist(['Нет заглушек', 'Нет выдуманных фактов', 'Тексты вычитаны', 'Всё согласованное присутствует', 'Единый стиль и тон', 'Технически работает (ссылки/кнопки/мобильная версия)', 'Понятен призыв к действию'])}
+    ${h2('Заметки по обратной связи')}
     ${fieldBlock('Что сказал клиент')}${fieldBlock('Уточняющий вопрос')}${fieldBlock('Итоговая правка')}
-    ${h2('Change Request')}
-    ${fieldBlock('Запрос клиента')}${fieldBlock('Revision или New Scope?')}${fieldBlock('Изменение цены/срока')}
-    ${h2('Handoff Checklist')}
-    ${checklist(['01_FINAL', '02_SOURCE (если входит)', '03_ASSETS (если входят)', '04_README', 'Доступы переданы, чувствительные — удалены'])}
-    ${h2('Support Policy')}
-    ${fieldBox('Included support', 20)}${fieldBox('Not included', 20)}
+    ${h2('Запрос на изменение')}
+    ${fieldBlock('Запрос клиента')}${fieldBlock('Правка или новый объём работ?')}${fieldBlock('Изменение цены/срока')}
+    ${h2('Чек-лист передачи')}
+    ${checklist(['01_ФИНАЛ', '02_ИСХОДНИКИ (если входят)', '03_МАТЕРИАЛЫ (если входят)', '04_README', 'Доступы переданы, чувствительные — удалены'])}
+    ${h2('Политика поддержки')}
+    ${fieldBox('Что входит в поддержку', 20)}${fieldBox('Что не входит', 20)}
   `);
 }
 
-// 09 — GROWTH
+// 09 — РОСТ
 function s09() {
   return page('wb-09', `
-    ${sectionHeader('09', 'Growth', 'Review → Referral → Next Client')}
-    ${h2('Review Builder')}
+    ${sectionHeader('09', 'Рост', 'Отзыв → Рекомендация → Следующий клиент')}
+    ${h2('Конструктор отзыва')}
     ${fieldBlock('Какая была задача')}${fieldBlock('Что было важно')}${fieldBlock('Что понравилось в результате')}
-    ${h2('Real Case Builder')}
-    ${fieldBlock('Client / business')}${fieldBlock('Project')}${fieldBlock('Initial task')}${fieldBlock('Constraints')}
-    ${fieldBlock('Deliverable')}${fieldBlock('My approach')}${fieldBlock('Key decisions')}${fieldBlock('Project outcome')}
-    ${fieldBlock('Client feedback')}${fieldBlock('Permission to show')}
-    ${h2('Permission Check')}
+    ${h2('Конструктор реального кейса')}
+    ${fieldBlock('Клиент / бизнес')}${fieldBlock('Проект')}${fieldBlock('Исходная задача')}${fieldBlock('Ограничения')}
+    ${fieldBlock('Результат работы')}${fieldBlock('Мой подход')}${fieldBlock('Ключевые решения')}${fieldBlock('Итог работы')}
+    ${fieldBlock('Отзыв клиента')}${fieldBlock('Разрешение на публикацию')}
+    ${h2('Проверка разрешения')}
     ${checklist(['Можно показывать бренд', 'Можно показывать дизайн', 'Можно использовать цифры', 'Можно использовать отзыв', 'Можно назвать компанию'])}
-    ${h2('Referral Planner')}
-    ${table({ headers: ['Клиент', 'Referral asked?', 'Referred by', 'Referral given to'], rows: Array.from({ length: 5 }, () => ['', '', '', '']) })}
-    ${h2('After-Project Review')}
-    ${fieldBlock('What went well')}${fieldBlock('What to fix')}${fieldBlock('What to standardize')}
-    ${fieldBlock('What to add to portfolio')}${fieldBlock('What did client value most')}
-    ${h2('Price Review')}
-    ${checklist(['Стал ли результат сильнее?', 'Появился ли real proof?', 'Был ли текущий price слишком низким?', 'Keep price / Adjust price?'])}
-    ${h2('Project Review')}
-    ${fieldBlock('Price')}${fieldBlock('Time spent')}${fieldBlock('Extra scope')}${fieldBlock('Would I take this project again?')}
-    ${h2('Client Quality Score (0–2)')}
-    ${table({ headers: ['Пункт', '0–2'], rows: ['Clear Communication', 'Pays as Agreed', 'Respects Scope', 'Provides Materials', 'Reasonable Feedback', 'Good Service Fit', 'Repeat Potential', 'Referral Potential'].map((r) => [r, '']) })}
-    ${h2('Specialization Check')}
+    ${h2('План рекомендаций')}
+    ${table({ headers: ['Клиент', 'Рекомендацию просил(а)?', 'Кто порекомендовал', 'Кому порекомендовал(а)'], rows: Array.from({ length: 5 }, () => ['', '', '', '']) })}
+    ${h2('Разбор проекта после сдачи')}
+    ${fieldBlock('Что прошло хорошо')}${fieldBlock('Что исправить')}${fieldBlock('Что стандартизировать')}
+    ${fieldBlock('Что добавить в портфолио')}${fieldBlock('Что клиент ценил больше всего')}
+    ${h2('Пересмотр цены')}
+    ${checklist(['Стал ли результат сильнее?', 'Появилось ли реальное доказательство?', 'Была ли текущая цена слишком низкой?', 'Оставить цену / изменить цену?'])}
+    ${h2('Разбор проекта (не только доход)')}
+    ${fieldBlock('Цена')}${fieldBlock('Затраченное время')}${fieldBlock('Дополнительный объём')}${fieldBlock('Взял(а) бы я этот проект снова?')}
+    ${h2('Оценка качества клиента (0–2)')}
+    ${table({ headers: ['Пункт', '0–2'], rows: ['Ясная коммуникация', 'Платит как договорились', 'Уважает объём работ', 'Предоставляет материалы', 'Разумная обратная связь', 'Хорошее соответствие услуге', 'Потенциал повторного заказа', 'Потенциал рекомендации'].map((r) => [r, '']) })}
+    ${h2('Проверка на специализацию')}
     ${checklist(['Выполнено несколько похожих проектов?', 'Понимаю нишу лучше, чем раньше?', 'Легко находить лидов в ней?', 'Ценят ли клиенты эту услугу?'])}
   `);
 }
 
-// 10 — DAY 30
+// 10 — ДЕНЬ 30
 function s10() {
   return page('wb-10', `
-    ${sectionHeader('10', 'Day 30', 'Full Review')}
-    ${fieldBlock('My service')}${fieldBlock('Leads found')}${fieldBlock('Messages sent')}${fieldBlock('Replies')}
-    ${fieldBlock('Positive replies')}${fieldBlock('Discussions')}${fieldBlock('Offers')}${fieldBlock('Won')}
-    ${fieldBlock('Revenue (опционально)')}${fieldBlock('Projects completed')}${fieldBlock('Reviews')}${fieldBlock('Referrals')}
-    ${fieldBox('What worked', 20)}${fieldBox("What didn't", 20)}${fieldBlock('My biggest bottleneck')}
-    ${fieldBlock('What I will change')}${fieldBox('Next 30-Day Target', 25)}
+    ${sectionHeader('10', 'День 30', 'Полный обзор')}
+    ${fieldBlock('Моя услуга')}${fieldBlock('Найдено лидов')}${fieldBlock('Отправлено сообщений')}${fieldBlock('Ответы')}
+    ${fieldBlock('Позитивные ответы')}${fieldBlock('Обсуждения')}${fieldBlock('Офферы')}${fieldBlock('Закрытые сделки')}
+    ${fieldBlock('Доход (опционально)')}${fieldBlock('Завершено проектов')}${fieldBlock('Отзывы')}${fieldBlock('Рекомендации')}
+    ${fieldBox('Что сработало', 20)}${fieldBox('Что не сработало', 20)}${fieldBlock('Моё главное узкое место')}
+    ${fieldBlock('Что я изменю')}${fieldBox('Цель на следующие 30 дней', 25)}
   `);
 }
 
 function buildWorkbookHtml() {
   const body = [cover(), s00(), s01(), s02(), s03(), s04(), s05(), s06(), s07(), s08(), s09(), s10()].join('\n');
-  return wrapDocument({ title: 'AI MONEY START — Workbook', bodyHtml: body, cssPath: '../styles/print.css' });
+  return wrapDocument({ title: 'AI MONEY START — Рабочая тетрадь', bodyHtml: body, cssPath: '../styles/print.css' });
 }
 
 module.exports = { buildWorkbookHtml };

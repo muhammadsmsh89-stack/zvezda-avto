@@ -54,13 +54,13 @@ const fieldBox = (fieldLabel, heightMm = 22) => `
 
 const promptCard = ({ num, title, role, context, input, task, constraints, output }) => `
   <div class="prompt-card">
-    <div class="card-label">${num ? `PROMPT ${num} — ` : ''}${inline(title)}</div>
-    <div class="pk">ROLE</div><div class="pv">${inline(role)}</div>
-    <div class="pk">CONTEXT</div><div class="pv">${inline(context)}</div>
-    <div class="pk">INPUT</div><div class="pv">${inline(input)}</div>
-    <div class="pk">TASK</div><div class="pv">${inline(task)}</div>
-    <div class="pk">CONSTRAINTS</div><div class="pv">${inline(constraints)}</div>
-    <div class="pk">OUTPUT FORMAT</div><div class="pv">${inline(output)}</div>
+    <div class="card-label">${num ? `ПРОМПТ ${num} — ` : ''}${inline(title)}</div>
+    <div class="pk">РОЛЬ</div><div class="pv">${inline(role)}</div>
+    <div class="pk">КОНТЕКСТ</div><div class="pv">${inline(context)}</div>
+    <div class="pk">ВВОДНЫЕ</div><div class="pv">${inline(input)}</div>
+    <div class="pk">ЗАДАЧА</div><div class="pv">${inline(task)}</div>
+    <div class="pk">ОГРАНИЧЕНИЯ</div><div class="pv">${inline(constraints)}</div>
+    <div class="pk">ФОРМАТ ОТВЕТА</div><div class="pv">${inline(output)}</div>
   </div>`;
 
 const progressDots = (names, activeIndex) => `
@@ -68,7 +68,7 @@ const progressDots = (names, activeIndex) => `
     ${names.map((n, i) => `<span class="progress-dot${i === activeIndex ? ' active' : ''}" title="${esc(n)}"></span>`).join('')}
   </div>`;
 
-const PROGRESS_NAMES = ['Service', 'Skill', 'Proof', 'Offer', 'Leads', 'Outreach', 'Sales', 'Delivery', 'Growth'];
+const PROGRESS_NAMES = ['Услуга', 'Навык', 'Портфолио', 'Оффер', 'Лиды', 'Контакт', 'Продажи', 'Сдача', 'Рост'];
 
 const moduleHeader = ({ number, title, day, tags = [], progressIndex }) => `
   <div class="module-header">
@@ -84,10 +84,10 @@ const dayCard = ({ day, objective, doItems = [], output, track, doneWhen = [] })
   <div class="day-card">
     <span class="day-num">${esc(day)}</span>
     <div class="day-objective">${inline(objective)}</div>
-    ${doItems.length ? `<div class="label">Do</div>${checklist(doItems)}` : ''}
-    ${output ? `<div class="label">Output</div><p>${inline(output)}</p>` : ''}
-    ${track ? `<div class="label">Track</div><p>${inline(track)}</p>` : ''}
-    ${doneWhen.length ? `<div class="label">Done When</div>${checklist(doneWhen)}` : ''}
+    ${doItems.length ? `<div class="label">Сделать</div>${checklist(doItems)}` : ''}
+    ${output ? `<div class="label">Результат</div><p>${inline(output)}</p>` : ''}
+    ${track ? `<div class="label">Метрика</div><p>${inline(track)}</p>` : ''}
+    ${doneWhen.length ? `<div class="label">Готово, когда</div>${checklist(doneWhen)}` : ''}
   </div>`;
 
 const tocEntry = (num, title, anchor) => `
